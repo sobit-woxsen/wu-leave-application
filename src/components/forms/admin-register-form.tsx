@@ -16,14 +16,23 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 const formSchema = z.object({
   adminemail: z.string().min(2).max(50),
+  department: z.enum(["BBA", "B.Com"]),
   password: z.string().min(2).max(50),
   confirmpassword: z.string().min(2).max(50),
 });
 
+const departments = ["BBA", "B.Com"];
 const AdminRegisterForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,10 +54,33 @@ const AdminRegisterForm = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
         <FormField
           control={form.control}
+          name="department"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Select department</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select department" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {departments?.map((department) => (
+                    <SelectItem value={department}>{department}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="adminemail"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Student Email</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="admin@woxsen.edu.in" {...field} />
               </FormControl>

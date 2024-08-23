@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 const formSchema = z.object({
   studentemail: z.string().min(2).max(50),
+  admissionNumber: z.string().min(2).max(50),
   password: z.string().min(2).max(50),
   confirmpassword: z.string().min(2).max(50),
 });
@@ -51,6 +52,19 @@ const StudentRegisterForm = () => {
               <FormLabel>Student Email</FormLabel>
               <FormControl>
                 <Input placeholder="student@woxsen.edu.in" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="admissionNumber"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Admission Number</FormLabel>
+              <FormControl>
+                <Input placeholder="WOU/2929/BBA/989890" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

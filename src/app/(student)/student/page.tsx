@@ -5,6 +5,7 @@ const StudentPage = () => {
   return (
     <div className="w-full h-full">
       <StudentNavbar />
+      <h1>Student Page</h1>
     </div>
   );
 };

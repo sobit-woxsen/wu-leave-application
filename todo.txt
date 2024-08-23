@@ -1,0 +1,14 @@
+API
+- User Login/Logout [user]
+- Admin Login/Logout [admin]
+- Apply leave [user]
+- Approve/Reject leave [admin]
+- Send Email
+- Check Status [user]
+
+MIDDLEWWARES
+- password hash
+- upload documents/videos on AWS S3
+
+MODELS
+- 
