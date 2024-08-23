@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,18 +16,23 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-const formSchema = z.object({
-  studentemail: z.string().min(2).max(50),
-  admissionNumber: z.string().min(2).max(50),
-  password: z.string().min(2).max(50),
-  confirmpassword: z.string().min(2).max(50),
-});
+import toast from "react-hot-toast";
+import { studentRegisterFormSchema } from "@/types/zod-schema";
 
 const StudentRegisterForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof studentRegisterFormSchema>>({
+    resolver: zodResolver(studentRegisterFormSchema),
     defaultValues: {
       studentemail: "",
       password: "",
@@ -35,15 +40,44 @@ const StudentRegisterForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const departments = ["BBA", "B.Com"];
+
+  function onSubmit(values: z.infer<typeof studentRegisterFormSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
 
+  // useEffect(() => {
+  //   toast.success("form submitted successfuly");
+  // }, []);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
+        <FormField
+          control={form.control}
+          name="department"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Select department</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select department" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {departments?.map((department) => (
+                    <SelectItem value={department}>{department}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <FormField
           control={form.control}
           name="studentemail"
@@ -90,11 +124,7 @@ const StudentRegisterForm = () => {
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input
-                  type="confirmpassword"
-                  placeholder="**********"
-                  {...field}
-                />
+                <Input type="password" placeholder="**********" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
