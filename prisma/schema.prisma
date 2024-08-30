@@ -8,34 +8,7 @@ generator client {
 }
 
 model BBAStudentData {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  degree              String
-  admissionNumber     String
-  fullName            String
-  rollNumber          String
-  academicYear        String
-  sessionAcademicYear String
-  program             String
-  semester            String
-  section             String
-  DOB                 DateTime
-  gender              String
-  citizen             String?
-  motherTongue        String?
-  religion            String?
-  smsPhoneNumber      Int?
-  studentEmail        String
-  country             String
-  fatherName          String?
-  fatherMobileNumber  String?
-  fatherEmail         String?
-  motherName          String?
-  motherMobileNumber  Int?
-  admissionStatus     String
-}
-
-model BCOMStudentData {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
   degree              String
   admissionNumber     String
   fullName            String
@@ -59,6 +32,35 @@ model BCOMStudentData {
   motherName          String?
   motherMobileNumber  Int?
   admissionStatus     String
+  otpVerify           OTPVerify?
+}
+
+model BCOMStudentData {
+  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
+  degree              String
+  admissionNumber     String
+  fullName            String
+  rollNumber          String
+  academicYear        String
+  sessionAcademicYear String
+  program             String
+  semester            String
+  section             String
+  DOB                 DateTime
+  gender              String
+  citizen             String?
+  motherTongue        String?
+  religion            String?
+  smsPhoneNumber      Int?
+  studentEmail        String
+  country             String
+  fatherName          String?
+  fatherMobileNumber  Int?
+  fatherEmail         String?
+  motherName          String?
+  motherMobileNumber  Int?
+  admissionStatus     String
+  otpVerify           OTPVerify?
 }
 
 model LeaveApplication {
@@ -87,8 +89,8 @@ enum Status {
 
 model User {
   id           String             @id @default(auto()) @map("_id") @db.ObjectId
-  studentEmail String
-  studentId    String
+  studentEmail String             @unique
+  department   Department
   password     String
   role         Role               @default(USER)
   applications LeaveApplication[]
@@ -119,4 +121,15 @@ model Admin {
 enum Department {
   BBA
   BCOM
+}
+
+model OTPVerify {
+  id          String           @id @default(cuid()) @map("_id")
+  otp         Int
+  studentId   String           @unique @db.ObjectId
+  bbaStudent  BBAStudentData?  @relation(fields: [studentId], references: [id])
+  bcomStudent BCOMStudentData? @relation(fields: [studentId], references: [id])
+  createdAt   DateTime         @default(now())
+  expiresAt   DateTime
+  userId      String?          @db.ObjectId
 }

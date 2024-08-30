@@ -12,3 +12,11 @@ MIDDLEWWARES
 
 MODELS
 - 
+
+PROTECTED ROUTES
+- student : application-status
+            applications
+            apply-for-leave
+- admin :  application
+                              
+

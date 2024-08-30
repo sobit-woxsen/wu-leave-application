@@ -1,15 +1,9 @@
+import prisma from "@/prisma";
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 export async function GET() {
   try {
-    const bbaStudents = await prisma.bBAStudentData.findMany({
-      where: {
-        id: "66c870922d4a485fcf416a5e",
-      },
-    });
+    const bbaStudents = await prisma.bBAStudentData.findMany({});
 
     return NextResponse.json({
       message: "BBA student data fetched successfully",

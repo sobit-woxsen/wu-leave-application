@@ -14,10 +14,10 @@ export const studentRegisterFormSchema = z
       .refine((studentemail) => studentemail.endsWith("@woxsen.edu.in"), {
         message: "Email must be in the @woxsen.edu.in format",
       }),
-    admissionNumber: z.string().min(1, {
-      message: "Admission number is required",
+    otp: z.string().min(1, {
+      message: "OTP is required",
     }),
-    department: z.enum(["BBA", "B.Com"]),
+    department: z.enum(["BBA", "BCOM"]),
     password: z
       .string()
       .min(8, { message: "Password must be at least 8 characters long" })
@@ -36,3 +36,8 @@ export const studentRegisterFormSchema = z
     message: "Passwords do not match",
     path: ["confirmpassword"],
   });
+
+export const studentLoginFormSchema = z.object({
+  studentemail: z.string().min(2).max(50),
+  password: z.string().min(2).max(50),
+});

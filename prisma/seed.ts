@@ -5,6 +5,8 @@ import bbaData from "../src/data/bba.json";
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.bBAStudentData.deleteMany();
+
   for (const student of bbaData) {
     const studentData = {
       degree: student.degree,
@@ -21,18 +23,18 @@ async function main() {
       motherTongue: student.motherTongue,
       religion: student.religion,
       smsPhoneNumber: student.smsPhoneNumber
-        ? parseInt(student.smsPhoneNumber.toString())
+        ? Number(student.smsPhoneNumber)
         : null,
       studentEmail: student.studentEmail,
       country: student.country,
       fatherName: student.fatherName,
       fatherMobileNumber: student.fatherMobileNumber
-        ? parseInt(student.fatherMobileNumber.toString())
+        ? Number(student.fatherMobileNumber)
         : null,
       fatherEmail: student.fatherEmail || null,
       motherName: student.motherName,
       motherMobileNumber: student.motherMobileNumber
-        ? parseInt(student.motherMobileNumber.toString())
+        ? Number(student.motherMobileNumber)
         : null,
       admissionStatus: student.admissionStatus,
     };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,24 +16,48 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-const formSchema = z.object({
-  studentemail: z.string().min(2).max(50),
-  password: z.string().min(2).max(50),
-});
+import { studentLoginFormSchema } from "@/types/zod-schema";
+import toast from "react-hot-toast";
+import { LoadingSpinner } from "../ui/spinner";
+import { useRouter } from "next/navigation";
 
 const StudentLoginForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const form = useForm<z.infer<typeof studentLoginFormSchema>>({
+    resolver: zodResolver(studentLoginFormSchema),
     defaultValues: {
       studentemail: "",
       password: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof studentLoginFormSchema>) {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/student/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        toast.error("Invalid credentials");
+      }
+      const json = await response.json();
+      console.log(json.data);
+      setLoading(false);
+      toast.success("Logged in successfully");
+      router.push("/student");
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      toast.error("Failed to login");
+    }
   }
 
   return (
@@ -72,8 +95,12 @@ const StudentLoginForm = () => {
         >
           Forget Password?
         </Link>
-        <Button className="w-full  bg-brand/90 hover:bg-brand" type="submit">
-          Login
+        <Button
+          disabled={loading}
+          className="w-full  bg-brand/90 hover:bg-brand"
+          type="submit"
+        >
+          {loading ? <LoadingSpinner /> : "Login"}
         </Button>
       </form>
 
