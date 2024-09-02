@@ -2,19 +2,27 @@ import { create } from "zustand";
 
 interface AuthState {
   isAuthenticated: boolean;
+  setAuthStatus: (status: boolean) => void;
   checkAuth: () => Promise<boolean>;
 }
 
 const useAuthStore = create<AuthState>((set) => ({
   isAuthenticated: false,
+  setAuthStatus: (status: boolean) => set({ isAuthenticated: status }),
+
   checkAuth: async () => {
-    const response = await fetch(`http://localhost:3001/api/student/login`, {
-      method: "GET",
-      credentials: "include",
-    });
-    const data = await response.json();
-    set({ isAuthenticated: data.isAuthenticated });
-    return data.isAuthenticated;
+    try {
+      const response = await fetch(`/api/student/checkauth`);
+
+      const data = await response.json();
+      console.log("DATA", data);
+
+      set({ isAuthenticated: true });
+
+      return data.isAuthenticated;
+    } catch (error) {
+      console.log(error);
+    }
   },
 }));
 

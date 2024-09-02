@@ -3,23 +3,6 @@ import { studentLoginFormSchema } from "@/types/zod-schema";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import type { NextRequest } from "next/server";
-export async function GET(request: NextRequest) {
-  const token = request.cookies.get("token")?.value;
-
-  console.log("TOKEN ", token);
-
-  if (!token) {
-    return NextResponse.json({ isAuthenticated: false }, { status: 401 });
-  }
-
-  try {
-    jwt.verify(token, process.env.JWT_SECRET!);
-    return NextResponse.json({ isAuthenticated: true }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ isAuthenticated: false }, { status: 401 });
-  }
-}
 
 export async function POST(request: Request) {
   try {
@@ -77,6 +60,8 @@ export async function POST(request: Request) {
       maxAge: 7 * 24 * 60 * 60,
       path: "/",
     });
+
+    response.headers.set("token", token);
 
     return response;
   } catch (error) {

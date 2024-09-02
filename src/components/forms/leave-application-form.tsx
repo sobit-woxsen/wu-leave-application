@@ -6,8 +6,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
-import { cn } from "../../lib/utils";
+import { format, isWeekend } from "date-fns";
+import { cn, isHoliday } from "../../lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -44,8 +44,8 @@ const formSchema = z.object({
     required_error: "End date is required",
   }),
   reasonForLeave: z.object({
-    reason: z.string().min(2).max(50, {
-      message: "Reason must be between 2 and 50 characters",
+    reason: z.string().min(2).max(500, {
+      message: "Reason must be between 2 and 500 characters",
     }),
     type: z.string().min(2),
   }),
@@ -70,13 +70,27 @@ const reasons = [
   { reason: "Other reasons", type: "OTHER" },
 ];
 
+const holidayDates = [
+  "2024-01-01",
+  "2024-01-15",
+  "2024-01-26",
+  "2024-02-14",
+  "2024-03-25",
+  "2024-03-29",
+  "2024-04-09",
+  "2024-04-11",
+  "2024-06-17",
+  "2024-08-15",
+  "2024-08-19",
+  "2024-08-26",
+  "2024-10-02",
+  "2024-10-31",
+  "2024-12-25",
+];
+
 const LeaveApplicationForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      startDate: new Date(),
-      endDate: new Date(),
-    },
   });
 
   const reasonForLeave = form.watch("reasonForLeave");
@@ -127,7 +141,9 @@ const LeaveApplicationForm = () => {
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
+                        date < new Date() ||
+                        isWeekend(date) ||
+                        isHoliday(date, holidayDates)
                       }
                       initialFocus
                     />
@@ -168,7 +184,9 @@ const LeaveApplicationForm = () => {
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
+                        date < form.getValues("startDate") ||
+                        isWeekend(date) ||
+                        isHoliday(date, holidayDates)
                       }
                       initialFocus
                     />
@@ -259,6 +277,7 @@ const LeaveApplicationForm = () => {
                   placeholder="Choose supporting document"
                   {...field}
                   type="file"
+                  accept=".png,.jpeg,.jpg,.pdf"
                 />
               </FormControl>
               <FormMessage />
@@ -278,6 +297,7 @@ const LeaveApplicationForm = () => {
                   placeholder="Choose supporting document"
                   {...field}
                   type="file"
+                  accept="video/mp4,video/webm,video/ogg"
                 />
               </FormControl>
               <FormMessage />

@@ -49,7 +49,7 @@ const StudentLoginForm = () => {
         toast.error("Invalid credentials");
       }
       const json = await response.json();
-      console.log(json.data);
+      console.log(json);
       setLoading(false);
       toast.success("Logged in successfully");
       router.push("/student");

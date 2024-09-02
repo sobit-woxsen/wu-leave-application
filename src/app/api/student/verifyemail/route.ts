@@ -24,7 +24,7 @@ const checkEmailValid = async (
           },
         },
       })
-    : department === "B.Com"
+    : department === "BCOM"
     ? prisma.bCOMStudentData.findFirst({
         where: {
           studentEmail: {
@@ -53,7 +53,7 @@ export async function updateOTP(
         ? await prisma.bBAStudentData.findFirst({
             where: { studentEmail: email },
           })
-        : department === "B.Com"
+        : department === "BCOM"
         ? await prisma.bCOMStudentData.findFirst({
             where: {
               studentEmail: email,
