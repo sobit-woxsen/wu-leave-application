@@ -15,14 +15,42 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 const formSchema = z.object({
-  adminemail: z.string().min(2).max(50),
-  password: z.string().min(2).max(50),
+  department: z.enum(["BBA", "BCOM"], {
+    message: "Please select your department",
+  }),
+  adminemail: z
+    .string()
+    .refine((studentemail) => studentemail.endsWith("@woxsen.edu.in"), {
+      message: "Email must be in the @woxsen.edu.in format",
+    }),
+  password: z
+    .string()
+    .min(8, {
+      message: "Password should be greater than 8",
+    })
+    .max(50, {
+      message: "Password is required",
+    }),
 });
 
+const departments = ["BBA", "BCOM"];
+
 const AdminLoginForm = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -31,10 +59,32 @@ const AdminLoginForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...values, email: values.adminemail }),
+        }
+      );
+
+      const json = await response.json();
+
+      if (!response.ok) {
+        toast.error(json.error);
+      } else {
+        toast.success(json.message);
+        console.log("JSON ", json);
+        router.push("/admin");
+      }
+    } catch (error) {
+      console.log("ERROR : ", error);
+      toast.error("Something went wrong! Please try after sometime");
+    }
   }
 
   return (
@@ -42,10 +92,33 @@ const AdminLoginForm = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
         <FormField
           control={form.control}
+          name="department"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Select department</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select department" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {departments?.map((department) => (
+                    <SelectItem value={department}>{department}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="adminemail"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Admin Email</FormLabel>
+              <FormLabel>Enter Email</FormLabel>
               <FormControl>
                 <Input placeholder="admin@woxsen.edu.in" {...field} />
               </FormControl>
@@ -58,7 +131,7 @@ const AdminLoginForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Enter Password</FormLabel>
               <FormControl>
                 <Input type="password" placeholder="**********" {...field} />
               </FormControl>
@@ -66,23 +139,23 @@ const AdminLoginForm = () => {
             </FormItem>
           )}
         />
-        <Link
+        {/* <Link
           href={"/admin/forget-password"}
           className="text-xs flex justify-end text-brand"
         >
           Forget Password?
-        </Link>
+        </Link> */}
         <Button className="w-full  bg-brand/90 hover:bg-brand" type="submit">
           Login
         </Button>
       </form>
 
-      <section className="flex space-x-1  text-sm">
+      {/* <section className="flex space-x-1  text-sm">
         <p>Don't have an account yet? </p>
         <Link className="text-brand underline" href="/admin/register">
           Create One
         </Link>
-      </section>
+      </section> */}
     </Form>
   );
 };

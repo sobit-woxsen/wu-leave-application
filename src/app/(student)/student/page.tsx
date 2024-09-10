@@ -5,7 +5,9 @@ const StudentPage = () => {
   return (
     <div className="w-full h-full">
       <StudentNavbar />
-      <h1>Student Page</h1>
+      <h1 className="text-lg font-medium text-slate-700  mt-10">
+        Student Page
+      </h1>
     </div>
   );
 };

@@ -72,9 +72,11 @@ export async function updateOTP(
         expiresAt: new Date(Date.now() + 10 * 60 * 1000),
       },
       create: {
+        id: student.id, // Add this line
         studentId: student.id,
         otp: parseInt(otp),
         expiresAt: new Date(Date.now() + 10 * 60 * 1000),
+        createdAt: new Date(), // Add this line
       },
     });
 
@@ -84,7 +86,6 @@ export async function updateOTP(
     return false;
   }
 }
-
 export async function POST(request: Request) {
   try {
     const { department, email } = await request.json();

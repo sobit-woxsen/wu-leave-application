@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { format, isWeekend } from "date-fns";
-import { cn, isHoliday } from "../../lib/utils";
+import { cn, getTotalLeaveDays, isHoliday } from "../../lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -35,70 +35,91 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-
-const formSchema = z.object({
-  startDate: z.date({
-    required_error: "Start date is required",
-  }),
-  endDate: z.date({
-    required_error: "End date is required",
-  }),
-  reasonForLeave: z.object({
-    reason: z.string().min(2).max(500, {
-      message: "Reason must be between 2 and 500 characters",
-    }),
-    type: z.string().min(2),
-  }),
-  document: z.string().min(2).max(50),
-  video: z.string().min(2).max(50),
-});
+import { getCurrentUserId } from "@/actions/getCurrentUserId";
+import toast from "react-hot-toast";
+import { leaveApplicationFormSchema } from "@/types/zod-schema";
+import { holidayDates, leaveReasons } from "@/constant";
+import { uploadFile } from "@/actions/uploadFile";
+import { gets3SignedUrl } from "@/actions/gets3SignedUrl.action";
+import useLeaveStore from "@/stores/leaveApplicationStore";
 
 // LEAVE REASONS
-const reasons = [
-  { reason: "Long leave for the student's medical issue", type: "LONG" },
-  {
-    reason:
-      "Long leave for the medical issue of a student's parents or grandparents",
-    type: "LONG",
-  },
-  { reason: "Short leave for festivals", type: "FESTIVE" },
-  {
-    reason: "Short leave for government office appointments",
-    type: "GOVERMENT",
-  },
-  { reason: "Short leave for doctor's appointments", type: "MEDICAL" },
-  { reason: "Other reasons", type: "OTHER" },
-];
-
-const holidayDates = [
-  "2024-01-01",
-  "2024-01-15",
-  "2024-01-26",
-  "2024-02-14",
-  "2024-03-25",
-  "2024-03-29",
-  "2024-04-09",
-  "2024-04-11",
-  "2024-06-17",
-  "2024-08-15",
-  "2024-08-19",
-  "2024-08-26",
-  "2024-10-02",
-  "2024-10-31",
-  "2024-12-25",
-];
 
 const LeaveApplicationForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [totalLeaveDays, setTotalLeaveDays] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const form = useForm<z.infer<typeof leaveApplicationFormSchema>>({
+    resolver: zodResolver(leaveApplicationFormSchema),
   });
 
   const reasonForLeave = form.watch("reasonForLeave");
+  const startDate = form.watch("startDate");
+  const endDate = form.watch("endDate");
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("VALUES");
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof leaveApplicationFormSchema>) {
+    setFormSubmitting(true);
+    const formData = new FormData();
+
+    formData.append("startDate", values.startDate.toISOString());
+    formData.append("endDate", values.endDate.toISOString());
+    formData.append("reasonForLeave", JSON.stringify(values.reasonForLeave));
+
+    const documentFile = values.document;
+    const videoFile = values.video;
+    const totalLeaveDays = getTotalLeaveDays(
+      values?.startDate,
+      values?.endDate
+    );
+
+    console.log("TotalLeave Days ", totalLeaveDays);
+
+    // if (documentFile) {
+    //   const docFileUrl = await uploadFile(documentFile);
+    //   if (docFileUrl) {
+    //     formData.append("documentUrl", docFileUrl);
+    //   }
+    // }
+
+    // if (videoFile) {
+    //   const videoFileUrl = await uploadFile(videoFile);
+    //   if (videoFileUrl) {
+    //     formData.append("videoUrl", videoFileUrl);
+    //   }
+    // }
+
+    console.log("TOTAL LEAVE DAYS :: ", totalLeaveDays);
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/application`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) {
+        toast.error("Something went wrong");
+        return;
+      }
+
+      const json = await response.json();
+      console.log("JSON ", json);
+    } catch (error) {
+      console.log("ERROR : ", error);
+    } finally {
+      setFormSubmitting(false);
+    }
   }
+
+  useEffect(() => {
+    if (startDate && endDate) {
+      const totalLeaves = getTotalLeaveDays(startDate, endDate);
+      setTotalLeaveDays(totalLeaves);
+    }
+  }, [startDate, endDate]);
 
   return (
     <Form {...form}>
@@ -199,41 +220,59 @@ const LeaveApplicationForm = () => {
         </section>
 
         {/* Reason for Leave */}
-        <FormField
-          control={form.control}
-          name="reasonForLeave"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Select your reason for leave</FormLabel>
-              <Select
-                onValueChange={(value) =>
-                  field.onChange({
-                    reason: JSON.parse(value)?.reason,
-                    type: JSON.parse(value)?.type,
-                  })
-                }
-                defaultValue={field.value?.reason}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select reason " />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {reasons.map((reason, index) => (
-                    <SelectItem key={index} value={JSON.stringify(reason)}>
-                      {reason?.reason}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <FormLabel className="">Select your reason for leave</FormLabel>
+        <Select onValueChange={setSelectedCategory}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select leave category" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Regular">Regular</SelectItem>
+            <SelectItem value="Medical">Medical</SelectItem>
+            <SelectItem value="Emergency">Emergency</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {selectedCategory ? (
+          <>
+            <FormField
+              control={form.control}
+              name="reasonForLeave"
+              render={({ field }) => (
+                <FormItem>
+                  {/* <FormLabel>Select your reason for leave</FormLabel> */}
+                  <Select
+                    onValueChange={(value) =>
+                      field.onChange({
+                        reason: JSON.parse(value)?.reason,
+                        type: JSON.parse(value)?.type,
+                      })
+                    }
+                    defaultValue={field.value?.reason}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select reason " />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {leaveReasons[
+                        selectedCategory as keyof typeof leaveReasons
+                      ]?.map((reason, index) => (
+                        <SelectItem key={index} value={JSON.stringify(reason)}>
+                          {reason?.reason}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </>
+        ) : null}
 
         {/* If reason is of type OTHERS */}
-        {reasonForLeave?.type === "OTHER" && (
+        {reasonForLeave?.type === "OTHERS" && (
           <FormField
             control={form.control}
             name="reasonForLeave"
@@ -266,46 +305,101 @@ const LeaveApplicationForm = () => {
         )}
 
         {/* Supporting Document for Leave */}
-        <FormField
-          control={form.control}
-          name="document"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Supporting Document</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Choose supporting document"
-                  {...field}
-                  type="file"
-                  accept=".png,.jpeg,.jpg,.pdf"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
+        {selectedCategory === "Regular" &&
+          reasonForLeave?.type === "GOVERNMENT" && (
+            <FormField
+              control={form.control}
+              name="document"
+              render={({ field: { onChange, value, ...rest } }) => (
+                <FormItem>
+                  <FormLabel>Supporting Document</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Choose supporting document"
+                      type="file"
+                      accept=".png,.jpeg,.jpg,.pdf"
+                      onChange={(e) => {
+                        const files = e.target.files;
+                        if (files) {
+                          const file = files[0];
+                          onChange(file);
+                        }
+                      }}
+                      {...rest}
+                      // value={value instanceof File ? value.name : undefined}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           )}
-        />
+
+        {selectedCategory === "Medical" ||
+          (selectedCategory === "Emergency" && (
+            <FormField
+              control={form.control}
+              name="document"
+              render={({ field: { onChange, value, ...rest } }) => (
+                <FormItem>
+                  <FormLabel>Supporting Document</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Choose supporting document"
+                      type="file"
+                      accept=".png,.jpeg,.jpg,.pdf"
+                      onChange={(e) => {
+                        const files = e.target.files;
+                        if (files) {
+                          const file = files[0];
+                          onChange(file);
+                        }
+                      }}
+                      {...rest}
+                      // value={value instanceof File ? value.name : undefined}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          ))}
 
         {/* Supporting Video  */}
-        <FormField
-          control={form.control}
-          name="video"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Supporting video from your parents</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Choose supporting document"
-                  {...field}
-                  type="file"
-                  accept="video/mp4,video/webm,video/ogg"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {totalLeaveDays > 3 && selectedCategory === "Emergency" ? (
+          <FormField
+            control={form.control}
+            name="video"
+            render={({ field: { onChange, value, ...rest } }) => (
+              <FormItem>
+                <FormLabel>Supporting video from your parents</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Choose supporting video"
+                    type="file"
+                    accept="video/mp4,video/webm,video/ogg"
+                    onChange={(e) => {
+                      const files = e.target.files;
+                      if (files) {
+                        const file = files[0];
+                        onChange(file);
+                      }
+                    }}
+                    {...rest}
+                    // value={value instanceof File ? value : undefined}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ) : null}
 
-        <Button className="w-full  bg-brand/90 hover:bg-brand" type="submit">
+        <Button
+          disabled={formSubmitting}
+          className="w-full  bg-brand/90 hover:bg-brand"
+          type="submit"
+        >
           Apply for Leave
         </Button>
       </form>

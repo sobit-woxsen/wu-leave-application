@@ -1,14 +1,14 @@
 API
-- User Login/Logout [user]
-- Admin Login/Logout [admin]
-- Apply leave [user]
-- Approve/Reject leave [admin]
+- User Login/Logout [user] ✅
+- Admin Login/Logout [admin] ✅
+- Apply leave [user] ✅
+- Approve/Reject leave [admin] ✅
 - Send Email
 - Check Status [user]
 
 MIDDLEWWARES
-- password hash
-- upload documents/videos on AWS S3
+- password hash ✅
+- upload documents/videos on AWS S3 ✅
 
 MODELS
 - 
@@ -17,6 +17,7 @@ PROTECTED ROUTES
 - student : application-status
             applications
             apply-for-leave
-- admin :  application
+- admin :   application
+            
                               
 

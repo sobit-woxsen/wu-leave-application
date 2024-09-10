@@ -44,12 +44,14 @@ const StudentLoginForm = () => {
         body: JSON.stringify(values),
         credentials: "include",
       });
+      const json = await response.json();
 
       if (!response.ok) {
-        toast.error("Invalid credentials");
+        toast.error(json.error);
+        setLoading(false);
+        return;
       }
-      const json = await response.json();
-      console.log(json);
+
       setLoading(false);
       toast.success("Logged in successfully");
       router.push("/student");
@@ -89,12 +91,12 @@ const StudentLoginForm = () => {
             </FormItem>
           )}
         />
-        <Link
+        {/* <Link
           href={"/student/forget-password"}
           className="text-xs flex justify-end text-brand"
         >
           Forget Password?
-        </Link>
+        </Link> */}
         <Button
           disabled={loading}
           className="w-full  bg-brand/90 hover:bg-brand"

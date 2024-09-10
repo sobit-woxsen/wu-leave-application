@@ -1,23 +1,19 @@
-import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
-import type { NextRequest } from "next/server";
 
-export async function POST(request: NextRequest) {
-  const { token } = await request.json();
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
 
-  if (!token) {
-    return NextResponse.json({ isAuthenticated: false }, { status: 401 });
-  }
+export async function GET() {
+  const cookieStore = cookies();
+  const encryptedSession = cookieStore.get("token")?.value;
 
-  try {
-    jwt.verify(token, process.env.JWT_SECRET!);
-    return NextResponse.json(
-      { isAuthenticated: true, token: token },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("ERROR ", error);
+  console.log("TOKEN ", encryptedSession);
 
-    return NextResponse.json({ isAuthenticated: false }, { status: 401 });
-  }
+  const session = encryptedSession
+    ? jwt.verify(encryptedSession, process.env.JWT_SECRET!)
+    : null;
+
+  console.log("session here ", session);
+
+  return NextResponse.json({ session });
 }

@@ -1,103 +1,161 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
-}
-
 model BBAStudentData {
-  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
-  degree              String
-  admissionNumber     String
-  fullName            String
-  rollNumber          String
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  DOB                 DateTime @db.Date
   academicYear        String
-  sessionAcademicYear String
-  program             String
-  semester            String
-  section             String
-  DOB                 DateTime
-  gender              String
-  citizen             String?
-  motherTongue        String?
-  religion            String?
-  smsPhoneNumber      Int?
-  studentEmail        String
-  country             String
-  fatherName          String?
-  fatherMobileNumber  Int?
-  fatherEmail         String?
-  motherName          String?
-  motherMobileNumber  Int?
+  admissionNumber     String
   admissionStatus     String
-  otpVerify           OTPVerify?
+  country             String
+  degree              String
+  fatherEmail         String?
+  fatherMobileNumber  BigInt?
+  fatherName          String
+  fullName            String
+  gender              String
+  motherMobileNumber  BigInt?
+  motherName          String
+  motherTongue        String
+  program             String
+  religion            String?
+  rollNumber          String
+  section             String
+  semester            String
+  sessionAcademicYear String
+  smsPhoneNumber      BigInt?
+  studentEmail        String
 }
 
 model BCOMStudentData {
-  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
-  degree              String
-  admissionNumber     String
-  fullName            String
-  rollNumber          String
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  DOB                 DateTime @db.Date
   academicYear        String
-  sessionAcademicYear String
-  program             String
-  semester            String
-  section             String
-  DOB                 DateTime
-  gender              String
-  citizen             String?
-  motherTongue        String?
-  religion            String?
-  smsPhoneNumber      Int?
-  studentEmail        String
-  country             String
-  fatherName          String?
-  fatherMobileNumber  Int?
-  fatherEmail         String?
-  motherName          String?
-  motherMobileNumber  Int?
+  admissionNumber     String
   admissionStatus     String
-  otpVerify           OTPVerify?
+  country             String
+  degree              String
+  fatherEmail         String?
+  fatherMobileNumber  BigInt
+  fatherName          String
+  fullName            String
+  gender              String
+  motherMobileNumber  BigInt?
+  motherName          String
+  motherTongue        String
+  program             String
+  religion            String
+  rollNumber          String
+  section             String
+  semester            String
+  sessionAcademicYear String
+  smsPhoneNumber      BigInt
+  studentEmail        String
+}
+
+enum ApplicationStatus {
+  ACCEPTED
+  REJECTED
+  PENDING
 }
 
 model LeaveApplication {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  studentEmail   String
-  studentId      String
-  startDate      DateTime
-  endDate        DateTime
-  reasonForLeave String
-  documentUrl    String?
-  videoUrl       String?
-  status         Status   @default(PENDING)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  User           User?    @relation(fields: [userId], references: [id])
-  userId         String?  @db.ObjectId
-
-  @@map("LeaveApplicationSchema")
+  id          String            @id @default(auto()) @map("_id") @db.ObjectId
+  startDate   DateTime
+  endDate     DateTime
+  totalLeaves Int
+  leaveReason String
+  leaveType   String
+  documentUrl String?
+  videoUrl    String?
+  status      ApplicationStatus @default(PENDING)
+  userId      String            @db.ObjectId
+  user        User              @relation(fields: [userId], references: [id])
+  createdAt   DateTime          @default(now()) @db.Date
+  updatedAt   DateTime          @updatedAt @db.Date
 }
 
-enum Status {
-  PENDING
-  APPROVED
-  REJECTED
+model OTPVerify {
+  id        String   @id @map("_id")
+  createdAt DateTime @db.Date
+  expiresAt DateTime @db.Date
+  otp       BigInt
+  studentId String   @unique @db.ObjectId
 }
 
 model User {
-  id           String             @id @default(auto()) @map("_id") @db.ObjectId
-  studentEmail String             @unique
-  department   Department
-  password     String
-  role         Role               @default(USER)
-  applications LeaveApplication[]
-  createdAt    DateTime           @default(now())
-  updatedAt    DateTime           @updatedAt
+  id               String             @id @default(auto()) @map("_id") @db.ObjectId
+  department       String
+  password         String
+  role             Role               @default(USER)
+  studentEmail     String             @unique
+  createdAt        DateTime           @default(now()) @db.Date
+  updatedAt        DateTime           @updatedAt @db.Date
+  LeaveApplication LeaveApplication[]
+}
 
-  @@map("UserSchema")
+model bbastudentdatas {
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  DOB                 DateTime @db.Date
+  v                   Int      @map("__v")
+  academicYear        String
+  admissionNumber     String
+  admissionStatus     String
+  country             String
+  degree              String
+  fatherEmail         String?
+  /// Multiple data types found: Float: 99.2%, Int: 0.8% out of 376 sampled entries
+  fatherMobileNumber  Json?
+  fatherName          String
+  fullName            String
+  gender              String
+  /// Multiple data types found: Float: 97.8%, Int: 2.2% out of 372 sampled entries
+  motherMobileNumber  Json?
+  motherName          String
+  motherTongue        String
+  program             String
+  religion            String?
+  rollNumber          String
+  section             String
+  semester            String
+  sessionAcademicYear String
+  /// Multiple data types found: Float: 99.2%, Int: 0.8% out of 376 sampled entries
+  smsPhoneNumber      Json?
+  studentEmail        String
+}
+
+model bcomstudentdatas {
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  DOB                 DateTime @db.Date
+  v                   Int      @map("__v")
+  academicYear        String
+  admissionNumber     String
+  admissionStatus     String
+  country             String
+  degree              String
+  fatherEmail         String?
+  fatherMobileNumber  Float
+  fatherName          String
+  fullName            String
+  gender              String
+  /// Multiple data types found: Float: 30.8%, Int: 69.2% out of 13 sampled entries
+  motherMobileNumber  Json?
+  motherName          String
+  motherTongue        String
+  program             String
+  religion            String
+  rollNumber          String
+  section             String
+  semester            String
+  sessionAcademicYear String
+  smsPhoneNumber      Float
+  studentEmail        String
 }
 
 enum Role {
@@ -105,10 +163,14 @@ enum Role {
   USER
 }
 
+enum Department {
+  BBA
+  BCOM
+}
+
 model Admin {
   id         String     @id @default(auto()) @map("_id") @db.ObjectId
   adminEmail String
-  adminId    String
   password   String
   role       Role       @default(ADMIN)
   department Department
@@ -116,20 +178,4 @@ model Admin {
   updatedAt  DateTime   @updatedAt
 
   @@map("AdminSchema")
-}
-
-enum Department {
-  BBA
-  BCOM
-}
-
-model OTPVerify {
-  id          String           @id @default(cuid()) @map("_id")
-  otp         Int
-  studentId   String           @unique @db.ObjectId
-  bbaStudent  BBAStudentData?  @relation(fields: [studentId], references: [id])
-  bcomStudent BCOMStudentData? @relation(fields: [studentId], references: [id])
-  createdAt   DateTime         @default(now())
-  expiresAt   DateTime
-  userId      String?          @db.ObjectId
 }
