@@ -18,14 +18,10 @@ import {
   FileIcon,
   PlayIcon,
 } from "@radix-ui/react-icons";
-import bcomStudents from "@/data/bba.json";
 
-import BackgroundPlayer from "next-video/background-player";
 import toast from "react-hot-toast";
 import { Department } from "@prisma/client";
-import Image from "next/image";
 import Link from "next/link";
-import { NextResponse } from "next/server";
 import { useRouter } from "next/navigation";
 import { applicationStatus } from "@/constant";
 
@@ -40,8 +36,6 @@ export function ViewLeaveApplicationDrawer({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [isDocumentOpen, setIsDocumentOpen] = useState(false);
-  const [isVideoPLayerOpen, setIsVideoPlayerOpen] = useState(false);
   const [studentData, setStudentData] = useState<any>({});
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -214,21 +208,6 @@ export function ViewLeaveApplicationDrawer({
               </li>
             </ul>
 
-            <section className="my-5">
-              {isVideoPLayerOpen ? (
-                <BackgroundPlayer src={studentData?.videoUrl} />
-              ) : null}
-              {isDocumentOpen ? (
-                <Image
-                  alt="doc"
-                  src={studentData?.documentUrl}
-                  width={0}
-                  height={0}
-                  className="w-[100%]"
-                />
-              ) : null}
-            </section>
-
             <section className="flex gap-3">
               {studentData?.documentUrl && (
                 <Link
@@ -236,8 +215,7 @@ export function ViewLeaveApplicationDrawer({
                   href={studentData?.documentUrl}
                   target="_blank"
                 >
-                  <FileIcon className="text-slate-400" />{" "}
-                  {isDocumentOpen ? "Close" : "View"} Supporting Document
+                  <FileIcon className="text-slate-400" /> Supporting Document
                 </Link>
               )}
 
@@ -247,8 +225,7 @@ export function ViewLeaveApplicationDrawer({
                   href={studentData?.videoUrl}
                   target="_blank"
                 >
-                  <FileIcon className="text-slate-400" />{" "}
-                  {isDocumentOpen ? "Close" : "View"} Supporting Video
+                  <FileIcon className="text-slate-400" /> Supporting Video
                 </Link>
               )}
             </section>
