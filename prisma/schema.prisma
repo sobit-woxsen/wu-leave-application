@@ -66,19 +66,21 @@ enum ApplicationStatus {
 }
 
 model LeaveApplication {
-  id          String            @id @default(auto()) @map("_id") @db.ObjectId
-  startDate   DateTime
-  endDate     DateTime
-  totalLeaves Int
-  leaveReason String
-  leaveType   String
-  documentUrl String?
-  videoUrl    String?
-  status      ApplicationStatus @default(PENDING)
-  userId      String            @db.ObjectId
-  user        User              @relation(fields: [userId], references: [id])
-  createdAt   DateTime          @default(now()) @db.Date
-  updatedAt   DateTime          @updatedAt @db.Date
+  id           String            @id @default(auto()) @map("_id") @db.ObjectId
+  startDate    DateTime
+  endDate      DateTime
+  totalLeaves  Int
+  leaveReason  String
+  leaveType    String
+  documentUrl  String?
+  videoUrl     String?
+  studentEmail String?
+  department   Department
+  status       ApplicationStatus @default(PENDING)
+  userId       String            @db.ObjectId
+  user         User              @relation(fields: [userId], references: [id])
+  createdAt    DateTime          @default(now()) @db.Date
+  updatedAt    DateTime          @updatedAt @db.Date
 }
 
 model OTPVerify {

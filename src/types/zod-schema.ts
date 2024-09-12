@@ -63,6 +63,7 @@ export const leaveApplicationFormSchema = z.object({
     }),
     type: z.string().min(2),
   }),
+
   document: z
     .any()
     .refine((files) => files?.size <= MAX_FILE_SIZE, "Max file size is 5MB")

@@ -47,11 +47,11 @@ const holidayDates = [
 //   { reason: "Other reasons", type: "OTHER" },
 // ];
 
-const leaveReasons = {
+const leaveReasonsData = {
   Regular: [
-    { reason: "Home Outing", type: "OUTING" },
-    { reason: "Shopping", type: "SHOPPING" },
-    { reason: "Festival", type: "FESTIVAL" },
+    { reason: "Home Outing", type: "REGULAR" },
+    { reason: "Shopping", type: "REGULAR" },
+    { reason: "Festival", type: "REGULAR" },
     { reason: "Government official appointment", type: "GOVERNMENT" },
   ],
   Medical: [
@@ -79,11 +79,18 @@ const leaveReasons = {
   ],
 };
 
+const applicationStatus = {
+  PENDING: "Pending",
+  REJECTED: "Rejected",
+  ACCEPTED: "Accepted",
+};
+
 export {
   MAX_FILE_SIZE,
   MAX_VIDEO_SIZE,
   ACCEPTED_IMAGE_TYPES,
   ACCEPTED_VIDEOS_TYPES,
   holidayDates,
-  leaveReasons,
+  leaveReasonsData,
+  applicationStatus,
 };

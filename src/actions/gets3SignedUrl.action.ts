@@ -1,14 +1,14 @@
 "use server";
 
-import { getCurrentUserId } from "./getCurrentUserId";
+import { getCurrentUser } from "./getCurrentUser";
 
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 export async function gets3SignedUrl() {
-  const userId = await getCurrentUserId();
+  const user = await getCurrentUser();
 
-  if (!userId) {
+  if (!user?.userId) {
     return { failure: "Not Authenticated" };
   }
 
@@ -30,9 +30,9 @@ export async function gets3SignedUrl() {
 
   const command = new PutObjectCommand({
     Bucket: s3BucketName,
-    Key: `${userId}-${Date.now()}`,
+    Key: `${user.userId}-${Date.now()}`,
     Metadata: {
-      userId: userId,
+      userId: user.userId,
     },
   });
 

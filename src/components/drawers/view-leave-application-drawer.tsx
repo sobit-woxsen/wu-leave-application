@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,22 +13,28 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { FileIcon, PlayIcon } from "@radix-ui/react-icons";
-import bcomStudents from "@/data/bcom.json";
+import bcomStudents from "@/data/bba.json";
 
 import BackgroundPlayer from "next-video/background-player";
+import toast from "react-hot-toast";
+import { Department } from "@prisma/client";
+import Image from "next/image";
+import Link from "next/link";
 
 export function ViewLeaveApplicationDrawer({
   studentEmail,
+  applicationId,
+  department,
 }: {
   studentEmail: string;
+  applicationId: string;
+  department: Department;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
   const [isVideoPLayerOpen, setIsVideoPlayerOpen] = useState(false);
-
-  const studentInfo = bcomStudents.find(
-    (student) =>
-      student.studentEmail.toLowerCase() === studentEmail.toLowerCase()
-  );
+  const [studentData, setStudentData] = useState<any>({});
 
   const handleToggleView = ({
     fileType,
@@ -44,11 +50,45 @@ export function ViewLeaveApplicationDrawer({
     }
   };
 
+  const getStudentInfo = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/application`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ studentEmail, applicationId, department }),
+        }
+      );
+
+      const json = await response.json();
+
+      if (!response.ok) {
+        toast.error(json.error);
+      }
+
+      setStudentData(json.data);
+    } catch (error) {
+      console.log("ERROR :: ", error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    }
+  };
+
+  useEffect(() => {
+    getStudentInfo();
+  }, [isOpen]);
+
   return (
-    <Drawer>
+    <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
         <Button className="bg-brand/85 hover:bg-brand text-white">
-          Open Application
+          See Application
         </Button>
       </DrawerTrigger>
       <DrawerContent>
@@ -56,134 +96,119 @@ export function ViewLeaveApplicationDrawer({
           <DrawerHeader>
             <DrawerTitle>Leave Application</DrawerTitle>
             <DrawerDescription>
-              Leave application description here
+              Leave application of {studentData?.fullName}
             </DrawerDescription>
           </DrawerHeader>
-
-          {/* TODO :  */}
-
-          {/* {
-    "degree": "UG",
-    "admissionNumber": "WOU/2023/BBA/44210",
-    "rollNumber": "23WU0201123",
-    "academicYear": "2023-24",
-    "sessionAcademicYear": "2023-24",
-    "program": "Bachelor of Business Administration (Honours)- General",
-    "semester": "Semester 2",
-    "section": "Rhinoceros",
-    "fullName": "Kanika Goyal",
-    "DOB": "2004-08-29",
-    "gender": "Female",
-    "motherTongue": "Hindi",
-    "religion": "Hindu",
-    "smsPhoneNumber": 9012013031,
-    "studentEmail": "kanika.goyal_2026@woxsen.edu.in",
-    "country": "India",
-    "fatherName": "Anuj Goyal",
-    "fatherMobileNumber": 9837662702,
-    "fatherEmail": "Goyalanuj588@gmail.com",
-    "motherName": "Rachita Goyal",
-    "motherMobileNumber": 8384811205,
-    "admissionStatus": "Withdrawn"
-  }, */}
 
           <div className="p-4 pb-0">
             <ul className="flex flex-col items-start justify-center">
               <li>
-                <span className="font-medium">Degree </span>{" "}
+                <span className="font-medium">Degree</span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.degree}
+                  {studentData?.degree === "UG" ? "yes" : "no"}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Program </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.program}
+                  {studentData?.program}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Enrollment Number </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.rollNumber}
+                  {studentData?.rollNumber}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Student Name </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.fullName}
+                  {studentData?.fullName}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Student Email </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.studentEmail.toLowerCase()}
+                  {studentData?.studentEmail?.toLowerCase()}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Semester </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.semester}
+                  {studentData?.semester}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Academic Year </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.academicYear}
+                  {studentData?.academicYear}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Section </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.section}
+                  {studentData?.section}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Father Email </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentInfo?.fatherEmail}
+                  {studentData?.fatherEmail}
                 </span>
               </li>
               <li>
                 <span className="font-medium">Leave Reason </span>{" "}
                 <span className="text-sm text-slate-600">
-                  Lorem ipsum dolor sit amet.
+                  {studentData?.leaveReason}
                 </span>
               </li>
             </ul>
 
             <section className="my-5">
               {isVideoPLayerOpen ? (
-                <BackgroundPlayer src={`/videos/temp-video.mp4`} />
+                <BackgroundPlayer src={studentData?.videoUrl} />
               ) : null}
               {isDocumentOpen ? (
-                <div style={{ width: "100%", height: "500px" }}>
-                  <iframe
-                    src="/documents/temp-pdf.pdf"
-                    width="100%"
-                    height="100%"
-                    title="document viewer"
-                  />
-                </div>
+                // <div style={{ width: "100%", height: "500px" }}>
+                //   <iframe
+                //     src={studentData?.documentUrl}
+                //     width="100%"
+                //     height="100%"
+                //     title="document viewer"
+                //   />
+                // </div>
+                <Image
+                  alt="doc"
+                  src={studentData?.documentUrl}
+                  width={0}
+                  height={0}
+                  className="w-[100%]"
+                />
               ) : null}
             </section>
 
             <section className="flex gap-3">
-              <Button
-                variant={"outline"}
-                className="shadow-none text-xs flex gap-2 text-slate-600"
-                onClick={() => handleToggleView({ fileType: "DOCUMENT" })}
-              >
-                <FileIcon className="text-slate-400" />{" "}
-                {isDocumentOpen ? "Close" : "View"} Document
-              </Button>
-              <Button
-                variant={"outline"}
-                className="shadow-none text-xs flex gap-2 text-slate-600"
-                onClick={() => handleToggleView({ fileType: "VIDEO" })}
-              >
-                <PlayIcon className="text-slate-400" />{" "}
-                {isVideoPLayerOpen ? "Close" : "Play"} Video
-              </Button>
+              {studentData?.documentUrl && (
+                <Link
+                  className="border-[1.5px] p-3 rounded-md shadow-none text-xs flex gap-2 text-slate-600"
+                  href={studentData?.documentUrl}
+                  target="_blank"
+                >
+                  <FileIcon className="text-slate-400" />{" "}
+                  {isDocumentOpen ? "Close" : "View"} Supporting Document
+                </Link>
+              )}
+
+              {studentData?.videoUrl && (
+                <Link
+                  className="border-[1.5px] p-3 rounded-md shadow-none text-xs flex gap-2 text-slate-600"
+                  href={studentData?.videoUrl}
+                  target="_blank"
+                >
+                  <FileIcon className="text-slate-400" />{" "}
+                  {isDocumentOpen ? "Close" : "View"} Supporting Video
+                </Link>
+              )}
             </section>
           </div>
           <DrawerFooter>

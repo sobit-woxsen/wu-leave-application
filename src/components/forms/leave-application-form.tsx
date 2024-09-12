@@ -14,14 +14,12 @@ import { Calendar } from "@/components/ui/calendar";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import {
   Popover,
   PopoverContent,
@@ -35,20 +33,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { getCurrentUserId } from "@/actions/getCurrentUserId";
 import toast from "react-hot-toast";
 import { leaveApplicationFormSchema } from "@/types/zod-schema";
-import { holidayDates, leaveReasons } from "@/constant";
+import { holidayDates, leaveReasonsData } from "@/constant";
 import { uploadFile } from "@/actions/uploadFile";
-import { gets3SignedUrl } from "@/actions/gets3SignedUrl.action";
-import useLeaveStore from "@/stores/leaveApplicationStore";
+import { useRouter } from "next/navigation";
 
 // LEAVE REASONS
-
 const LeaveApplicationForm = () => {
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [totalLeaveDays, setTotalLeaveDays] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [leaveReasons, setLeaveReasons] = useState(leaveReasonsData);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof leaveApplicationFormSchema>>({
     resolver: zodResolver(leaveApplicationFormSchema),
@@ -66,30 +63,26 @@ const LeaveApplicationForm = () => {
     formData.append("endDate", values.endDate.toISOString());
     formData.append("reasonForLeave", JSON.stringify(values.reasonForLeave));
 
-    const documentFile = values.document;
-    const videoFile = values.video;
-    const totalLeaveDays = getTotalLeaveDays(
-      values?.startDate,
-      values?.endDate
-    );
+    const documentFile = values?.document;
+    const videoFile = values?.video;
 
-    console.log("TotalLeave Days ", totalLeaveDays);
+    if (documentFile) {
+      const docFileUrl = await uploadFile(documentFile);
+      if (docFileUrl) {
+        formData.append("documentUrl", docFileUrl);
+      }
+    }
 
-    // if (documentFile) {
-    //   const docFileUrl = await uploadFile(documentFile);
-    //   if (docFileUrl) {
-    //     formData.append("documentUrl", docFileUrl);
-    //   }
-    // }
+    if (videoFile) {
+      const videoFileUrl = await uploadFile(videoFile);
+      if (videoFileUrl) {
+        formData.append("videoUrl", videoFileUrl);
+      }
+    }
 
-    // if (videoFile) {
-    //   const videoFileUrl = await uploadFile(videoFile);
-    //   if (videoFileUrl) {
-    //     formData.append("videoUrl", videoFileUrl);
-    //   }
-    // }
-
-    console.log("TOTAL LEAVE DAYS :: ", totalLeaveDays);
+    if (startDate && endDate) {
+      formData.append("totalLeaves", totalLeaveDays.toString());
+    }
 
     try {
       const response = await fetch(
@@ -100,13 +93,16 @@ const LeaveApplicationForm = () => {
         }
       );
 
+      const json = await response.json();
+      console.log("APPLIJSON", json);
+
       if (!response.ok) {
-        toast.error("Something went wrong");
+        toast.error(json.error);
         return;
       }
 
-      const json = await response.json();
-      console.log("JSON ", json);
+      toast.success(json.message);
+      router.push("/student/application-status");
     } catch (error) {
       console.log("ERROR : ", error);
     } finally {
@@ -335,38 +331,65 @@ const LeaveApplicationForm = () => {
             />
           )}
 
-        {selectedCategory === "Medical" ||
-          (selectedCategory === "Emergency" && (
-            <FormField
-              control={form.control}
-              name="document"
-              render={({ field: { onChange, value, ...rest } }) => (
-                <FormItem>
-                  <FormLabel>Supporting Document</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Choose supporting document"
-                      type="file"
-                      accept=".png,.jpeg,.jpg,.pdf"
-                      onChange={(e) => {
-                        const files = e.target.files;
-                        if (files) {
-                          const file = files[0];
-                          onChange(file);
-                        }
-                      }}
-                      {...rest}
-                      // value={value instanceof File ? value.name : undefined}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          ))}
+        {selectedCategory === "Medical" && (
+          <FormField
+            control={form.control}
+            name="document"
+            render={({ field: { onChange, value, ...rest } }) => (
+              <FormItem>
+                <FormLabel>Supporting Document</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Choose supporting document"
+                    type="file"
+                    accept=".png,.jpeg,.jpg,.pdf"
+                    onChange={(e) => {
+                      const files = e.target.files;
+                      if (files) {
+                        const file = files[0];
+                        onChange(file);
+                      }
+                    }}
+                    {...rest}
+                    // value={value instanceof File ? value.name : undefined}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
+        {selectedCategory === "Emergency" && (
+          <FormField
+            control={form.control}
+            name="document"
+            render={({ field: { onChange, value, ...rest } }) => (
+              <FormItem>
+                <FormLabel>Supporting Document</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Choose supporting document"
+                    type="file"
+                    accept=".png,.jpeg,.jpg,.pdf"
+                    onChange={(e) => {
+                      const files = e.target.files;
+                      if (files) {
+                        const file = files[0];
+                        onChange(file);
+                      }
+                    }}
+                    {...rest}
+                    // value={value instanceof File ? value.name : undefined}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
 
         {/* Supporting Video  */}
-        {totalLeaveDays > 3 && selectedCategory === "Emergency" ? (
+        {selectedCategory === "Emergency" ? (
           <FormField
             control={form.control}
             name="video"
