@@ -75,22 +75,22 @@ const StudentRegisterForm = () => {
         body: JSON.stringify(values),
       });
 
+      const json = await response.json();
+
       if (!response.ok) {
-        toast.error("Failed to register");
+        toast.error(json.error);
         return;
       }
 
-      const json = await response.json();
-
-      console.log("JSON", json);
-
-      setIsFormSubmitting(false);
       toast.success("Registration successful");
       router.push("/student/login");
+      setIsFormSubmitting(false);
     } catch (error) {
       console.log("Error : ", error);
       setIsFormSubmitting(false);
       toast.error("Registration failed");
+    } finally {
+      setIsFormSubmitting(false);
     }
   }
 

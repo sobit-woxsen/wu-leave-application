@@ -47,8 +47,6 @@ const Applications = () => {
       <div className="mt-16">
         <h3 className="text-xl font-bold text-slate-800">Leave applications</h3>
         <section className="my-6">
-          <p className="text-sm text-slate-700/85 mb-1">Applied on 28-09-24</p>
-          {/* <LeaveApplicationTable /> */}
           <ul className="flex flex-col gap-2 mt-3">
             {leaveApplications?.map(
               ({

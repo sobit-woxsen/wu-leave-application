@@ -27,6 +27,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NextResponse } from "next/server";
 import { useRouter } from "next/navigation";
+import { applicationStatus } from "@/constant";
 
 export function ViewLeaveApplicationDrawer({
   studentEmail,
@@ -205,7 +206,10 @@ export function ViewLeaveApplicationDrawer({
               <li>
                 <span className="font-medium">Application Status </span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentData?.status}
+                  {studentData?.status &&
+                    applicationStatus[
+                      studentData.status as keyof typeof applicationStatus
+                    ]}
                 </span>
               </li>
             </ul>

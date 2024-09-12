@@ -55,11 +55,13 @@ export async function POST(request: Request) {
       },
     });
 
-    const response = NextResponse.json({
-      message: "User registered successfully",
-      userId: newUser.id,
-      status: 201,
-    });
+    const response = NextResponse.json(
+      {
+        message: "User registered successfully",
+        userId: newUser.id,
+      },
+      { status: 201 }
+    );
 
     response.cookies.set("token", token, {
       httpOnly: true,

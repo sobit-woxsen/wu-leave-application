@@ -4,15 +4,6 @@ import StudentNavbar from "@/components/navbar/student-navbar";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const applications = [
-  {
-    id: 1,
-    title: "Leave Application for Festivals",
-    isApproved: "ACCEPTED",
-    dateApplied: new Date(),
-  },
-];
-
 const applicationStatus = {
   PENDING: "Pending",
   REJECTED: "Rejected",
@@ -44,7 +35,6 @@ const ApplicationStatus = () => {
     getLatestApplication();
   }, []);
 
-  console.log("APPLICATION", application);
   return (
     <div className="w-full h-full">
       <StudentNavbar />
@@ -52,7 +42,7 @@ const ApplicationStatus = () => {
         Your Application Status
       </h1>
 
-      {applications.length === 0 && <p>No Applications Found</p>}
+      {Object.keys(application).length === 0 && <p>No Application Found</p>}
 
       <ul className="flex flex-col gap-2 mt-3">
         <li key={application?.id} className="border-2 rounded p-2">
