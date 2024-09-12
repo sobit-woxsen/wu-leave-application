@@ -66,7 +66,9 @@ const AdminRegisterForm = () => {
                 </FormControl>
                 <SelectContent>
                   {departments?.map((department) => (
-                    <SelectItem value={department}>{department}</SelectItem>
+                    <SelectItem key={department} value={department}>
+                      {department}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>

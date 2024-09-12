@@ -36,8 +36,9 @@ import { Textarea } from "@/components/ui/textarea";
 import toast from "react-hot-toast";
 import { leaveApplicationFormSchema } from "@/types/zod-schema";
 import { holidayDates, leaveReasonsData } from "@/constant";
-import { uploadFile } from "@/actions/uploadFile";
+
 import { useRouter } from "next/navigation";
+// import { uploadFile } from "@/actions/uploadFile";
 
 // LEAVE REASONS
 const LeaveApplicationForm = () => {
@@ -54,6 +55,39 @@ const LeaveApplicationForm = () => {
   const reasonForLeave = form.watch("reasonForLeave");
   const startDate = form.watch("startDate");
   const endDate = form.watch("endDate");
+
+  async function uploadFile(file: File) {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/uploadfile`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fileName: file.name,
+          fileType: file.type,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to get signed URL");
+    }
+
+    const { signedUrl, url } = await response.json();
+
+    // Upload the file to S3 using the signed URL
+    await fetch(signedUrl, {
+      method: "PUT",
+      body: file,
+      headers: {
+        "Content-Type": file.type,
+      },
+    });
+
+    return url;
+  }
 
   async function onSubmit(values: z.infer<typeof leaveApplicationFormSchema>) {
     setFormSubmitting(true);

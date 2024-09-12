@@ -107,7 +107,7 @@ const StudentLoginForm = () => {
       </form>
 
       <section className="flex space-x-1  text-sm">
-        <p>Don't have an account yet? </p>
+        <p>Don&apos;t have an account yet? </p>
         <Link className="text-brand underline" href="/student/register">
           Create One
         </Link>

@@ -76,7 +76,7 @@ const StudentForgetPasswordForm = () => {
       </form>
 
       <section className="flex space-x-1  text-sm">
-        <p>Don't have an account yet? </p>
+        <p>Don&apos;t have an account yet? </p>
         <Link className="text-brand underline" href="/admin/register">
           Create One
         </Link>

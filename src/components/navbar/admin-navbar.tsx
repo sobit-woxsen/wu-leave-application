@@ -70,7 +70,7 @@ function LargeDeviceNavbar() {
       <NavigationMenu>
         <NavigationMenuList className="flex w-full text-sm justify-start space-x-5 items-start">
           {routes.map(({ path, title }: { path: string; title: string }) => (
-            <NavigationMenuItem>
+            <NavigationMenuItem key={path}>
               <Link href={path} legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
@@ -147,7 +147,7 @@ function SmallDeviceNavbar() {
         <NavigationMenu className="w-full mt-5">
           <NavigationMenuList className="flex w-full flex-col justify-start space-y-5 items-start">
             {routes.map(({ path, title }) => (
-              <NavigationMenuItem>
+              <NavigationMenuItem key={path}>
                 <Link href={path} legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(

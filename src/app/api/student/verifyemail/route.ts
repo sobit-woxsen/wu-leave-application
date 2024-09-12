@@ -1,91 +1,21 @@
+import { checkEmailValid } from "@/actions/checkEmailValid";
+import { updateOTP } from "@/actions/updateOTP";
+import { generateOTP } from "@/lib/utils";
 import prisma from "@/prisma";
+import { Department } from "@prisma/client";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
   port: 587,
-  secure: false, // Use `true` for port 465, `false` for all other ports
+  secure: false,
   auth: {
     user: "sobit.prasad@woxsen.edu.in",
     pass: "sobit@wu1999",
   },
 });
-const checkEmailValid = async (
-  department: string,
-  email: string
-): Promise<boolean> => {
-  const student = await (department === "BBA"
-    ? prisma.bBAStudentData.findFirst({
-        where: {
-          studentEmail: {
-            equals: email,
-            mode: "insensitive",
-          },
-        },
-      })
-    : department === "BCOM"
-    ? prisma.bCOMStudentData.findFirst({
-        where: {
-          studentEmail: {
-            equals: email,
-            mode: "insensitive",
-          },
-        },
-      })
-    : null);
 
-  return student !== null;
-};
-
-export function generateOTP(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString();
-}
-
-export async function updateOTP(
-  department: string,
-  email: string,
-  otp: string
-) {
-  try {
-    const student =
-      department === "BBA"
-        ? await prisma.bBAStudentData.findFirst({
-            where: { studentEmail: email },
-          })
-        : department === "BCOM"
-        ? await prisma.bCOMStudentData.findFirst({
-            where: {
-              studentEmail: email,
-            },
-          })
-        : null;
-
-    if (!student) {
-      return false;
-    }
-
-    await prisma.oTPVerify.upsert({
-      where: { studentId: student.id },
-      update: {
-        otp: parseInt(otp),
-        expiresAt: new Date(Date.now() + 10 * 60 * 1000),
-      },
-      create: {
-        id: student.id, // Add this line
-        studentId: student.id,
-        otp: parseInt(otp),
-        expiresAt: new Date(Date.now() + 10 * 60 * 1000),
-        createdAt: new Date(), // Add this line
-      },
-    });
-
-    return true;
-  } catch (error) {
-    console.error("Error updating OTP:", error);
-    return false;
-  }
-}
 export async function POST(request: Request) {
   try {
     const { department, email } = await request.json();
