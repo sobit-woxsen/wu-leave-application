@@ -1,3 +1,4 @@
+"use server";
 import { gets3SignedUrl } from "./gets3SignedUrl.action";
 
 export async function uploadFile(file: File) {
