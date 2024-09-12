@@ -15,7 +15,8 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { title } from "process";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const routes = [
   {
@@ -39,6 +40,33 @@ const routes = [
 // Navbar for Large Screen Devices
 function LargeDeviceNavbar() {
   const pathname = usePathname();
+
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/logout`,
+        { method: "POST" }
+      );
+
+      const json = await response.json();
+
+      if (!response.ok) {
+        toast.error(json.error);
+      }
+
+      toast.success(json.message);
+      router.replace("/student/login");
+    } catch (error) {
+      console.log("ERROR : ", error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    }
+  };
 
   return (
     <section className="hidden md:flex md:w-full md:justify-between mb-5">
@@ -68,9 +96,9 @@ function LargeDeviceNavbar() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <Link href="/student/login" legacyBehavior passHref>
-        <Button className="bg-brand/85 hover:bg-brand">Logout</Button>
-      </Link>
+      <Button className="bg-brand/85 hover:bg-brand" onClick={handleLogout}>
+        Logout
+      </Button>
     </section>
   );
 }
@@ -79,6 +107,32 @@ function LargeDeviceNavbar() {
 function SmallDeviceNavbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/logout`,
+        { method: "POST" }
+      );
+
+      const json = await response.json();
+
+      if (!response.ok) {
+        toast.error(json.error);
+      }
+
+      toast.success(json.message);
+      router.replace("/student/login");
+    } catch (error) {
+      console.log("ERROR : ", error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    }
+  };
 
   const handleToggleNavbar = () => {
     setIsOpen((prev) => !prev);
@@ -118,9 +172,12 @@ function SmallDeviceNavbar() {
               </NavigationMenuItem>
             ))}
             <NavigationMenuItem>
-              <Link href="/student/login" legacyBehavior passHref>
-                <Button className="bg-brand/85 hover:bg-brand">Logout</Button>
-              </Link>
+              <Button
+                className="bg-brand/85 hover:bg-brand"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

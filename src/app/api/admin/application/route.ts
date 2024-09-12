@@ -40,7 +40,12 @@ export async function POST(request: NextRequest) {
     typeof v === "bigint" ? v.toString() : v
   );
 
-  const data = { ...applicationData, ...JSON.parse(studentData) };
+  const updatedApplicationData = {
+    ...applicationData,
+    applicationId: applicationData?.id,
+  };
+
+  const data = { ...updatedApplicationData, ...JSON.parse(studentData) };
 
   return NextResponse.json({
     message: "Success",

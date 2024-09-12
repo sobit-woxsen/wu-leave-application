@@ -20,6 +20,9 @@ export async function GET() {
     where: {
       department: department,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
 
   return NextResponse.json({

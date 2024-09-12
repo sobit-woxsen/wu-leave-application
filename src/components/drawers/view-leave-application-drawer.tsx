@@ -12,7 +12,12 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { FileIcon, PlayIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  Cross1Icon,
+  FileIcon,
+  PlayIcon,
+} from "@radix-ui/react-icons";
 import bcomStudents from "@/data/bba.json";
 
 import BackgroundPlayer from "next-video/background-player";
@@ -20,6 +25,8 @@ import toast from "react-hot-toast";
 import { Department } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
+import { NextResponse } from "next/server";
+import { useRouter } from "next/navigation";
 
 export function ViewLeaveApplicationDrawer({
   studentEmail,
@@ -35,20 +42,8 @@ export function ViewLeaveApplicationDrawer({
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
   const [isVideoPLayerOpen, setIsVideoPlayerOpen] = useState(false);
   const [studentData, setStudentData] = useState<any>({});
-
-  const handleToggleView = ({
-    fileType,
-  }: {
-    fileType: "VIDEO" | "DOCUMENT";
-  }) => {
-    if (fileType === "VIDEO") {
-      setIsVideoPlayerOpen((prev) => !prev);
-      setIsDocumentOpen(false);
-    } else {
-      setIsDocumentOpen((prev) => !prev);
-      setIsVideoPlayerOpen(false);
-    }
-  };
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const getStudentInfo = async () => {
     try {
@@ -69,6 +64,8 @@ export function ViewLeaveApplicationDrawer({
         toast.error(json.error);
       }
 
+      console.log("JSON ", json);
+
       setStudentData(json.data);
     } catch (error) {
       console.log("ERROR :: ", error);
@@ -77,6 +74,49 @@ export function ViewLeaveApplicationDrawer({
       } else {
         toast.error("An unknown error occurred");
       }
+    }
+  };
+
+  const handleApplication = async ({
+    isApplicationAccepted,
+  }: {
+    isApplicationAccepted: boolean;
+  }) => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/sendmail`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            isApplicationAccepted,
+            parentEmail: studentData?.fatherEmail,
+            studentEmail: studentData?.studentEmail,
+            applicationId: studentData?.applicationId,
+          }),
+        }
+      );
+
+      const json = await response.json();
+      if (!response.ok) {
+        toast.error(json.error);
+      }
+
+      console.log("JSON MAIL ", json);
+      toast.success(json.message);
+      router.refresh();
+    } catch (error) {
+      console.log("Error : ", error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -105,7 +145,7 @@ export function ViewLeaveApplicationDrawer({
               <li>
                 <span className="font-medium">Degree</span>{" "}
                 <span className="text-sm text-slate-600">
-                  {studentData?.degree === "UG" ? "yes" : "no"}
+                  {studentData?.degree}
                 </span>
               </li>
               <li>
@@ -162,6 +202,12 @@ export function ViewLeaveApplicationDrawer({
                   {studentData?.leaveReason}
                 </span>
               </li>
+              <li>
+                <span className="font-medium">Application Status </span>{" "}
+                <span className="text-sm text-slate-600">
+                  {studentData?.status}
+                </span>
+              </li>
             </ul>
 
             <section className="my-5">
@@ -169,14 +215,6 @@ export function ViewLeaveApplicationDrawer({
                 <BackgroundPlayer src={studentData?.videoUrl} />
               ) : null}
               {isDocumentOpen ? (
-                // <div style={{ width: "100%", height: "500px" }}>
-                //   <iframe
-                //     src={studentData?.documentUrl}
-                //     width="100%"
-                //     height="100%"
-                //     title="document viewer"
-                //   />
-                // </div>
                 <Image
                   alt="doc"
                   src={studentData?.documentUrl}
@@ -212,14 +250,42 @@ export function ViewLeaveApplicationDrawer({
             </section>
           </div>
           <DrawerFooter>
-            <Button className="bg-green-600 text-white hover:bg-green-700">
-              Accept
-            </Button>
-            <DrawerClose asChild>
-              <Button className="bg-white text-black hover:bg-red-600 hover:text-white">
-                Reject
-              </Button>
-            </DrawerClose>
+            {studentData.status === "PENDING" && (
+              <>
+                <Button
+                  onClick={() =>
+                    handleApplication({ isApplicationAccepted: true })
+                  }
+                  className="bg-green-600 text-white hover:bg-green-700"
+                  disabled={loading}
+                >
+                  Accept
+                </Button>
+                <DrawerClose asChild>
+                  <Button
+                    onClick={() =>
+                      handleApplication({ isApplicationAccepted: false })
+                    }
+                    className="bg-white text-black hover:bg-red-600 hover:text-white"
+                    disabled={loading}
+                  >
+                    Reject
+                  </Button>
+                </DrawerClose>
+              </>
+            )}
+
+            {studentData.status === "ACCEPTED" ? (
+              <p className="text-green-600 flex justify-center items-center gap-1 bg-green-50 p-4 rounded-md">
+                <CheckIcon /> Application Accepted
+              </p>
+            ) : studentData.status === "REJECTED" ? (
+              <p className="text-red-600 flex justify-center items-center gap-1 bg-red-50 p-4 rounded-md">
+                {" "}
+                <Cross1Icon />
+                Application Rejected
+              </p>
+            ) : null}
           </DrawerFooter>
         </div>
       </DrawerContent>
