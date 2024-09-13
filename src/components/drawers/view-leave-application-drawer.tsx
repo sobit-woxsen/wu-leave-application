@@ -59,8 +59,6 @@ export function ViewLeaveApplicationDrawer({
         toast.error(json.error);
       }
 
-      console.log("JSON ", json);
-
       setStudentData(json.data);
     } catch (error) {
       console.log("ERROR :: ", error);
@@ -100,7 +98,6 @@ export function ViewLeaveApplicationDrawer({
         toast.error(json.error);
       }
 
-      console.log("JSON MAIL ", json);
       toast.success(json.message);
       router.refresh();
     } catch (error) {

@@ -6,7 +6,6 @@ import { Department } from "@prisma/client";
 export async function getCurrentUser() {
   const cookieStore = cookies();
   const token = cookieStore.get("token")?.value;
-  console.log(token);
 
   if (!token) {
     return null;

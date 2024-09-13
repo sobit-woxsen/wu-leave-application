@@ -102,64 +102,6 @@ model User {
   LeaveApplication LeaveApplication[]
 }
 
-model bbastudentdatas {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  DOB                 DateTime @db.Date
-  v                   Int      @map("__v")
-  academicYear        String
-  admissionNumber     String
-  admissionStatus     String
-  country             String
-  degree              String
-  fatherEmail         String?
-  /// Multiple data types found: Float: 99.2%, Int: 0.8% out of 376 sampled entries
-  fatherMobileNumber  Json?
-  fatherName          String
-  fullName            String
-  gender              String
-  /// Multiple data types found: Float: 97.8%, Int: 2.2% out of 372 sampled entries
-  motherMobileNumber  Json?
-  motherName          String
-  motherTongue        String
-  program             String
-  religion            String?
-  rollNumber          String
-  section             String
-  semester            String
-  sessionAcademicYear String
-  /// Multiple data types found: Float: 99.2%, Int: 0.8% out of 376 sampled entries
-  smsPhoneNumber      Json?
-  studentEmail        String
-}
-
-model bcomstudentdatas {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  DOB                 DateTime @db.Date
-  v                   Int      @map("__v")
-  academicYear        String
-  admissionNumber     String
-  admissionStatus     String
-  country             String
-  degree              String
-  fatherEmail         String?
-  fatherMobileNumber  Float
-  fatherName          String
-  fullName            String
-  gender              String
-  /// Multiple data types found: Float: 30.8%, Int: 69.2% out of 13 sampled entries
-  motherMobileNumber  Json?
-  motherName          String
-  motherTongue        String
-  program             String
-  religion            String
-  rollNumber          String
-  section             String
-  semester            String
-  sessionAcademicYear String
-  smsPhoneNumber      Float
-  studentEmail        String
-}
-
 enum Role {
   ADMIN
   USER

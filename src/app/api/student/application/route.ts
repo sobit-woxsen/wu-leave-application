@@ -57,8 +57,6 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const user = await getCurrentUser();
 
-    console.log("USER ", user);
-
     if (!user?.userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
@@ -74,8 +72,6 @@ export async function POST(request: NextRequest) {
     const { reason: leaveReason, type: leaveType } = reasonForLeave
       ? JSON.parse(reasonForLeave.toString())
       : null;
-
-    console.log("FORMDATA ", formData);
 
     if (!startDate) {
       return NextResponse.json(

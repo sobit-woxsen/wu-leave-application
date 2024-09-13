@@ -75,11 +75,10 @@ const AdminLoginForm = () => {
         toast.error(json.error);
       } else {
         toast.success(json.message);
-        console.log("JSON ", json);
+
         router.push("/admin");
       }
     } catch (error) {
-      console.log("ERROR : ", error);
       toast.error("Something went wrong! Please try after sometime");
     }
   }

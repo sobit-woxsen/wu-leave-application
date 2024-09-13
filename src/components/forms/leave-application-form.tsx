@@ -128,7 +128,6 @@ const LeaveApplicationForm = () => {
       );
 
       const json = await response.json();
-      console.log("APPLIJSON", json);
 
       if (!response.ok) {
         toast.error(json.error);

@@ -1,18 +1,16 @@
 import { checkEmailValid } from "@/actions/checkEmailValid";
 import { updateOTP } from "@/actions/updateOTP";
 import { generateOTP } from "@/lib/utils";
-import prisma from "@/prisma";
-import { Department } from "@prisma/client";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
+  host: "smtp.gmail.com",
   port: 587,
   secure: false,
   auth: {
-    user: "sobit.prasad@woxsen.edu.in",
-    pass: "sobit@wu1999",
+    user: "woxsenailab@gmail.com",
+    pass: "ycoviljsqtfrtoul",
   },
 });
 
@@ -20,9 +18,6 @@ export async function POST(request: Request) {
   try {
     const { department, email } = await request.json();
 
-    console.log(email);
-
-    // verify email
     const isEmailValid = await checkEmailValid(department, email);
 
     if (!isEmailValid) {
@@ -35,9 +30,11 @@ export async function POST(request: Request) {
     const OTP = generateOTP();
     await updateOTP(department, email, OTP);
 
-    await transporter.sendMail({
-      from: '"Woxsen University" <sobit.prasad@woxsen.edu.in>',
-      to: "sobit.prasad@woxsen.edu.in, sobitp59@gmail.com",
+    const currentYear = new Date().getFullYear();
+
+    const sendingEmail = await transporter.sendMail({
+      from: '"Woxsen University" <woxsenailab@gmail.com>',
+      to: `${email}`,
       subject: "Verify Your Email - Woxsen University",
       html: `<!DOCTYPE html>
   <html lang="en">
@@ -48,9 +45,6 @@ export async function POST(request: Request) {
   </head>
   <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
       <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-          <header style="text-align: center; margin-bottom: 20px;">
-              <img src="/wu-logo.png" alt="Woxsen University Logo" style="max-width: 200px;">
-          </header>
           <main>
               <h1 style="color: #003366;">Verify Your Email</h1>
               <p>Dear Student,</p>
@@ -62,13 +56,17 @@ export async function POST(request: Request) {
               <p>If you have any questions, please don't hesitate to contact our support team.</p>
           </main>
           <footer style="margin-top: 20px; text-align: center; font-size: 12px; color: #666;">
-              <p>© 2023 Woxsen University. All rights reserved.</p>
+              <p>© ${currentYear} Woxsen University. All rights reserved.</p>
           </footer>
       </div>
   </body>
   </html>
-  `, // html body
+  `,
     });
+
+    if (!sendingEmail) {
+      return NextResponse.json({ message: "Failed to send OTP", statu: 400 });
+    }
 
     return NextResponse.json({
       message: "OTP Send successfully",

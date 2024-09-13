@@ -2,8 +2,6 @@ import prisma from "@/prisma";
 import { NextResponse } from "next/server";
 
 const verifyOTP = async (otp: number, studentId: string) => {
-  console.log(otp, studentId);
-
   const otpRecord = await prisma.oTPVerify.findFirst({
     where: {
       otp: otp,
@@ -22,8 +20,6 @@ const verifyOTP = async (otp: number, studentId: string) => {
 export async function POST(request: Request) {
   try {
     const { department, otp, email } = await request.json();
-
-    console.log(otp, email, department);
 
     const student =
       department === "BBA"
@@ -46,8 +42,6 @@ export async function POST(request: Request) {
         status: 404,
       });
     }
-
-    console.log("STUDENT ", student);
 
     const isOTPValid = await verifyOTP(otp, student?.id);
 

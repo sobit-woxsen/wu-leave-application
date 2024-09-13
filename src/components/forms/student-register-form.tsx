@@ -66,7 +66,6 @@ const StudentRegisterForm = () => {
   async function onSubmit(values: z.infer<typeof studentRegisterFormSchema>) {
     setIsFormSubmitting(true);
     try {
-      console.log(values);
       const response = await fetch("/api/student/register", {
         method: "POST",
         headers: {
@@ -153,8 +152,6 @@ const StudentRegisterForm = () => {
       setVerifyingOTP(true);
       setIsEmailValid(true);
       toast.success("OTP Verification successful");
-
-      console.log(json);
     } catch (error) {
       setIsOTPValid(false);
       setVerifyingOTP(false);

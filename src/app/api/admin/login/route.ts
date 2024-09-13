@@ -6,8 +6,6 @@ import jwt from "jsonwebtoken";
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
 
-  console.log(email, password);
-
   // Check if all the fileds are there
   if (!email || !password) {
     return NextResponse.json(

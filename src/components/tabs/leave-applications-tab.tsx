@@ -66,8 +66,6 @@ const DepartmentalApplications = ({
         toast.error(json.error);
       }
 
-      console.log("JSON", json.data);
-
       setLeaveApplications(json?.data?.applications);
     } catch (error) {
       console.log("Error : ", error);
