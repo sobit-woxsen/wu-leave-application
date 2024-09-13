@@ -58,16 +58,13 @@ const AdminLoginForm = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/login`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...values, email: values.adminemail }),
-        }
-      );
+      const response = await fetch(`/api/admin/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...values, email: values.adminemail }),
+      });
 
       const json = await response.json();
 

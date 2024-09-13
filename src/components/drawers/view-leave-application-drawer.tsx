@@ -42,16 +42,13 @@ export function ViewLeaveApplicationDrawer({
 
   const getStudentInfo = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/application`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ studentEmail, applicationId, department }),
-        }
-      );
+      const response = await fetch(`/api/admin/application`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ studentEmail, applicationId, department }),
+      });
 
       const json = await response.json();
 
@@ -77,21 +74,18 @@ export function ViewLeaveApplicationDrawer({
   }) => {
     setLoading(true);
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/sendmail`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            isApplicationAccepted,
-            parentEmail: studentData?.fatherEmail,
-            studentEmail: studentData?.studentEmail,
-            applicationId: studentData?.applicationId,
-          }),
-        }
-      );
+      const response = await fetch(`/api/admin/sendmail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          isApplicationAccepted,
+          parentEmail: studentData?.fatherEmail,
+          studentEmail: studentData?.studentEmail,
+          applicationId: studentData?.applicationId,
+        }),
+      });
 
       const json = await response.json();
       if (!response.ok) {

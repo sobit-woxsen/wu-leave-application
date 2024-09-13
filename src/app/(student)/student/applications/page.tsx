@@ -14,9 +14,7 @@ const ApplicationStatus = () => {
   const getApplications = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/application`
-      );
+      const response = await fetch(`/api/student/application`);
 
       const json = await response.json();
 

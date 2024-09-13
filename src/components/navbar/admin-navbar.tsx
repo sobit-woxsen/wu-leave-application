@@ -34,10 +34,7 @@ function LargeDeviceNavbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/logout`,
-        { method: "POST" }
-      );
+      const response = await fetch(`/api/admin/logout`, { method: "POST" });
 
       const json = await response.json();
 
@@ -104,10 +101,7 @@ function SmallDeviceNavbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/logout`,
-        { method: "POST" }
-      );
+      const response = await fetch(`/api/admin/logout`, { method: "POST" });
 
       const json = await response.json();
 

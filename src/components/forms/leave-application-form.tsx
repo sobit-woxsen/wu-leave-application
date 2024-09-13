@@ -57,19 +57,16 @@ const LeaveApplicationForm = () => {
   const endDate = form.watch("endDate");
 
   async function uploadFile(file: File) {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/uploadfile`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fileName: file.name,
-          fileType: file.type,
-        }),
-      }
-    );
+    const response = await fetch(`/api/uploadfile`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fileName: file.name,
+        fileType: file.type,
+      }),
+    });
 
     if (!response.ok) {
       throw new Error("Failed to get signed URL");
@@ -119,13 +116,10 @@ const LeaveApplicationForm = () => {
     }
 
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/application`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch(`/api/student/application`, {
+        method: "POST",
+        body: formData,
+      });
 
       const json = await response.json();
 

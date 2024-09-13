@@ -49,16 +49,13 @@ const DepartmentalApplications = ({
   const getApplications = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/applications`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ department }),
-        }
-      );
+      const response = await fetch(`/api/admin/applications`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ department }),
+      });
 
       const json = await response.json();
 

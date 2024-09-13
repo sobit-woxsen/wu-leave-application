@@ -15,9 +15,7 @@ const ApplicationStatus = () => {
 
   const getLatestApplication = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/student/checkapplicationstatus`
-      );
+      const response = await fetch(`/api/student/checkapplicationstatus`);
       const json = await response.json();
 
       if (!response.ok) {
