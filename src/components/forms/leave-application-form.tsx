@@ -11,6 +11,8 @@ import { cn, getTotalLeaveDays, isHoliday } from "../../lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+
+import { Cloudinary } from "@cloudinary/url-gen";
 import {
   Form,
   FormControl,
@@ -56,34 +58,28 @@ const LeaveApplicationForm = () => {
   const startDate = form.watch("startDate");
   const endDate = form.watch("endDate");
 
-  async function uploadFile(file: File) {
-    const response = await fetch(`/api/uploadfile`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fileName: file.name,
-        fileType: file.type,
-      }),
-    });
+  async function uploadToCloudinary(file: File) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append(
+      "upload_preset",
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
+    );
+
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/auto/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     if (!response.ok) {
-      throw new Error("Failed to get signed URL");
+      throw new Error("Failed to upload file to Cloudinary");
     }
 
-    const { signedUrl, url } = await response.json();
-
-    // Upload the file to S3 using the signed URL
-    await fetch(signedUrl, {
-      method: "PUT",
-      body: file,
-      headers: {
-        "Content-Type": file.type,
-      },
-    });
-
-    return url;
+    const data = await response.json();
+    return data.secure_url;
   }
 
   async function onSubmit(values: z.infer<typeof leaveApplicationFormSchema>) {
@@ -98,14 +94,14 @@ const LeaveApplicationForm = () => {
     const videoFile = values?.video;
 
     if (documentFile) {
-      const docFileUrl = await uploadFile(documentFile);
+      const docFileUrl = await uploadToCloudinary(documentFile);
       if (docFileUrl) {
         formData.append("documentUrl", docFileUrl);
       }
     }
 
     if (videoFile) {
-      const videoFileUrl = await uploadFile(videoFile);
+      const videoFileUrl = await uploadToCloudinary(videoFile);
       if (videoFileUrl) {
         formData.append("videoUrl", videoFileUrl);
       }
