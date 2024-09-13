@@ -1,9 +1,10 @@
 import { getCurrentAdmin } from "@/actions/getCurrentAdmin";
 import prisma from "@/prisma";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function POST(request: NextRequest) {
   const admin = await getCurrentAdmin();
+  const { department } = await request.json();
 
   if (!admin) {
     return NextResponse.json(
@@ -14,7 +15,7 @@ export async function GET() {
     );
   }
 
-  const { userId, department, email } = admin;
+  const { userId, email } = admin;
 
   const applications = await prisma.leaveApplication.findMany({
     where: {

@@ -29,9 +29,6 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 const formSchema = z.object({
-  department: z.enum(["BBA", "BCOM"], {
-    message: "Please select your department",
-  }),
   adminemail: z
     .string()
     .refine((studentemail) => studentemail.endsWith("@woxsen.edu.in"), {
@@ -90,7 +87,7 @@ const AdminLoginForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
-        <FormField
+        {/* <FormField
           control={form.control}
           name="department"
           render={({ field }) => (
@@ -113,7 +110,7 @@ const AdminLoginForm = () => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <FormField
           control={form.control}

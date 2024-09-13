@@ -15,7 +15,7 @@ const AdminLogin = () => {
 
       <div className="flex justify-between items-center flex-col space-y-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center">
-          Admin Login
+          Faculty Login
         </h2>
         <AdminLoginForm />
       </div>

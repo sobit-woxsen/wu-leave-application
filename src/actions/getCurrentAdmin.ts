@@ -23,10 +23,9 @@ export async function getCurrentAdmin() {
       email: string;
     };
     const userId = decoded.id;
-    const department = decoded.department;
     const email = decoded.email;
 
-    return { userId, department, email };
+    return { userId, email };
   } catch (error) {
     console.error("Error decoding token:", error);
     return null;

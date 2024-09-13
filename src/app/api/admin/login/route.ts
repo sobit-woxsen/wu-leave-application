@@ -4,12 +4,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export async function POST(request: NextRequest) {
-  const { department, email, password } = await request.json();
+  const { email, password } = await request.json();
 
-  console.log(department, email, password);
+  console.log(email, password);
 
   // Check if all the fileds are there
-  if (!department || !email || !password) {
+  if (!email || !password) {
     return NextResponse.json(
       {
         error: "All fields are required",
@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
   const user = await prisma.admin.findFirst({
     where: {
       adminEmail: email,
-      department: department,
     },
   });
 
@@ -38,7 +37,7 @@ export async function POST(request: NextRequest) {
   }
 
   const adminToken = jwt.sign(
-    { id: user.id, email: user.adminEmail, department: user.department },
+    { id: user.id, email: user.adminEmail },
     process.env.JWT_SECRET!,
     { expiresIn: "7d" }
   );

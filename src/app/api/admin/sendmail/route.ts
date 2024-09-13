@@ -38,19 +38,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const username =
-    admin?.department === "BBA"
-      ? process.env.NEXT_PUBLIC_BBA_ADMIN_USERNAME
-      : admin?.department === "BCOM"
-      ? process.env.NEXT_PUBLIC_BCOM_ADMIN_USERNAME
-      : null;
+  const username = process.env.NEXT_PUBLIC_BBA_ADMIN_USERNAME;
 
-  const password =
-    admin?.department === "BBA"
-      ? process.env.NEXT_PUBLIC_BBA_ADMIN_PASSWORD
-      : admin?.department === "BCOM"
-      ? process.env.NEXT_PUBLIC_BCOM_ADMIN_PASSWORD
-      : null;
+  const password = process.env.NEXT_PUBLIC_BBA_ADMIN_PASSWORD;
 
   const transporter = nodemailer.createTransport({
     host: "smtp-mail.outlook.com",

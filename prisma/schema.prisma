@@ -171,13 +171,13 @@ enum Department {
 }
 
 model Admin {
-  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
   adminEmail String
   password   String
-  role       Role       @default(ADMIN)
-  department Department
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  role       Role        @default(ADMIN)
+  department Department?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
 
   @@map("AdminSchema")
 }
