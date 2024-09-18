@@ -115,8 +115,15 @@ const StudentRegisterForm = () => {
           department: watchDepartment,
         }),
       });
+      const json = await response.json();
+      if (!response.ok) {
+        toast.error(json.error);
+        setOtpSent(false);
+        setSendingOTP(false);
+        return;
+      }
+
       setOtpSent(true);
-      await response.json();
       toast.success(`OTP send successfully to ${watchStudentEmail}`);
     } catch (error) {
       console.log("Failed to send otp");

@@ -111,6 +111,7 @@ function SmallDeviceNavbar() {
 
       toast.success(json.message);
       router.replace("/admin/login");
+      router.refresh();
     } catch (error) {
       console.log("ERROR : ", error);
       if (error instanceof Error) {

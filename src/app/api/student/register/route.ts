@@ -32,6 +32,8 @@ export async function POST(request: Request) {
       },
     });
 
+    console.log("is Email ", isEmailAlreadyRegistered);
+
     if (isEmailAlreadyRegistered) {
       return NextResponse.json(
         { error: "Email already registered" },
@@ -67,7 +69,7 @@ export async function POST(request: Request) {
       httpOnly: true,
       secure: false,
       sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60,
+      maxAge: 31536000000,
       path: "/",
     });
 

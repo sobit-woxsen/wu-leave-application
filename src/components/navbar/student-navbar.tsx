@@ -9,12 +9,10 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { title } from "process";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -55,6 +53,7 @@ function LargeDeviceNavbar() {
 
       toast.success(json.message);
       router.replace("/student/login");
+      router.refresh();
     } catch (error) {
       console.log("ERROR : ", error);
       if (error instanceof Error) {

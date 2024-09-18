@@ -94,6 +94,7 @@ export function ViewLeaveApplicationDrawer({
 
       toast.success(json.message);
       router.refresh();
+      setIsOpen(false);
     } catch (error) {
       console.log("Error : ", error);
       if (error instanceof Error) {
