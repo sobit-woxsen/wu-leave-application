@@ -2,22 +2,11 @@ import { Department, PrismaClient } from "@prisma/client";
 import bcomData from "../src/data/bcom.json";
 import bbaData from "../src/data/bba.json";
 import adminData from "../src/data/admin.json";
-import bcrypt from "bcrypt";
-
-// [
-//   {
-//     adminEmail: "sobit.prasad@woxsen.edu.in",
-//     password: "sobit@wu1999",
-//     role: "ADMIN",
-//     department: "BBA",
-//   },
-// ];
 
 const prisma = new PrismaClient();
 
 async function main() {
   // await prisma.bBAStudentData.deleteMany();
-
   // SEED STUDENT DATA
   // for (const student of bbaData) {
   //   const studentData = {
@@ -50,29 +39,25 @@ async function main() {
   //       : null,
   //     admissionStatus: student.admissionStatus,
   //   };
-
   //   await prisma.bBAStudentData.create({
   //     data: studentData,
   //   });
   // }
-
   // ADMIN DATA SEED
-  const saltRounds = 10;
-  const adminWithHashedPassword = await Promise.all(
-    adminData.map(async (admin) => ({
-      adminEmail: admin.adminEmail,
-      department: admin.department as Department,
-      password: await bcrypt.hash(admin.password, saltRounds),
-    }))
-  );
-
-  for (const admin of adminWithHashedPassword) {
-    await prisma.admin.create({
-      data: admin,
-    });
-  }
-
-  console.log("Seed data inserted successfully");
+  //   const saltRounds = 10;
+  //   const adminWithHashedPassword = await Promise.all(
+  //     adminData.map(async (admin) => ({
+  //       adminEmail: admin.adminEmail,
+  //       department: admin.department as Department,
+  //       password: await bcrypt.hash(admin.password, saltRounds),
+  //     }))
+  //   );
+  //   for (const admin of adminWithHashedPassword) {
+  //     await prisma.admin.create({
+  //       data: admin,
+  //     });
+  //   }
+  //   console.log("Seed data inserted successfully");
 }
 main()
   .catch((e) => {
