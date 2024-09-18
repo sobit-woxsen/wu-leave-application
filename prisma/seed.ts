@@ -2,7 +2,6 @@ import { Department, PrismaClient } from "@prisma/client";
 import bcomData from "../src/data/bcom.json";
 import bbaData from "../src/data/bba.json";
 import adminData from "../src/data/admin.json";
-
 const prisma = new PrismaClient();
 
 async function main() {
