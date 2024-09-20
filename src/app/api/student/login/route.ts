@@ -2,7 +2,8 @@ import prisma from "@/prisma";
 import { studentLoginFormSchema } from "@/types/zod-schema";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import { generateAccessToken, generateRefreshToken } from "@/lib/auth";
+import { Department } from "@prisma/client";
 
 export async function POST(request: Request) {
   try {
@@ -16,7 +17,7 @@ export async function POST(request: Request) {
           message: "Failed to login",
         },
         {
-          status: 404,
+          status: 400,
         }
       );
     }
@@ -28,46 +29,63 @@ export async function POST(request: Request) {
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
-
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (!passwordMatch) {
       return NextResponse.json(
         { error: "Invalid credentials" },
-        { status: 401 }
+        { status: 400 }
       );
     }
 
-    const token = jwt.sign(
-      { id: user.id, email: user.studentEmail, department: user.department },
-      process.env.JWT_SECRET!,
-      { expiresIn: "7d" }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordValid) {
+      return NextResponse.json(
+        { error: "Invalid credentials" },
+        { status: 400 }
+      );
+    }
+
+    const accessToken = await generateAccessToken(
+      user.id,
+      user.studentEmail,
+      user.department as Department
     );
+
+    const refreshToken = await generateRefreshToken(
+      user.id,
+      user.studentEmail,
+      user.department as Department
+    );
+
+    await prisma.user.update({ where: { id: user.id }, data: refreshToken });
 
     const response = NextResponse.json({
       message: "Login successful",
       userId: user.id,
+      accessToken,
     });
 
-    response.cookies.set("token", token, {
+    response.cookies.set("accessToken", accessToken, {
       httpOnly: true,
       secure: false,
       sameSite: "lax",
-      maxAge: 31536000000,
+      maxAge: 15 * 60,
       path: "/",
     });
 
-    response.headers.set("token", token);
-
+    response.cookies.set("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60,
+      path: "/",
+    });
     return response;
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json(
       {
         message: "Failed to login",
-        error: error,
+        error: `Error in /api/student/login ${(error as Error).message}`,
       },
       {
         status: 500,

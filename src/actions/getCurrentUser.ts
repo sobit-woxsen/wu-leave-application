@@ -1,11 +1,10 @@
 "use server";
 import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
-import { Department } from "@prisma/client";
+import { verifyAccessToken } from "@/lib/auth";
 
 export async function getCurrentUser() {
   const cookieStore = cookies();
-  const token = cookieStore.get("token")?.value;
+  const token = cookieStore.get("accessToken")?.value;
 
   if (!token) {
     return null;
@@ -16,14 +15,11 @@ export async function getCurrentUser() {
     if (!jwtSecret) {
       throw new Error("JWT_SECRET is not defined");
     }
-    const decoded = jwt.verify(token, jwtSecret) as {
-      id: string;
-      department: Department;
-      email: string;
-    };
-    const userId = decoded.id;
-    const department = decoded.department;
-    const email = decoded.email;
+    const decoded = await verifyAccessToken(token);
+
+    const userId = decoded?.userId;
+    const department = decoded?.department;
+    const email = decoded?.email;
 
     return { userId, department, email };
   } catch (error) {

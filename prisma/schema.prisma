@@ -97,6 +97,7 @@ model User {
   password         String
   role             Role               @default(USER)
   studentEmail     String             @unique
+  refreshToken     String?
   createdAt        DateTime           @default(now()) @db.Date
   updatedAt        DateTime           @updatedAt @db.Date
   LeaveApplication LeaveApplication[]
@@ -113,13 +114,14 @@ enum Department {
 }
 
 model Admin {
-  id         String      @id @default(auto()) @map("_id") @db.ObjectId
-  adminEmail String
-  password   String
-  role       Role        @default(ADMIN)
-  department Department?
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  adminEmail   String      @unique
+  password     String
+  refreshToken String?
+  role         Role        @default(ADMIN)
+  department   Department?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
 
   @@map("AdminSchema")
 }

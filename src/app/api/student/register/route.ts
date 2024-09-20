@@ -1,13 +1,7 @@
 import { NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { studentRegisterFormSchema } from "@/types/zod-schema";
 import prisma from "@/prisma";
-export async function GET() {
-  return NextResponse.json({
-    message: "USER REGISTERED successfully",
-  });
-}
 
 export async function POST(request: Request) {
   try {
@@ -32,8 +26,6 @@ export async function POST(request: Request) {
       },
     });
 
-    console.log("is Email ", isEmailAlreadyRegistered);
-
     if (isEmailAlreadyRegistered) {
       return NextResponse.json(
         { error: "Email already registered" },
@@ -43,12 +35,6 @@ export async function POST(request: Request) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const token = jwt.sign(
-      { email: studentemail, department: department },
-      process.env.JWT_SECRET!,
-      { expiresIn: "7d" }
-    );
-
     const newUser = await prisma.user.create({
       data: {
         studentEmail: studentemail,
@@ -57,27 +43,22 @@ export async function POST(request: Request) {
       },
     });
 
-    const response = NextResponse.json(
+    return NextResponse.json(
       {
         message: "User registered successfully",
         userId: newUser.id,
       },
       { status: 201 }
     );
-
-    response.cookies.set("token", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      maxAge: 31536000000,
-      path: "/",
-    });
-
-    return response;
   } catch (error) {
     console.error("Registration error : ", error);
     return NextResponse.json(
-      { message: "Failed to register" },
+      {
+        message: "Failed to register",
+        error: `Error in /api/student/register [POST] : ${
+          (error as Error).message
+        }`,
+      },
       { status: 500 }
     );
   }
