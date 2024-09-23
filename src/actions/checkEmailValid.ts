@@ -1,30 +1,35 @@
 "use server";
-import prisma from "@/prisma";
-import { Department } from "@prisma/client";
+import { PrismaClient, Department } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export const checkEmailValid = async (
-  department: Department,
-  email: string
+  email: string,
+  department: Department
 ): Promise<boolean> => {
-  const student = await (department === "BBA"
-    ? prisma.bBAStudentData.findFirst({
-        where: {
-          studentEmail: {
-            equals: email,
-            mode: "insensitive",
-          },
+  try {
+    const student = await prisma.studentData.findFirst({
+      where: {
+        studentEmail: {
+          equals: email,
+          mode: "insensitive",
         },
-      })
-    : department === "BCOM"
-    ? prisma.bCOMStudentData.findFirst({
-        where: {
-          studentEmail: {
-            equals: email,
-            mode: "insensitive",
-          },
-        },
-      })
-    : null);
+        department: department,
+      },
+    });
 
-  return student !== null;
+    const isValid = student !== null;
+    console.log(
+      `Validation result for email: ${email}, department: ${department} - ${
+        isValid ? "Valid" : "Invalid"
+      }`
+    );
+
+    return isValid;
+  } catch (error) {
+    console.error("Error checking student validity:", error);
+    return false;
+  } finally {
+    await prisma.$disconnect();
+  }
 };

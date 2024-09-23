@@ -24,6 +24,7 @@ import { Department } from "@prisma/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { applicationStatus } from "@/constant";
+import { getApplicationAndUserInfo } from "@/actions/getApplicationAndUserInfo";
 
 export function ViewLeaveApplicationDrawer({
   studentEmail,
@@ -40,23 +41,45 @@ export function ViewLeaveApplicationDrawer({
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
+  // const getStudentInfo = async () => {
+  //   try {
+  //     const response = await fetch(`/api/admin/application`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ studentEmail, applicationId, department }),
+  //     });
+
+  //     const json = await response.json();
+
+  //     if (!response.ok) {
+  //       toast.error(json.error);
+  //     }
+
+  //     setStudentData(json.data);
+  //   } catch (error) {
+  //     console.log("ERROR :: ", error);
+  //     if (error instanceof Error) {
+  //       toast.error(error.message);
+  //     } else {
+  //       toast.error("An unknown error occurred");
+  //     }
+  //   }
+  // };
+
   const getStudentInfo = async () => {
     try {
-      const response = await fetch(`/api/admin/application`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ studentEmail, applicationId, department }),
-      });
-
-      const json = await response.json();
-
-      if (!response.ok) {
-        toast.error(json.error);
+      const result = await getApplicationAndUserInfo(
+        studentEmail,
+        applicationId
+      );
+      if (result?.error) {
+        toast.error(result?.error);
+      } else {
+        console.log("res", result);
+        setStudentData(result.data);
       }
-
-      setStudentData(json.data);
     } catch (error) {
       console.log("ERROR :: ", error);
       if (error instanceof Error) {
@@ -66,7 +89,6 @@ export function ViewLeaveApplicationDrawer({
       }
     }
   };
-
   const handleApplication = async ({
     isApplicationAccepted,
   }: {
@@ -110,6 +132,8 @@ export function ViewLeaveApplicationDrawer({
   useEffect(() => {
     getStudentInfo();
   }, [isOpen]);
+
+  console.log("STDUENT", studentData);
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>

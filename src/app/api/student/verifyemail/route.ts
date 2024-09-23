@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const isEmailValid = await checkEmailValid(department, email);
+    const isEmailValid = await checkEmailValid(email, department);
 
     if (!isEmailValid) {
       return NextResponse.json(
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     }
 
     const OTP = generateOTP();
-    await updateOTP(department, email, OTP);
+    await updateOTP(email, OTP);
 
     const currentYear = new Date().getFullYear();
 

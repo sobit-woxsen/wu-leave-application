@@ -47,7 +47,7 @@ const StudentLoginForm = () => {
       const json = await response.json();
 
       if (!response.ok) {
-        toast.error(json.error);
+        toast.error(json.message);
         setLoading(false);
         return;
       }
@@ -58,7 +58,7 @@ const StudentLoginForm = () => {
     } catch (error) {
       console.log(error);
       setLoading(false);
-      toast.error("Failed to login");
+      toast.error("Failed to login to");
     }
   }
 

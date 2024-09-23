@@ -1,26 +1,12 @@
 "use server";
 
 import prisma from "@/prisma";
-import { Department } from "@prisma/client";
 
-export async function updateOTP(
-  department: Department,
-  email: string,
-  otp: string
-) {
+export async function updateOTP(email: string, otp: string) {
   try {
-    const student =
-      department === "BBA"
-        ? await prisma.bBAStudentData.findFirst({
-            where: { studentEmail: email },
-          })
-        : department === "BCOM"
-        ? await prisma.bCOMStudentData.findFirst({
-            where: {
-              studentEmail: email,
-            },
-          })
-        : null;
+    const student = await prisma.studentData.findFirst({
+      where: { studentEmail: email },
+    });
 
     if (!student) {
       return false;

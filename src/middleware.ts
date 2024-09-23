@@ -103,7 +103,11 @@ export async function middleware(request: NextRequest) {
   const adminRefreshToken = request.cookies.get("adminRefreshToken")?.value;
   const path = request.nextUrl.pathname;
 
-  if (path.startsWith("/student") && path !== "/student/login") {
+  if (
+    path.startsWith("/student") &&
+    path !== "/student/login" &&
+    path !== "/student/register"
+  ) {
     if (!userToken) {
       return NextResponse.redirect(new URL("/student/login", request.url));
     }

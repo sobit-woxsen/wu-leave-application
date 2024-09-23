@@ -76,6 +76,8 @@ const DepartmentalApplications = ({
     getApplications();
   }, [department]);
 
+  console.log("Leave Applications ", leaveApplications);
+
   return (
     <section className="my-6">
       {loading && leaveApplications.length > 1 && <p>Loading...</p>}

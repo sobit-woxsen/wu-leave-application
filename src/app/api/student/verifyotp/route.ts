@@ -19,22 +19,13 @@ const verifyOTP = async (otp: number, studentId: string) => {
 
 export async function POST(request: Request) {
   try {
-    const { department, otp, email } = await request.json();
+    const { otp, email } = await request.json();
 
-    const student =
-      department === "BBA"
-        ? await prisma.bBAStudentData.findFirst({
-            where: {
-              studentEmail: email,
-            },
-          })
-        : department === "B.Com"
-        ? await prisma.bCOMStudentData.findFirst({
-            where: {
-              studentEmail: email,
-            },
-          })
-        : null;
+    const student = await prisma.studentData.findFirst({
+      where: {
+        studentEmail: email,
+      },
+    });
 
     if (!student) {
       return NextResponse.json({

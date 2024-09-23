@@ -19,12 +19,30 @@ export async function POST(request: Request) {
 
     const { studentemail, department, password } = result.data;
 
-    const isEmailAlreadyRegistered = await prisma.user.findFirst({
-      where: {
-        studentEmail: studentemail,
-        department: department,
-      },
+    const studentInfo = await prisma.studentData.findUnique({
+      where: { studentEmail: studentemail, department },
     });
+
+    console.log("STUDENT INFO ", studentInfo);
+
+    if (!studentInfo) {
+      return NextResponse.json(
+        { message: "No student found" },
+        { status: 400 }
+      );
+    }
+
+    const isEmailAlreadyRegistered = studentInfo.isRegistered;
+
+    // const studentData = await prisma.studentData.findFirst({
+    //   where: {
+    //     studentEmail: studentemail,
+    //     department: department,
+    //   },
+    //   select: {
+    //     isRegistered: true,
+    //   },
+    // });
 
     if (isEmailAlreadyRegistered) {
       return NextResponse.json(
@@ -35,18 +53,20 @@ export async function POST(request: Request) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = await prisma.user.create({
-      data: {
+    const student = await prisma.studentData.update({
+      where: {
         studentEmail: studentemail,
-        department: department,
+      },
+      data: {
         password: hashedPassword,
+        isRegistered: true,
       },
     });
 
     return NextResponse.json(
       {
         message: "User registered successfully",
-        userId: newUser.id,
+        userId: student.id,
       },
       { status: 201 }
     );

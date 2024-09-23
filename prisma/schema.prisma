@@ -7,9 +7,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model BBAStudentData {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  DOB                 DateTime @db.Date
+model StudentData {
+  id                  String             @id @default(auto()) @map("_id") @db.ObjectId
+  DOB                 DateTime           @db.Date
   academicYear        String
   admissionNumber     String
   admissionStatus     String
@@ -30,33 +30,15 @@ model BBAStudentData {
   semester            String
   sessionAcademicYear String
   smsPhoneNumber      BigInt?
-  studentEmail        String
-}
-
-model BCOMStudentData {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  DOB                 DateTime @db.Date
-  academicYear        String
-  admissionNumber     String
-  admissionStatus     String
-  country             String
-  degree              String
-  fatherEmail         String?
-  fatherMobileNumber  BigInt
-  fatherName          String
-  fullName            String
-  gender              String
-  motherMobileNumber  BigInt?
-  motherName          String
-  motherTongue        String
-  program             String
-  religion            String
-  rollNumber          String
-  section             String
-  semester            String
-  sessionAcademicYear String
-  smsPhoneNumber      BigInt
-  studentEmail        String
+  studentEmail        String             @unique
+  department          Department
+  LeaveApplication    LeaveApplication[]
+  password            String?
+  refreshToken        String?
+  isRegistered        Boolean?           @default(false)
+  role                Role               @default(USER)
+  createdAt           DateTime           @default(now()) @db.Date
+  updatedAt           DateTime           @updatedAt @db.Date
 }
 
 enum ApplicationStatus {
@@ -77,8 +59,8 @@ model LeaveApplication {
   studentEmail String?
   department   Department
   status       ApplicationStatus @default(PENDING)
-  userId       String            @db.ObjectId
-  user         User              @relation(fields: [userId], references: [id])
+  studentId    String            @db.ObjectId
+  StudentData  StudentData?      @relation(fields: [studentId], references: [id])
   createdAt    DateTime          @default(now()) @db.Date
   updatedAt    DateTime          @updatedAt @db.Date
 }
@@ -89,18 +71,6 @@ model OTPVerify {
   expiresAt DateTime @db.Date
   otp       BigInt
   studentId String   @unique @db.ObjectId
-}
-
-model User {
-  id               String             @id @default(auto()) @map("_id") @db.ObjectId
-  department       String
-  password         String
-  role             Role               @default(USER)
-  studentEmail     String             @unique
-  refreshToken     String?
-  createdAt        DateTime           @default(now()) @db.Date
-  updatedAt        DateTime           @updatedAt @db.Date
-  LeaveApplication LeaveApplication[]
 }
 
 enum Role {

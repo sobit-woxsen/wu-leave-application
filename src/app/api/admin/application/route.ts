@@ -1,4 +1,3 @@
-import { getCurrentAdmin } from "@/actions/getCurrentAdmin";
 import prisma from "@/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -21,20 +20,11 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  const studentInfo =
-    department === "BBA"
-      ? await prisma.bBAStudentData.findFirst({
-          where: {
-            studentEmail: studentEmail,
-          },
-        })
-      : department === "BCOM"
-      ? await prisma.bCOMStudentData.findFirst({
-          where: {
-            studentEmail: studentEmail,
-          },
-        })
-      : null;
+  const studentInfo = await prisma.studentData.findFirst({
+    where: {
+      studentEmail: studentEmail,
+    },
+  });
 
   const studentData = JSON.stringify(studentInfo, (_, v) =>
     typeof v === "bigint" ? v.toString() : v

@@ -21,7 +21,8 @@
     "fatherEmail": "sobitp59@gmail.com",
     "motherName": "Test",
     "motherMobileNumber": 8976655443,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -45,7 +46,8 @@
     "fatherEmail": "Goyalanuj588@gmail.com",
     "motherName": "Rachita Goyal",
     "motherMobileNumber": 8384811205,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -69,7 +71,8 @@
     "fatherEmail": "Bsrinivasrao1@gmail.com",
     "motherName": "Bocha Vani Prapurna",
     "motherMobileNumber": 9348688996,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -93,7 +96,8 @@
     "fatherEmail": "Pshanthkumar19@gmail.com",
     "motherName": "P. Shailaja",
     "motherMobileNumber": 8309260600,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -117,7 +121,8 @@
     "fatherEmail": "Tsrao69.1116@gmail.com",
     "motherName": "M. Leelavathi",
     "motherMobileNumber": 8328287002,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -141,7 +146,8 @@
     "fatherEmail": "Snfts_009@yahoo.co.in",
     "motherName": "Vijayalakshmi",
     "motherMobileNumber": 9391098667,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -165,7 +171,8 @@
     "fatherEmail": "Amardeep1.sharma@gmail.com",
     "motherName": "Tulsi Sharma",
     "motherMobileNumber": 9643808171,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -188,7 +195,8 @@
     "fatherMobileNumber": 9849099777,
     "fatherEmail": "Kamleshwargattu@gmail.com",
     "motherName": "Bhargavi Gattu",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -212,7 +220,8 @@
     "fatherEmail": "Yseshagiri666@gmail.com",
     "motherName": "Yadlapalli Venkata Naga Rajeswari",
     "motherMobileNumber": 9392636177,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -236,7 +245,8 @@
     "fatherEmail": "Bhayalokharam82@gmail.com",
     "motherName": "Vimla Choudhary",
     "motherMobileNumber": 8106178992,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -260,7 +270,8 @@
     "fatherEmail": "kirtiya@gmail.com",
     "motherName": "Manda Patel",
     "motherMobileNumber": 8978942314,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -284,7 +295,8 @@
     "fatherEmail": "Kumbhasreenivasarao@gmail.com",
     "motherName": "Vuyyala Bhavani",
     "motherMobileNumber": 9490372116,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -308,7 +320,8 @@
     "fatherEmail": "Deepsharma76@yahoo.com",
     "motherName": "Shobha",
     "motherMobileNumber": 7869139777,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -332,7 +345,8 @@
     "fatherEmail": "Rajashekarmanthenanzb@gmail.com",
     "motherName": "Peddi Swetha",
     "motherMobileNumber": 9441324754,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -356,7 +370,8 @@
     "fatherEmail": "kishan@shreeprimedistributors.com",
     "motherName": "Ankala Jaya Krishna Hymavathi",
     "motherMobileNumber": 8096155777,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -380,7 +395,8 @@
     "fatherEmail": "Kaluram2500@gmail.com",
     "motherName": "Leela Choudhary",
     "motherMobileNumber": 8886442500,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -404,7 +420,8 @@
     "fatherEmail": "Email2gsr@gmail.com",
     "motherName": "Gaddam Prathima Reddy",
     "motherMobileNumber": 9121315454,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -427,7 +444,8 @@
     "fatherMobileNumber": 9966451919,
     "motherName": "K. Lakshmi",
     "motherMobileNumber": 9247292954,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -451,7 +469,8 @@
     "fatherEmail": "Vivekvardhan69@gmail.com",
     "motherName": "Swapna Surasani",
     "motherMobileNumber": 9492058155,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -475,7 +494,8 @@
     "fatherEmail": "Ravikumarnandina@gmail.com",
     "motherName": "Nandina Ramya Sree",
     "motherMobileNumber": 7013876606,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -499,7 +519,8 @@
     "fatherEmail": "Damodarreddy072@gmail.com",
     "motherName": "Swapna Reddy",
     "motherMobileNumber": 9951195468,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -523,7 +544,8 @@
     "fatherEmail": "Krishna.thota@rediffmail.com",
     "motherName": "Thota Sunita",
     "motherMobileNumber": 9908833989,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -547,7 +569,8 @@
     "fatherEmail": "Praveen.gajavelli@gmail.com",
     "motherName": "Gajavelli Pallavi",
     "motherMobileNumber": 9618991291,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -571,7 +594,8 @@
     "fatherEmail": "Rammurthysandri@gmail.com",
     "motherName": "Sandri Sreelatha",
     "motherMobileNumber": 9701819922,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -595,7 +619,8 @@
     "fatherEmail": "Naveenganneboina13@gmail.com",
     "motherName": "Ganneboina Vijaya Goud",
     "motherMobileNumber": 8888176970,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -619,7 +644,8 @@
     "fatherEmail": "Lingaiahjangiti462@gmail.com",
     "motherName": "Radhika",
     "motherMobileNumber": 7013864535,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -643,7 +669,8 @@
     "fatherEmail": "Anilkothari7@gmail.com",
     "motherName": "Namrata Kothari",
     "motherMobileNumber": 7032909089,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -667,7 +694,8 @@
     "fatherEmail": "Sasilakki@gmail.com",
     "motherName": "Madhavi Latha",
     "motherMobileNumber": 9885400036,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -691,7 +719,8 @@
     "fatherEmail": "Rasool.kb@gmail.com",
     "motherName": "Shaik Reshma Begum",
     "motherMobileNumber": 7989858259,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -715,7 +744,8 @@
     "fatherEmail": "deeprajtak98@gmail.com",
     "motherName": "Rajeshwari Tak",
     "motherMobileNumber": 8008903300,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -739,7 +769,8 @@
     "fatherEmail": "Abdussaleemvt@gmail.com",
     "motherName": "Haseena Edamundakkal",
     "motherMobileNumber": 7559920038,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -763,7 +794,8 @@
     "fatherEmail": "Kishore.vtps99@gmail.com",
     "motherName": "Allada Naga Hima Bindu",
     "motherMobileNumber": 9490769180,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -787,7 +819,8 @@
     "fatherEmail": "Mamuhaque786@gmail.com",
     "motherName": "Sajuda Parvin",
     "motherMobileNumber": 8101068365,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -811,7 +844,8 @@
     "fatherEmail": "Chbalreddy6678@gmail.com",
     "motherName": "Ch Lavanya",
     "motherMobileNumber": 9177413558,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -835,7 +869,8 @@
     "fatherEmail": "Maadigitals999@gmail.com",
     "motherName": "Akula Shashikala",
     "motherMobileNumber": 9494239555,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -859,7 +894,8 @@
     "fatherEmail": "Kcreddybusa@gmail.com",
     "motherName": "Busa. Anantha Lakshmi",
     "motherMobileNumber": 9440238845,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -883,7 +919,8 @@
     "fatherEmail": "Sandeep1104@yahoo.com",
     "motherName": "Rinku Agrawal",
     "motherMobileNumber": 9990667600,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -907,7 +944,8 @@
     "fatherEmail": "Rajeevbalaraju@gmail.com",
     "motherName": "Anita Balaraju",
     "motherMobileNumber": 9848082130,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -931,7 +969,8 @@
     "fatherEmail": "Venkateswaragranites.rvr@gmail.com",
     "motherName": "Kiranmaye",
     "motherMobileNumber": 9030086019,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -955,7 +994,8 @@
     "fatherEmail": "Ravimanikonda18@gmail.com",
     "motherName": "Sumana Paramata",
     "motherMobileNumber": 8885000997,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -979,7 +1019,8 @@
     "fatherEmail": "Suneelreddip1234@gmail.com",
     "motherName": "Sreelatha",
     "motherMobileNumber": 8884012349,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1003,7 +1044,8 @@
     "fatherEmail": "nadellavenkatarao6@gmail.com",
     "motherName": "Nadella Sridevi",
     "motherMobileNumber": 8106363636,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1027,7 +1069,8 @@
     "fatherEmail": "S.sivashanker@gmail.com",
     "motherName": "Bhuwaneshwari Krishnan",
     "motherMobileNumber": 9985357383,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1051,7 +1094,8 @@
     "fatherEmail": "Brijeshbung@gmail.com",
     "motherName": "Suman Bung",
     "motherMobileNumber": 9394803382,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1075,7 +1119,8 @@
     "fatherEmail": "Prasanth60006@gmail.com",
     "motherName": "Sai Bhavani Jangala",
     "motherMobileNumber": 9160160006,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1099,7 +1144,8 @@
     "fatherEmail": "Prabhu.bhogadi@gmail.com",
     "motherName": "Padmaja Kossireddy",
     "motherMobileNumber": 8331814516,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1123,7 +1169,8 @@
     "fatherEmail": "Sritrader@gmail.com",
     "motherName": "Radhika Reddy",
     "motherMobileNumber": 9966901010,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1147,7 +1194,8 @@
     "fatherEmail": "Vamsikrishna72@gmail.com",
     "motherName": "Chaparala Sailaja",
     "motherMobileNumber": 9704170818,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1171,7 +1219,8 @@
     "fatherEmail": "Sushilandcompany1@gmail.com",
     "motherName": "Rachna Devi Hirawat",
     "motherMobileNumber": 9885499208,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1195,7 +1244,8 @@
     "fatherEmail": "Rajeshreddyk@yahoo.com",
     "motherName": "Shilpa Reddy",
     "motherMobileNumber": 9494994334,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1219,7 +1269,8 @@
     "fatherEmail": "Lal.arun72@gmail.com",
     "motherName": "Renuka Bai",
     "motherMobileNumber": 9618990049,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1243,7 +1294,8 @@
     "fatherEmail": "Akarunkumar2005@gmail.com",
     "motherName": "Avala Ratna",
     "motherMobileNumber": 8185946213,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1267,7 +1319,8 @@
     "fatherEmail": "Eathamukkalaramanaiah003@gmail.com",
     "motherName": "Jayasree",
     "motherMobileNumber": 9490773854,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1291,7 +1344,8 @@
     "fatherEmail": "Khan439517@gmail.com",
     "motherName": "Rabia Sultana Khan",
     "motherMobileNumber": 9177705268,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1315,7 +1369,8 @@
     "fatherEmail": "Ravidott@gmail.com",
     "motherName": "Sumathi",
     "motherMobileNumber": 9618222219,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1339,7 +1394,8 @@
     "fatherEmail": "kovuvri@gmail.com",
     "motherName": "Kovuvri Radhika Reddy",
     "motherMobileNumber": 9182314620,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1363,7 +1419,8 @@
     "fatherEmail": "Madhavareddy8999@gmail.com",
     "motherName": "Vinta Komala",
     "motherMobileNumber": 8886666689,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1387,7 +1444,8 @@
     "fatherEmail": "Kovvuri77@gmail.com",
     "motherName": "K.Sunitha",
     "motherMobileNumber": 9849843816,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1411,7 +1469,8 @@
     "fatherEmail": "Sgumdavelly1972@gmail.com",
     "motherName": "Mrs. Sirisha Gumdavelly",
     "motherMobileNumber": 9600033859,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1435,7 +1494,8 @@
     "fatherEmail": "Sainithinnallapati@gmail.com",
     "motherName": "Sunitha",
     "motherMobileNumber": 9293941558,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1459,7 +1519,8 @@
     "fatherEmail": "Pavithra.undergrad23@gmail.com",
     "motherName": "Sumithra S",
     "motherMobileNumber": 9003072719,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1483,7 +1544,8 @@
     "fatherEmail": "rajugoudtdr@gmail.com",
     "motherName": "Sandal Swapna",
     "motherMobileNumber": 9989740532,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1507,7 +1569,8 @@
     "fatherEmail": "ASRAO74@rediffmail.com",
     "motherName": "Adapa Nagasri",
     "motherMobileNumber": 9391304420,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1530,7 +1593,8 @@
     "fatherMobileNumber": 9177224343,
     "fatherEmail": "pcsn.raju3@gmail.com",
     "motherName": "Poornima",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1554,7 +1618,8 @@
     "fatherEmail": "Venkatrreddy@hotmail.com",
     "motherName": "Mrs. Busa Sunita Reddy",
     "motherMobileNumber": 9866192262,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1578,7 +1643,8 @@
     "fatherEmail": "Srinuteppa57@gmail.com",
     "motherName": "Miss. Teppa Rajini",
     "motherMobileNumber": 8074144071,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1602,7 +1668,8 @@
     "fatherEmail": "Adikola54@gmail.com",
     "motherName": "Paravasthu Sridevi",
     "motherMobileNumber": 9849596719,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1626,7 +1693,8 @@
     "fatherEmail": "Vadlamudiashwith@gmail.com",
     "motherName": "Neelima",
     "motherMobileNumber": 8317531083,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1650,7 +1718,8 @@
     "fatherEmail": "Sridhar112@gmail.com",
     "motherName": "Sattarapu Raja Rajeshwari",
     "motherMobileNumber": 8328421599,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1674,7 +1743,8 @@
     "fatherEmail": "Manohar.rao75@gmail.com",
     "motherName": "Rajitha",
     "motherMobileNumber": 7780498660,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1698,7 +1768,8 @@
     "fatherEmail": "kalapalavandana18@gmail.com",
     "motherName": "Vandana",
     "motherMobileNumber": 9502460701,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1722,7 +1793,8 @@
     "fatherEmail": "Rangaraopuskur@gmail.com",
     "motherName": "Satyapriya Puskur",
     "motherMobileNumber": 9550040667,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1746,7 +1818,8 @@
     "fatherEmail": "Yoganandsfpl@gmail.co",
     "motherName": "B.Sunitha",
     "motherMobileNumber": 9948786293,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1770,7 +1843,8 @@
     "fatherEmail": "Spvanamala@gmail.com",
     "motherName": "Rini Prasad",
     "motherMobileNumber": 9866096067,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1794,7 +1868,8 @@
     "fatherEmail": "Telagamsettirammohan@gmail.com",
     "motherName": "Telagamsetti Vishali",
     "motherMobileNumber": 9989335910,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1818,7 +1893,8 @@
     "fatherEmail": "Varshiniayyavari4@gmail.com",
     "motherName": "Malathi",
     "motherMobileNumber": 9963789779,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1842,7 +1918,8 @@
     "fatherEmail": "Guntakalakshmareddy@gmail.com",
     "motherName": "Guntaka Soujanya",
     "motherMobileNumber": 9603752866,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1866,7 +1943,8 @@
     "fatherEmail": "Thakur_sandeep@hotmail.com",
     "motherName": "Mrs. Deepali Sandeep Thakur",
     "motherMobileNumber": 9730597171,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1890,7 +1968,8 @@
     "fatherEmail": "Premchoudhary2424@gmail.com",
     "motherName": "Narangi Prem Choudhary",
     "motherMobileNumber": 9701170907,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1914,7 +1993,8 @@
     "fatherEmail": "shankarsinghb@prabhatseeds.in",
     "motherName": "Diksha Bisht",
     "motherMobileNumber": 8106999972,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1938,7 +2018,8 @@
     "fatherEmail": "Seshagiriraogorantla@gmail.com",
     "motherName": "Gorantla Prasanthi",
     "motherMobileNumber": 9980509187,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1962,7 +2043,8 @@
     "fatherEmail": "Alokdhanda@yahoo.com",
     "motherName": "Hansini Dhanda",
     "motherMobileNumber": 9849592797,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -1986,7 +2068,8 @@
     "fatherEmail": "Reddykruthika748@gmail.com",
     "motherName": "K. Sumathi",
     "motherMobileNumber": 8790461023,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2010,7 +2093,8 @@
     "fatherEmail": "Koravinodkumar@gmail.com",
     "motherName": "Kotra Sree Laxmi",
     "motherMobileNumber": 9849187772,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2034,7 +2118,8 @@
     "fatherEmail": "balrajkoppula02@gmail.com",
     "motherName": "Miss. Prameela Koppula",
     "motherMobileNumber": 8179969913,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2058,7 +2143,8 @@
     "fatherEmail": "Malekistone.sarl@yahoo.com",
     "motherName": "Reshma Khan",
     "motherMobileNumber": 8951146732,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2082,7 +2168,8 @@
     "fatherEmail": "Sudhara535311@gmail.com",
     "motherName": "Rama Devi",
     "motherMobileNumber": 9963045757,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2106,7 +2193,8 @@
     "fatherEmail": "Aradhyu@gmail.com",
     "motherName": "Krishna Veni",
     "motherMobileNumber": 9989025040,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2130,7 +2218,8 @@
     "fatherEmail": "Hari.krishna.1904@gmail.com",
     "motherName": "Lakshmi Prasanna Chowdary Jammula",
     "motherMobileNumber": 7287018284,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2154,7 +2243,8 @@
     "fatherEmail": "Mmtahyd@gmail.com",
     "motherName": "Pechetti Padmavathi",
     "motherMobileNumber": 9059119913,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2178,7 +2268,8 @@
     "fatherEmail": "Rambabuchiranchi@gmail.com",
     "motherName": "Chiranchi Rajani",
     "motherMobileNumber": 9666522897,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2202,7 +2293,8 @@
     "fatherEmail": "Tsarathkumar99080@gmail.com",
     "motherName": "Thadi Kavitha",
     "motherMobileNumber": 6300371279,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2226,7 +2318,8 @@
     "fatherEmail": "Ranjithkumarchukk1515@gmail.com",
     "motherName": "Arunarani Chukka",
     "motherMobileNumber": 7981426782,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2250,7 +2343,8 @@
     "fatherEmail": "Mynenfiles@gmail.com",
     "motherName": "Bindu Madhavi",
     "motherMobileNumber": 7799212414,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2274,7 +2368,8 @@
     "fatherEmail": "Bhanu6092@gmail.com",
     "motherName": "Rayana Rajini",
     "motherMobileNumber": 9177919198,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2298,7 +2393,8 @@
     "fatherEmail": "vinayvarmapubg@gmail.com",
     "motherName": "Ruddarraju Pravallika",
     "motherMobileNumber": 9848682762,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2322,7 +2418,8 @@
     "fatherEmail": "Pradeppthakker1105@gmail.com",
     "motherName": "Komal Thakker",
     "motherMobileNumber": 9849874000,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2346,7 +2443,8 @@
     "fatherEmail": "Alimineti9@gmail.com",
     "motherName": "Alimineti Saritha Reddy",
     "motherMobileNumber": 9394909999,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2370,7 +2468,8 @@
     "fatherEmail": "Bhutadavigyat4@gmail.com",
     "motherName": "Priya Bhutada",
     "motherMobileNumber": 8330971558,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2394,7 +2493,8 @@
     "fatherEmail": "S.iqbal.vision@gmail.com",
     "motherName": "Tabassum Sultana",
     "motherMobileNumber": 7386379626,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2418,7 +2518,8 @@
     "fatherEmail": "ankitbatheja8@gmail.com",
     "motherName": "Mrs. Soniya Batheja",
     "motherMobileNumber": 9975844114,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2442,7 +2543,8 @@
     "fatherEmail": "Srinivasunnam9999@gmail.com",
     "motherName": "Haritha Unnam",
     "motherMobileNumber": 9030016166,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2466,7 +2568,8 @@
     "fatherEmail": "K.ajayreddy22@gmail.com",
     "motherName": "Kanamathareddy Chandi Priya",
     "motherMobileNumber": 9493988649,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2490,7 +2593,8 @@
     "fatherEmail": "Geethanivas2009@gmail.com",
     "motherName": "Geetha Rani Bodla",
     "motherMobileNumber": 9440002591,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2514,7 +2618,8 @@
     "fatherEmail": "sribhanu9993@gmail.com",
     "motherName": "Mrs. Yadlapalli Ammaji",
     "motherMobileNumber": 7989151205,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2538,7 +2643,8 @@
     "fatherEmail": "Yerramsettyvidyasagar@gmail.com",
     "motherName": "Y Vijaya Lakshmi",
     "motherMobileNumber": 8309538445,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2562,7 +2668,8 @@
     "fatherEmail": "Sudarshanrao3008@gmail.com",
     "motherName": "M Satee Devi",
     "motherMobileNumber": 9866695145,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2586,7 +2693,8 @@
     "fatherEmail": "Zr.alhayat@gmail.com",
     "motherName": "Kainath Fathima",
     "motherMobileNumber": 8897639987,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2610,7 +2718,8 @@
     "fatherEmail": "divyamudundi123@123gmai.com",
     "motherName": "Mudundi Divya",
     "motherMobileNumber": 7993722569,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2634,7 +2743,8 @@
     "fatherEmail": "Koukuntla.srinivasreddy@gmail.com",
     "motherName": "Koukuntla Rajasri Reddy",
     "motherMobileNumber": 9121017734,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2658,7 +2768,8 @@
     "fatherEmail": "Jennyseetakka@gmail.com",
     "motherName": "Thota Sudha Rani",
     "motherMobileNumber": 9704152333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2682,7 +2793,8 @@
     "fatherEmail": "Premmehta@yahoo.com",
     "motherName": "Divya Mehta",
     "motherMobileNumber": 9885291418,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2705,7 +2817,8 @@
     "fatherEmail": "Nagamallareddy@gmail.com",
     "motherName": "Iragam Vani",
     "motherMobileNumber": 8939068818,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2729,7 +2842,8 @@
     "fatherEmail": "gandhamnavyasri@gmail.com",
     "motherName": "Gandham Ratna Kumari",
     "motherMobileNumber": 9856456567,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2753,7 +2867,8 @@
     "fatherEmail": "Malempativivek599@gmail.com",
     "motherName": "Rama Tulasi",
     "motherMobileNumber": 8978470536,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2777,7 +2892,8 @@
     "fatherEmail": "nari272838@gmail.com",
     "motherName": "Kothamasu Venkata Guruvardhana",
     "motherMobileNumber": 6301308106,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2801,7 +2917,8 @@
     "fatherEmail": "Mcjain.rmkd@gmail.com",
     "motherName": "Leela Jain",
     "motherMobileNumber": 8639749204,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2825,7 +2942,8 @@
     "fatherEmail": "Srinivas.eleshwaram123@gmail.com",
     "motherName": "Lavanya",
     "motherMobileNumber": 9392171761,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2849,7 +2967,8 @@
     "fatherEmail": "swarajya.paruchuri@gmail.com",
     "motherName": "Paruchuri Swarajya Lakshmi",
     "motherMobileNumber": 9963046333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2873,7 +2992,8 @@
     "fatherEmail": "Vakavenkat@gmail.com",
     "motherName": "Anuradha Vaka",
     "motherMobileNumber": 8008801239,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2897,7 +3017,8 @@
     "fatherEmail": "Eshwaryendeti@gmail.com",
     "motherName": "Padmajapotluru",
     "motherMobileNumber": 9182451237,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2921,7 +3042,8 @@
     "fatherEmail": "Cmmhyd@gmail.com",
     "motherName": "Vijaya Gladys",
     "motherMobileNumber": 9533282655,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2945,7 +3067,8 @@
     "fatherEmail": "Srinathr768@gmail.com",
     "motherName": "Pagidyala Uma Rani",
     "motherMobileNumber": 9948867947,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2969,7 +3092,8 @@
     "fatherEmail": "Tyelraj@gmail.com",
     "motherName": "Lavanya Tallapally",
     "motherMobileNumber": 8247510487,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -2993,7 +3117,8 @@
     "fatherEmail": "Vishnu5099@gmail.com",
     "motherName": "V.Nikitha Reddy",
     "motherMobileNumber": 9000606038,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3017,7 +3142,8 @@
     "fatherEmail": "Kpulusu@gmail.com",
     "motherName": "Latha Pulusu",
     "motherMobileNumber": 6303821344,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3041,7 +3167,8 @@
     "fatherEmail": "rahulgothadiya1111@gmail.com",
     "motherName": "Varshaben",
     "motherMobileNumber": 8320241620,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3065,7 +3192,8 @@
     "fatherEmail": "Md@laserene.com",
     "motherName": "Aanchal",
     "motherMobileNumber": 9866533445,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3089,7 +3217,8 @@
     "fatherEmail": "Rahul.neelap@gmail.com",
     "motherName": "Islavath Madhura",
     "motherMobileNumber": 9346636564,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3113,7 +3242,8 @@
     "fatherEmail": "Prasadhvallabhaneni@gmail.com",
     "motherName": "Radhika Vallabhaneni",
     "motherMobileNumber": 8008266609,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3137,7 +3267,8 @@
     "fatherEmail": "Myr4869@gmail.com",
     "motherName": "Malupally Prashanthi Reddy",
     "motherMobileNumber": 9849567112,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3161,7 +3292,8 @@
     "fatherEmail": "shwejan1812@gmail.com",
     "motherName": "Dr. Saroja Mittapally",
     "motherMobileNumber": 9989008712,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3185,7 +3317,8 @@
     "fatherEmail": "ashokreddy.bommidi@gmail.com",
     "motherName": "Srilatha Reddy Bommidi",
     "motherMobileNumber": 7337393914,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3209,7 +3342,8 @@
     "fatherEmail": "Sreenivas.mukta@gmail.com",
     "motherName": "Gayathri Thotakura",
     "motherMobileNumber": 9963634720,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3233,7 +3367,8 @@
     "fatherEmail": "Srinteriorsdesign@gmail.com",
     "motherName": "Pavani",
     "motherMobileNumber": 9652001166,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3257,7 +3392,8 @@
     "fatherEmail": "Bapireddy75@gmail.com",
     "motherName": "Motakatla Aruna Sri",
     "motherMobileNumber": 9951277379,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3281,7 +3417,8 @@
     "fatherEmail": "rakesh_kumaragarwal@rediffmail.com",
     "motherName": "Renu Agarwal",
     "motherMobileNumber": 9604984333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3305,7 +3442,8 @@
     "fatherEmail": "Netdeal1947@gmail.com",
     "motherName": "Sakeena Begum",
     "motherMobileNumber": 9963885155,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3329,7 +3467,8 @@
     "fatherEmail": "Srinivasreddy.shahbad@gmail.com",
     "motherName": "Madhura Vani Reddy Shahbad",
     "motherMobileNumber": 9985066651,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3353,7 +3492,8 @@
     "fatherEmail": "Mohanchauhan.mc@gmail.com",
     "motherName": "P Anuradha",
     "motherMobileNumber": 9440820123,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3377,7 +3517,8 @@
     "fatherEmail": "saisoujanya.92@gmail.com",
     "motherName": "Mohini",
     "motherMobileNumber": 9085599999,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3401,7 +3542,8 @@
     "fatherEmail": "Msr202122@gmail.com",
     "motherName": "Mulamalla Venkateswari",
     "motherMobileNumber": 9247263333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3425,7 +3567,8 @@
     "fatherEmail": "Madhukarreddy.akkali@gmail.com",
     "motherName": "Akkali Swathi",
     "motherMobileNumber": 9908282699,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3449,7 +3592,8 @@
     "fatherEmail": "Colors4all786@gmail.com",
     "motherName": "Anees Kauser",
     "motherMobileNumber": 9676911008,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3473,7 +3617,8 @@
     "fatherEmail": "Rajareddymora@gmail.com",
     "motherName": "Mora Keerthana",
     "motherMobileNumber": 9346064042,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3497,7 +3642,8 @@
     "fatherEmail": "Jagdeep.c.jain.jagu87@gmail.com",
     "motherName": "Leelu.J.Rathore",
     "motherMobileNumber": 9884116546,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3521,7 +3667,8 @@
     "fatherEmail": "Sidhirajeshsilks8@gmail.com",
     "motherName": "Aruna Gunda",
     "motherMobileNumber": 6281925858,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3545,7 +3692,8 @@
     "fatherEmail": "Shailessh.marine@gmail.com",
     "motherName": "Aarthi Jain",
     "motherMobileNumber": 8688099629,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3569,7 +3717,8 @@
     "fatherEmail": "Rajasekharponnapati74@gmail.com",
     "motherName": "Watkins Indira",
     "motherMobileNumber": 9515934055,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3593,7 +3742,8 @@
     "fatherEmail": "Yskkr2003@yahoo.com",
     "motherName": "Y S Silpa Reddy",
     "motherMobileNumber": 9959009595,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3617,7 +3767,8 @@
     "fatherEmail": "Affussana@gmail.com",
     "motherName": "Lathimun",
     "motherMobileNumber": 8106239333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3641,7 +3792,8 @@
     "fatherEmail": "Giridhar.lachagari@gnail.com",
     "motherName": "Sandhya Rani Yenugula",
     "motherMobileNumber": 9866226759,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3665,7 +3817,8 @@
     "fatherEmail": "yvHarishkumar15@gmail.com",
     "motherName": "Madhavi Yerva",
     "motherMobileNumber": 7086426881,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3689,7 +3842,8 @@
     "fatherEmail": "Peram45@gmail.com",
     "motherName": "Peram Ramadevi",
     "motherMobileNumber": 9346790188,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3713,7 +3867,8 @@
     "fatherEmail": "Travels_sanket@yahoo.in",
     "motherName": "Rupali Loyare",
     "motherMobileNumber": 9881622741,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3737,7 +3892,8 @@
     "fatherEmail": "Egirishbabu@gmail.com",
     "motherName": "Edara Anantha Lakshmi",
     "motherMobileNumber": 8374429525,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3761,7 +3917,8 @@
     "fatherEmail": "Maheshwarbabu@gmail.com",
     "motherName": "Mrs. B.R.Sabitha",
     "motherMobileNumber": 9866256589,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3785,7 +3942,8 @@
     "fatherEmail": "Pavanpandala1977@gmail.com",
     "motherName": "Pandala Chandana",
     "motherMobileNumber": 8008885889,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3809,7 +3967,8 @@
     "fatherEmail": "Sairam.abbireddy@gmail.com",
     "motherName": "Abbireddy Shilpa",
     "motherMobileNumber": 9502144343,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3833,7 +3992,8 @@
     "fatherEmail": "babulalshivshakti@gmail.com",
     "motherName": "Mrs. Sunita",
     "motherMobileNumber": 9391442084,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3857,7 +4017,8 @@
     "fatherEmail": "ashirisha345@gmail.com",
     "motherName": "Mrs. Vijaya",
     "motherMobileNumber": 7842809664,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3881,7 +4042,8 @@
     "fatherEmail": "Kalyananandrao@gmail.com",
     "motherName": "Mrs. Kalyan Kamala",
     "motherMobileNumber": 9849539988,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3905,7 +4067,8 @@
     "fatherEmail": "Gvrchella@gmail.com",
     "motherName": "Mrs. Radhika",
     "motherMobileNumber": 9640104555,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3929,7 +4092,8 @@
     "fatherEmail": "Netdeal1947@gmail.com",
     "motherName": "Sakeena Begum",
     "motherMobileNumber": 9963885155,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3953,7 +4117,8 @@
     "fatherEmail": "Sheena8488@gmail.com",
     "motherName": "K L Radhika",
     "motherMobileNumber": 9849130279,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -3977,7 +4142,8 @@
     "fatherEmail": "Kishorebathina@yahoo.co.in",
     "motherName": "Shireesha Bathina",
     "motherMobileNumber": 9848266353,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4001,7 +4167,8 @@
     "fatherEmail": "A.harshareddy1234@gmail.com",
     "motherName": "Ankireddy Jyothi",
     "motherMobileNumber": 7780735040,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4025,7 +4192,8 @@
     "fatherEmail": "Rameshthakurkapil99@gmail.com",
     "motherName": "B Kalyani Bai",
     "motherMobileNumber": 9550166824,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4049,7 +4217,8 @@
     "fatherEmail": "srbonthu22@gmail.com",
     "motherName": "Bonthu Jaya Sudha",
     "motherMobileNumber": 9441282930,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4073,7 +4242,8 @@
     "fatherEmail": "Dimplebidar@rediffmail.com",
     "motherName": "Harmeet Kaur",
     "motherMobileNumber": 7893524175,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4097,7 +4267,8 @@
     "fatherEmail": "Somprakash@gmail.com",
     "motherName": "Rekha Choudhary",
     "motherMobileNumber": 9966027473,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4121,7 +4292,8 @@
     "fatherEmail": "Apkamatchi@gmail.com",
     "motherName": "P.Prematha",
     "motherMobileNumber": 9442642221,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4145,7 +4317,8 @@
     "fatherEmail": "Npedada@gmail.com",
     "motherName": "Pedada Sudhistana",
     "motherMobileNumber": 9596900966,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4169,7 +4342,8 @@
     "fatherEmail": "Panchamisrikanth@gmail.com",
     "motherName": "Sujatha D",
     "motherMobileNumber": 9493285159,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4193,7 +4367,8 @@
     "fatherEmail": "Dhoragaru@yahoo.co.in",
     "motherName": "Ponugoti Manjula Rao",
     "motherMobileNumber": 9949419123,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4217,7 +4392,8 @@
     "fatherEmail": "Kkarunakar_25@yahoo.com",
     "motherName": "Mary Heleena Godi",
     "motherMobileNumber": 9440568444,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4241,7 +4417,8 @@
     "fatherEmail": "Ashamgarisinu@gmail.com",
     "motherName": "Ashamgari Manasa",
     "motherMobileNumber": 9848633423,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4265,7 +4442,8 @@
     "fatherEmail": "Saddinreddy@gmail.com",
     "motherName": "Saddi Harshitha",
     "motherMobileNumber": 8019109848,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4288,7 +4466,8 @@
     "fatherMobileNumber": 8639743949,
     "motherName": "Sireesha",
     "motherMobileNumber": 9441381411,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4312,7 +4491,8 @@
     "fatherEmail": "Ishaloka@gmail.com",
     "motherName": "Loka Shailaja Reddy",
     "motherMobileNumber": 9603958359,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4336,7 +4516,8 @@
     "fatherEmail": "ajay@vprompt.com",
     "motherName": "Preety Srivastava",
     "motherMobileNumber": 8885124000,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4360,7 +4541,8 @@
     "fatherEmail": "Maruthisrinivaskarnatakam@gmail.com",
     "motherName": "Mrs. Karnatakam Swapna Swapna",
     "motherMobileNumber": 9848035748,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4384,7 +4566,8 @@
     "fatherEmail": "Tpreddy14@gmail.com",
     "motherName": "Tirumala Reddy Thomasamma",
     "motherMobileNumber": 9494365566,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4408,7 +4591,8 @@
     "fatherEmail": "Dbnkalyanrao@gmail.com",
     "motherName": "Danduboina Sunita",
     "motherMobileNumber": 9966822282,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4432,7 +4616,8 @@
     "fatherEmail": "Sambhajidesai993@gmail.com",
     "motherName": "Reshma Desai",
     "motherMobileNumber": 9552549675,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4456,7 +4641,8 @@
     "fatherEmail": "V_n_patel@yahoo.com",
     "motherName": "Pratiksha Patel",
     "motherMobileNumber": 9396828665,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4480,7 +4666,8 @@
     "fatherEmail": "Reddymanya17@gmail.com",
     "motherName": "Gummadi Samyuktha Reddy",
     "motherMobileNumber": 9391646519,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4504,7 +4691,8 @@
     "fatherEmail": "Sunilkumar1gp@yahoo.co.in",
     "motherName": "Kavitha",
     "motherMobileNumber": 8008360914,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4527,7 +4715,8 @@
     "fatherMobileNumber": 8247304902,
     "motherName": "Anala Shanti",
     "motherMobileNumber": 8247304902,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4551,7 +4740,8 @@
     "fatherEmail": "Gaddamcnu78@gmail.com",
     "motherName": "J.Sandhya",
     "motherMobileNumber": 9989582232,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4575,7 +4765,8 @@
     "fatherEmail": "Devender6369@gmail.com",
     "motherName": "Madhavi",
     "motherMobileNumber": 9492058495,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4599,7 +4790,8 @@
     "fatherEmail": "rajakanteti@gmail.com",
     "motherName": "Kantheti Surya Bharathi",
     "motherMobileNumber": 8885013333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4623,7 +4815,8 @@
     "fatherEmail": "Skandanreddy2349@gmail.com",
     "motherName": "Veluru Rama Devi",
     "motherMobileNumber": 9030572349,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4647,7 +4840,8 @@
     "fatherEmail": "Maturupreethi@gmail.com",
     "motherName": "Sudha Rani",
     "motherMobileNumber": 9490223425,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4671,7 +4865,8 @@
     "fatherEmail": "Abdulrkhan33@gmail.com",
     "motherName": "Khizra Sultana",
     "motherMobileNumber": -542403883,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4694,7 +4889,8 @@
     "fatherEmail": "Satwanth@rediffmail.com",
     "motherName": "Maneesha Singh",
     "motherMobileNumber": 9963716535,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4718,7 +4914,8 @@
     "fatherEmail": "kothurisuresh67@gmail.com",
     "motherName": "I A Sarala Kumari",
     "motherMobileNumber": 9949216758,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4742,7 +4939,8 @@
     "fatherEmail": "Charan.lingam@gmail.com",
     "motherName": "Lingam Sri Naga Lakshmi",
     "motherMobileNumber": 9247822649,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4766,7 +4964,8 @@
     "fatherEmail": "Medipallydeepika@gmail.com",
     "motherName": "Deepika Reddy",
     "motherMobileNumber": 7331104048,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4790,7 +4989,8 @@
     "fatherEmail": "Mukan909@gmail.com",
     "motherName": "Aarti Trivedi",
     "motherMobileNumber": 9921392222,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4814,7 +5014,8 @@
     "fatherEmail": "Bff.pdsn@gmail.com",
     "motherName": "P V Madhavi",
     "motherMobileNumber": 8519808047,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4838,7 +5039,8 @@
     "fatherEmail": "Swamysangaiah040@gmail.com",
     "motherName": "Madupathi Rajeshwari",
     "motherMobileNumber": 9849375773,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4862,7 +5064,8 @@
     "fatherEmail": "Sahasrachopperla@gmail.com",
     "motherName": "Ch Nvj Seetal",
     "motherMobileNumber": 90526224455,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4886,7 +5089,8 @@
     "fatherEmail": "Rickyaddagatla@gmail.com",
     "motherName": "Addagatla Monika",
     "motherMobileNumber": 8341396777,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4910,7 +5114,8 @@
     "fatherEmail": "reddymyda@gmail.com",
     "motherName": "Myda Arpitha Reddy",
     "motherMobileNumber": 8106023262,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4934,7 +5139,8 @@
     "fatherEmail": "Deekshithakyasaram05@gmail.com",
     "motherName": "K. Srilatha",
     "motherMobileNumber": 9291515676,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4958,7 +5164,8 @@
     "fatherEmail": "ashokvidya.9@gmail.com",
     "motherName": "Vidya Umadevi",
     "motherMobileNumber": 9652888718,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -4982,7 +5189,8 @@
     "fatherEmail": "mahipalreddie009@gmail.com",
     "motherName": "Mrs. S,Praveena Reddy",
     "motherMobileNumber": 9550994545,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5004,7 +5212,8 @@
     "fatherName": "Adire Krishna",
     "fatherMobileNumber": "8090909599",
     "motherName": "Adire Padma",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5024,7 +5233,8 @@
     "country": "India",
     "fatherName": "Srinivas",
     "motherName": "Srilatha ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5048,7 +5258,8 @@
     "fatherEmail": "Matta99.venkataiah@gmail.com",
     "motherName": "Matta Yadamma",
     "motherMobileNumber": 9121909010,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5072,7 +5283,8 @@
     "fatherEmail": "Arjun28999@gmail.com",
     "motherName": "G Vara Lakshmi",
     "motherMobileNumber": 7013971621,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5096,7 +5308,8 @@
     "fatherEmail": "Patchava.ramesh@gmail.com",
     "motherName": "Uma Maheswari",
     "motherMobileNumber": 9966454742,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5120,7 +5333,8 @@
     "fatherEmail": "Soldierkiran9@gmail.com",
     "motherName": "N Thriveni",
     "motherMobileNumber": 9515035581,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5144,7 +5358,8 @@
     "fatherEmail": "Narayanareddy0611@gmail.com",
     "motherName": "Kranthi Aenugu",
     "motherMobileNumber": 7330698673,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5168,7 +5383,8 @@
     "fatherEmail": "V9420987@gmail.com",
     "motherName": "Bobba Vijaya",
     "motherMobileNumber": 6281805623,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5192,7 +5408,8 @@
     "fatherEmail": "Nwankede@hotmail.com",
     "motherName": "Mrunali Wankhede",
     "motherMobileNumber": 9553274537,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5216,7 +5433,8 @@
     "fatherEmail": "Regumadugujanardhan@gamil.com",
     "motherName": "Regamadugu Nagamani",
     "motherMobileNumber": 8179556670,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5240,7 +5458,8 @@
     "fatherEmail": "Ravi4ren@gmail.com",
     "motherName": "Dubba Rajeshwari Reddy",
     "motherMobileNumber": 9885684976,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5264,7 +5483,8 @@
     "fatherEmail": "Raju.chvm@gmail.com",
     "motherName": "Chinthalapati Vidya",
     "motherMobileNumber": 9849677377,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5288,7 +5508,8 @@
     "fatherEmail": "Bvssnl@gmail.com",
     "motherName": "Mrs. B V S S Nagalakshmi",
     "motherMobileNumber": 9492157592,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5312,7 +5533,8 @@
     "fatherEmail": "Md@valtree.in",
     "motherName": "Deepshree Sarda",
     "motherMobileNumber": 9959766000,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5336,7 +5558,8 @@
     "fatherEmail": "Jaganmohamp999@gmail.com",
     "motherName": "Pothula Alivelu",
     "motherMobileNumber": 7993894893,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5360,7 +5583,8 @@
     "fatherEmail": "Sreeagros2727@gmail.com",
     "motherName": "Janaki Devi Palacharla",
     "motherMobileNumber": 8881234999,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5384,7 +5608,8 @@
     "fatherEmail": "Cshankar439@gmail.com",
     "motherName": "Chetla Swapna",
     "motherMobileNumber": 9502071152,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5408,7 +5633,8 @@
     "fatherEmail": "Bvkiran6@gmail.com",
     "motherName": "B V Swapna Priya",
     "motherMobileNumber": 9948870714,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5432,7 +5658,8 @@
     "fatherEmail": "rajiswar1980@gmail.com",
     "motherName": "Lalitha",
     "motherMobileNumber": 9439935689,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5456,7 +5683,8 @@
     "fatherEmail": "Prasadmeka73@gmail.com",
     "motherName": "Prathyusha Meka",
     "motherMobileNumber": 9949200600,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5480,7 +5708,8 @@
     "fatherEmail": "Malipeddigiridhar@gmail.com",
     "motherName": "Purnima Bharathi",
     "motherMobileNumber": 9494485537,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5504,7 +5733,8 @@
     "fatherEmail": "Sathwiknanisai55@gmail.com",
     "motherName": "Badda Jyothi",
     "motherMobileNumber": 9493429903,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5527,7 +5757,8 @@
     "fatherMobileNumber": 6300181151,
     "motherName": "Pendem Vimala Kumari",
     "motherMobileNumber": 9701213593,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5551,7 +5782,8 @@
     "fatherEmail": "Rkreddy1811222@gmail.com",
     "motherName": "Manusha Reddy",
     "motherMobileNumber": 9618614566,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5575,7 +5807,8 @@
     "fatherEmail": "Draanilkumarreddy@gmail.com",
     "motherName": "Mamatha",
     "motherMobileNumber": 9440492032,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5599,7 +5832,8 @@
     "fatherEmail": "Sreeautomotives2023@gmail.com",
     "motherName": "Kommalapati Sridevi",
     "motherMobileNumber": 8500083992,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5623,7 +5857,8 @@
     "fatherEmail": "Kalotra.sanjay2005@gmail.com",
     "motherName": "Pyaridevi Devasi",
     "motherMobileNumber": 7702541180,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5647,7 +5882,8 @@
     "fatherEmail": "Karthikvarma2244228@gmail.com",
     "motherName": "Chinthalapati Vidya",
     "motherMobileNumber": 9849677377,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5671,7 +5907,8 @@
     "fatherEmail": "Sarvanbidasar82@gmail.com",
     "motherName": "Ratni Bidasar",
     "motherMobileNumber": 8247079841,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5695,7 +5932,8 @@
     "fatherEmail": "Badrinath.sarangapani@gmail.com",
     "motherName": "Shubashree Badrinath",
     "motherMobileNumber": 9866651169,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5719,7 +5957,8 @@
     "fatherEmail": "Novacarediagnostics@gmail.com",
     "motherName": "Swapna . M",
     "motherMobileNumber": 9848492865,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5743,7 +5982,8 @@
     "fatherEmail": "Rakesh196868@gmail.com",
     "motherName": "Shubhra Shrivastava",
     "motherMobileNumber": 9424309892,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5767,7 +6007,8 @@
     "fatherEmail": "Satish.hpcl@gmail.com",
     "motherName": "Mani Pallavi",
     "motherMobileNumber": 9000435555,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5791,7 +6032,8 @@
     "fatherEmail": "Botsaprasadrao9@gmail.com",
     "motherName": "B.Manjula",
     "motherMobileNumber": 7799555166,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5815,7 +6057,8 @@
     "fatherEmail": "Kandagatla.vasu@gmail.com",
     "motherName": "Manjula",
     "motherMobileNumber": 9000111048,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5839,7 +6082,8 @@
     "fatherEmail": "Prashanth@barao.in",
     "motherName": "Palakurthy Saritha",
     "motherMobileNumber": 8978433415,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5863,7 +6107,8 @@
     "fatherEmail": "Irfanmalkani786@gmail.com",
     "motherName": "Shahina Bano",
     "motherMobileNumber": 8117986808,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5886,7 +6131,8 @@
     "fatherEmail": "mani_hasitha@yahoo.com",
     "motherName": "Mani Adimulam",
     "motherMobileNumber": 9538133275,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5910,7 +6156,8 @@
     "fatherEmail": "Vjdfam4242@gmail.com",
     "motherName": "J Jyothi",
     "motherMobileNumber": 7799204242,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5934,7 +6181,8 @@
     "fatherEmail": "Gajpalsingh05557@gmail.com",
     "motherName": "Neeta Singh",
     "motherMobileNumber": 7417600687,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5958,7 +6206,8 @@
     "fatherEmail": "Chitesh7@yahoo.com",
     "motherName": "Sheetal Jain",
     "motherMobileNumber": 9963706236,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -5982,7 +6231,8 @@
     "fatherEmail": "Dlnreddy12@gmail.com",
     "motherName": "Duvvuri Jyothi Reddy",
     "motherMobileNumber": 7995459966,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6006,7 +6256,8 @@
     "fatherEmail": "Mcjain.rmd@gmail.com",
     "motherName": "Leela Jain",
     "motherMobileNumber": 8639749204,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6030,7 +6281,8 @@
     "fatherEmail": "Sudhakar@sudhakarpipes.com",
     "motherName": "Ananthula Mani",
     "motherMobileNumber": 9880232733,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6054,7 +6306,8 @@
     "fatherEmail": "raviagenciesongole@gmail.com",
     "motherName": "Motukuri Anjana Devi",
     "motherMobileNumber": 7093654636,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6078,7 +6331,8 @@
     "fatherEmail": "Shoury@balavikasa.org",
     "motherName": "Singareddy Sunitha",
     "motherMobileNumber": 9849844868,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6102,7 +6356,8 @@
     "fatherEmail": "Tsrinivas951974@gmail.com",
     "motherName": "T Naga Rani",
     "motherMobileNumber": 9392037070,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6126,7 +6381,8 @@
     "fatherEmail": "Rajputsunilsingh1972@gmail.com",
     "motherName": "Mrs. Swathi Rajput",
     "motherMobileNumber": 9000418989,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6150,7 +6406,8 @@
     "fatherEmail": "bvshekhal@yahoo.co.in",
     "motherName": "Alpa Patel",
     "motherMobileNumber": 8008502654,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6174,7 +6431,8 @@
     "fatherEmail": "Srinivasgoud0804@gmail.com",
     "motherName": "Archana Goud",
     "motherMobileNumber": 9023407423,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6198,7 +6456,8 @@
     "fatherEmail": "Bollamvenkat1978@gmail.com",
     "motherName": "Bollam Mamatha",
     "motherMobileNumber": 8498825058,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6222,7 +6481,8 @@
     "fatherEmail": "Balamuralireddy123@gmail.com",
     "motherName": "E.Radha",
     "motherMobileNumber": 9493195067,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6246,7 +6506,8 @@
     "fatherEmail": "Siddiramreddy715@gmail.com",
     "motherName": "Kavitha Reddy",
     "motherMobileNumber": 9390513745,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6270,7 +6531,8 @@
     "fatherEmail": "nikkilram4050@gmail.com",
     "motherName": "Parameswari",
     "motherMobileNumber": 9442215370,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6294,7 +6556,8 @@
     "fatherEmail": "Charankittu541@gmail.com",
     "motherName": "Kummari Saritha",
     "motherMobileNumber": 7893300339,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6318,7 +6581,8 @@
     "fatherEmail": "Psssre@gmail.com",
     "motherName": "Palakala Pavani Reddy",
     "motherMobileNumber": 8309061787,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6342,7 +6606,8 @@
     "fatherEmail": "Cramraj@gmail.com",
     "motherName": "Rajita Chaganti",
     "motherMobileNumber": 9550724684,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6366,7 +6631,8 @@
     "fatherEmail": "pathapatibhavani@gmail.com",
     "motherName": "Pathapati Geeta Bhavani",
     "motherMobileNumber": 9989622779,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6390,7 +6656,8 @@
     "fatherEmail": "Saitra5957@gmail.com",
     "motherName": "Anugu Sindhu Reddy",
     "motherMobileNumber": 9391499333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6414,7 +6681,8 @@
     "fatherEmail": "Koteshramisetti@gmail.com",
     "motherName": "Ramisetti Roja",
     "motherMobileNumber": 7816030416,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6438,7 +6706,8 @@
     "fatherEmail": "Khaiseransari1955@gmail.com",
     "motherName": "Afreen Begum",
     "motherMobileNumber": 9966319516,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6462,7 +6731,8 @@
     "fatherEmail": "Sivareddy28897@gmail.com",
     "motherName": "Saritha",
     "motherMobileNumber": 75691987846,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6486,7 +6756,8 @@
     "fatherEmail": "Anand.balasani@gmail.com",
     "motherName": "Aruna Balasani",
     "motherMobileNumber": 9948751622,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6510,7 +6781,8 @@
     "fatherEmail": "sh.firdhos@gmail.com",
     "motherName": "Ayesha Sultana",
     "motherMobileNumber": 9949555716,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6534,7 +6806,8 @@
     "fatherEmail": "Ganesh1981.gc@gmail.com",
     "motherName": "Manju Choudhary",
     "motherMobileNumber": 7702297005,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6558,7 +6831,8 @@
     "fatherEmail": "Nageshwarraon9@gmail.com",
     "motherName": "House Wife",
     "motherMobileNumber": 8639624956,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6582,7 +6856,8 @@
     "fatherEmail": "Narendrakumar.kotagiri@gmail.com",
     "motherName": "Kotagiri Swapna Kumari",
     "motherMobileNumber": 9989358124,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6606,7 +6881,8 @@
     "fatherEmail": "S76441992@gmail.com",
     "motherName": "Gadikota Chandra Kala",
     "motherMobileNumber": 9492561652,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6630,7 +6906,8 @@
     "fatherEmail": "Vkumar2807@gmail.com",
     "motherName": "Reddi Anantha Rajya Lakshmi",
     "motherMobileNumber": 9650307373,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6654,7 +6931,8 @@
     "fatherEmail": "Ramanacvr225@gmail.com",
     "motherName": "Chennuru Kalavathi",
     "motherMobileNumber": 9866847233,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6678,7 +6956,8 @@
     "fatherEmail": "Sunildeepesh@gmail.com",
     "motherName": "Khushi Sunil Keswani",
     "motherMobileNumber": 9908239070,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6702,7 +6981,8 @@
     "fatherEmail": "Abhireddy205@gmail.com",
     "motherName": "Thummala Rekha",
     "motherMobileNumber": 6301138598,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6726,7 +7006,8 @@
     "fatherEmail": "Anandvarma27@gmail.com",
     "motherName": "Priti Varma",
     "motherMobileNumber": 9880158001,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6750,7 +7031,8 @@
     "fatherEmail": "Mbuchireddyvkb@gmail.com",
     "motherName": "Maddi Anitha",
     "motherMobileNumber": 9440769106,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6774,7 +7056,8 @@
     "fatherEmail": "Pn_reddy@yahoo.com",
     "motherName": "Neerugutti Ramadevi",
     "motherMobileNumber": 9885482317,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6798,7 +7081,8 @@
     "fatherEmail": "Narukullahitesh@gmail.com",
     "motherName": "Narukulla Joshana Rani",
     "motherMobileNumber": 9989637877,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6822,7 +7106,8 @@
     "fatherEmail": "Ngonuru@gmail.com",
     "motherName": "Renuka Gonuru",
     "motherMobileNumber": 9963223344,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6846,7 +7131,8 @@
     "fatherEmail": "Sagipranay@gmail.com",
     "motherName": "Sagi Madhavi",
     "motherMobileNumber": 9502119920,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6870,7 +7156,8 @@
     "fatherEmail": "Remeshreddy897@gmail.com",
     "motherName": "Katkuri Kiranmai Reddy",
     "motherMobileNumber": 9951143222,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6894,7 +7181,8 @@
     "fatherEmail": "rithwikreddymetlakunta@gmail.com",
     "motherName": "Jyothi Metlakunta",
     "motherMobileNumber": 8247056538,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6918,7 +7206,8 @@
     "fatherEmail": "navinpolepalli25@gmail.com",
     "motherName": "Mrs. Polepalli Jayanthi",
     "motherMobileNumber": 9705526854,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6942,7 +7231,8 @@
     "fatherEmail": "Mahereddyetv@gmail.com",
     "motherName": "P.Sunitha Reddy",
     "motherMobileNumber": 9492189163,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6966,7 +7256,8 @@
     "fatherEmail": "Arjuna19.sk@gmail.com",
     "motherName": "Malini Saravanan",
     "motherMobileNumber": 8179347730,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -6990,7 +7281,8 @@
     "fatherEmail": "Dhani.anthati1979@gmail.com",
     "motherName": "Swarnalatha Anthati",
     "motherMobileNumber": 8639556468,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7014,7 +7306,8 @@
     "fatherEmail": "Amitbearings@gmail.com",
     "motherName": "Shikha Agarwal",
     "motherMobileNumber": 9246222510,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7038,7 +7331,8 @@
     "fatherEmail": "machameghana@gmail.com",
     "motherName": "Macha Lakshmi Devi",
     "motherMobileNumber": 9573167311,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7062,7 +7356,8 @@
     "fatherEmail": "yalamanchili99@yahoo.com",
     "motherName": "Vandana",
     "motherMobileNumber": 9848058168,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7086,7 +7381,8 @@
     "fatherEmail": "chinnuvarma01@gmail.com",
     "motherName": "Sri Lakshmi",
     "motherMobileNumber": 8563889999,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7110,7 +7406,8 @@
     "fatherEmail": "dundigallavenu.g@gmail.com",
     "motherName": "Mrs. Dundigalla Jayaprada",
     "motherMobileNumber": 9912154669,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7132,7 +7429,8 @@
     "fatherName": "Ratnam",
     "fatherMobileNumber": "8019999836",
     "motherName": "Tirupathamma",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7156,7 +7454,8 @@
     "fatherEmail": "Srinuch810@gmail.com",
     "motherName": "Ch. Naga Lakshmi",
     "motherMobileNumber": 9949370303,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7179,7 +7478,8 @@
     "fatherEmail": " ",
     "motherName": "",
     "motherMobileNumber": " ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7202,7 +7502,8 @@
     "fatherEmail": " ",
     "motherName": "",
     "motherMobileNumber": " ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7225,7 +7526,8 @@
     "fatherEmail": " ",
     "motherName": "",
     "motherMobileNumber": " ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7248,7 +7550,8 @@
     "fatherEmail": "Mohanpadala999@gmail.com",
     "motherName": "Unaraheswari Padala",
     "motherMobileNumber": 9491707888,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7271,7 +7574,8 @@
     "fatherEmail": "Ssurparaju@gmail.com",
     "motherName": "Saripalle Aruna",
     "motherMobileNumber": 7382215666,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7294,7 +7598,8 @@
     "fatherEmail": "Rjha16426@gmail.com",
     "motherName": "Sita Devi",
     "motherMobileNumber": 7250600841,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7317,7 +7622,8 @@
     "fatherEmail": "Praveen_doddy@yahoo.co.in",
     "motherName": "Shyamala Devi Doddy",
     "motherMobileNumber": 6302453961,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7340,7 +7646,8 @@
     "fatherEmail": " ",
     "motherName": "Rangu Suchirthra",
     "motherMobileNumber": 8919337113,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7363,7 +7670,8 @@
     "fatherEmail": "mahesh.pawde@gmail.com",
     "motherName": "Mrs. Anuradha Pawde",
     "motherMobileNumber": 9822666661,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7386,7 +7694,8 @@
     "fatherEmail": "Chiru777@gmail.com",
     "motherName": "Jhansi Lakshmi",
     "motherMobileNumber": 9886666799,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7409,7 +7718,8 @@
     "fatherEmail": "fkhan_kwt@hotmail.com",
     "motherName": "Mrs. Shazli Siddiqui",
     "motherMobileNumber": 9133211412,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7432,7 +7742,8 @@
     "fatherEmail": "Jaganindia18@gmail.com",
     "motherName": "G. Parvathi",
     "motherMobileNumber": 9299555567,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7456,7 +7767,8 @@
     "fatherEmail": "Kumar.chaudhary@sbi.co.in",
     "motherName": "Veena Rani",
     "motherMobileNumber": 7479735609,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7480,7 +7792,8 @@
     "fatherEmail": "Kurma.raju@gmail.com",
     "motherName": "Svpkh Chandrakala",
     "motherMobileNumber": 9866685344,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7504,7 +7817,8 @@
     "fatherEmail": "Pavani.thanneeru@gmail.com",
     "motherName": "Pavani Thanneeru",
     "motherMobileNumber": 9290160040,
-    "admissionStatus": "Expel"
+    "admissionStatus": "Expel",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7528,7 +7842,8 @@
     "fatherEmail": "Ajaybordiya925@gmail.com",
     "motherName": "Reena Bordiya",
     "motherMobileNumber": 9246283088,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7552,7 +7867,8 @@
     "fatherEmail": "Burukuntasatish@gmail.com",
     "motherName": "Swathi Burukunta",
     "motherMobileNumber": 9866825959,
-    "admissionStatus": "Expel"
+    "admissionStatus": "Expel",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7576,7 +7892,8 @@
     "fatherEmail": "Shanthan.llb@gmail.com",
     "motherName": "Gadiraju Bindu Madhavi",
     "motherMobileNumber": 9849148200,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7600,7 +7917,8 @@
     "fatherEmail": "subram68@yahoo.com",
     "motherName": "Mrs. Nagamani Muddapolu",
     "motherMobileNumber": 9704166250,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7624,7 +7942,8 @@
     "fatherEmail": "Alikhanmayanaakbar@gmail.com",
     "motherName": "Mayana Fathima Khanam",
     "motherMobileNumber": 9542356786,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7648,7 +7967,8 @@
     "fatherEmail": "Nayini.globalads@gmail.com",
     "motherName": "Nayini Sujatha Goud",
     "motherMobileNumber": 9100833328,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7672,7 +7992,8 @@
     "fatherEmail": "Shyamv_98@yahoo.com",
     "motherName": "Radha Vuppala",
     "motherMobileNumber": 9989352868,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7696,7 +8017,8 @@
     "fatherEmail": "Mk.shreyas@gmail.com",
     "motherName": "Archana Kumari",
     "motherMobileNumber": 7042243706,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7720,7 +8042,8 @@
     "fatherEmail": "Sripathivenu1975@gmail.com",
     "motherName": "Mrs. Swetha Reddy Sripathi",
     "motherMobileNumber": 9769011176,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7744,7 +8067,8 @@
     "fatherEmail": "adrian.fernandes@rediffmail.com",
     "motherName": "Nayana R Fernandes",
     "motherMobileNumber": 9844075758,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7768,7 +8092,8 @@
     "fatherEmail": " ",
     "motherName": "G.K.Surekha Reddy",
     "motherMobileNumber": " ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7792,7 +8117,8 @@
     "fatherEmail": "jethanimuskan7@gmail.com",
     "motherName": "Muskan Jethani",
     "motherMobileNumber": 9922471144,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7816,7 +8142,8 @@
     "fatherEmail": "mchintalapati@hotmail.com",
     "motherName": "Mrs. Anupama Chintalapati",
     "motherMobileNumber": 9704333333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7840,7 +8167,8 @@
     "fatherEmail": "draviverma@gmail.com",
     "motherName": "Datla V Ss Lakshmi",
     "motherMobileNumber": 7093671835,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7864,7 +8192,8 @@
     "fatherEmail": "rka200300@gmail.com",
     "motherName": "Rakhee Agarwal",
     "motherMobileNumber": 9247764182,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7888,7 +8217,8 @@
     "fatherEmail": "Bkkr513@gmail.com",
     "motherName": "Thonduru Sireesha",
     "motherMobileNumber": 9849807499,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7912,7 +8242,8 @@
     "fatherEmail": "Kalisettibrothers@gmail.com",
     "motherName": "Rama Laxmi Kalisetti",
     "motherMobileNumber": 9989862366,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7936,7 +8267,8 @@
     "fatherEmail": "Gopalpolyflex@gmail.com",
     "motherName": "Navneeta Bang",
     "motherMobileNumber": 9849766662,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7960,7 +8292,8 @@
     "fatherEmail": "msralte94@gmail.com",
     "motherName": "R. Lalawmpuii",
     "motherMobileNumber": " ",
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -7984,7 +8317,8 @@
     "fatherEmail": "Ms_nzb@yahoo.co.in",
     "motherName": "Swaroopa Reddy",
     "motherMobileNumber": 9848255328,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8008,7 +8342,8 @@
     "fatherEmail": "Paramatmaeeco@gmail.com",
     "motherName": "Baljeet Kaur",
     "motherMobileNumber": 8096808011,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8032,7 +8367,8 @@
     "fatherEmail": "Kmoommen@gmail.com",
     "motherName": "Jijy Oommen",
     "motherMobileNumber": 9605433999,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8056,7 +8392,8 @@
     "fatherEmail": "rv0209@yahool.com",
     "motherName": "Pranusha Vishwanath",
     "motherMobileNumber": 9948159333,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8080,7 +8417,8 @@
     "fatherEmail": "Rpinds@yahoo.com",
     "motherName": "Santosh Agarwal",
     "motherMobileNumber": 8886443900,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8104,7 +8442,8 @@
     "fatherEmail": "Smreddy5842@gmail.com",
     "motherName": "Sudala Swapna",
     "motherMobileNumber": 9848087911,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8128,7 +8467,8 @@
     "fatherEmail": "gmkraju@gmail.com",
     "motherName": "Himabindu Gadiraju",
     "motherMobileNumber": 7618723424,
-    "admissionStatus": "Admitted"
+    "admissionStatus": "Admitted",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8152,7 +8492,8 @@
     "fatherEmail": "vagarwal70007@gmail.com",
     "motherName": "Mrs. Vinita Agarwal",
     "motherMobileNumber": 9830948038,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8175,7 +8516,8 @@
     "fatherEmail": "Rajalingamdr@yahoo.co.in",
     "motherName": "Rita Bahadur Shaw",
     "motherMobileNumber": 9848186712,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8198,7 +8540,8 @@
     "fatherEmail": "Prabhakarreddy.dokuri27@gmail.com",
     "motherName": "Dokuri Sunitha",
     "motherMobileNumber": 9866114727,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8221,7 +8564,8 @@
     "fatherEmail": "Raghavendar@hotmail.com",
     "motherName": "Archana Gangishetty",
     "motherMobileNumber": " ",
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8244,7 +8588,8 @@
     "fatherEmail": "Vsr3838@gmail.com",
     "motherName": "Venati Sobha Reddy",
     "motherMobileNumber": " ",
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8267,7 +8612,8 @@
     "fatherEmail": "Ppandya46@rediff.com",
     "motherName": "Shital Pandya",
     "motherMobileNumber": 9373775751,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8290,7 +8636,8 @@
     "fatherEmail": "Sheerlatirupathi@gmail.com",
     "motherName": "Sheerla Saritha",
     "motherMobileNumber": 9100331113,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8313,7 +8660,8 @@
     "fatherEmail": "shyam4779@gmail.com",
     "motherName": "Swapana",
     "motherMobileNumber": 9866460094,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8336,7 +8684,8 @@
     "fatherEmail": "Mpk360@gmail.com",
     "motherName": "Anita Milind Kulkarni",
     "motherMobileNumber": 9820653222,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8359,7 +8708,8 @@
     "fatherEmail": "Rajireddysalla@gmail.com",
     "motherName": "Jaya Pradha S",
     "motherMobileNumber": 8919648133,
-    "admissionStatus": "Expel"
+    "admissionStatus": "Expel",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8382,7 +8732,8 @@
     "fatherEmail": "Anandchandan9@gmail.com",
     "motherName": "Geeta Chandan",
     "motherMobileNumber": 8669126766,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8405,7 +8756,8 @@
     "fatherEmail": "Srivanishannu@gmail.com",
     "motherName": "Alli Srivani",
     "motherMobileNumber": 9703302129,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8428,7 +8780,8 @@
     "fatherEmail": "Bishnoi.rm64@gmail.com",
     "motherName": "Kamla Devi",
     "motherMobileNumber": 6376324033,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8451,7 +8804,8 @@
     "fatherEmail": "Vemareddyharikrishna@gmail.com",
     "motherName": "Vemareddy Aunsha",
     "motherMobileNumber": 9444832033,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8474,7 +8828,8 @@
     "fatherEmail": "Premanandsamba@gmail.com",
     "motherName": "Samba.Gouri Devi",
     "motherMobileNumber": 9866710999,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8497,7 +8852,8 @@
     "fatherEmail": "Chetan@acsafreight.com",
     "motherName": "Purva Shah",
     "motherMobileNumber": 9819028851,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8520,7 +8876,8 @@
     "fatherEmail": "Srivishwakarma2003@gmail.com",
     "motherName": "Manjula Serucoju",
     "motherMobileNumber": 7036567935,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8543,7 +8900,8 @@
     "fatherEmail": "Sanjaybansal01@gmail.com",
     "motherName": "Siya Bansal",
     "motherMobileNumber": 9439871711,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8566,7 +8924,8 @@
     "fatherEmail": "Srinivasakumar.karavadi@bayer.com",
     "motherName": "Padmashree Karavadi",
     "motherMobileNumber": 9652255100,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8589,7 +8948,8 @@
     "fatherEmail": "Nirmalyakumar.chaudhuri@gi-de.com",
     "motherName": "Namami Chatterjee",
     "motherMobileNumber": 7045023047,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8612,7 +8972,8 @@
     "fatherEmail": " ",
     "motherName": "Talluri Prasanna Kumari",
     "motherMobileNumber": 8977883800,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8635,7 +8996,8 @@
     "fatherEmail": "Rajuranjithreddy734@gmail.com",
     "motherName": "Bandala Nagamani",
     "motherMobileNumber": 9492481673,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8658,7 +9020,8 @@
     "fatherEmail": "Vijay.mulpui@gmail.com",
     "motherName": "Naga Sai Madhuri",
     "motherMobileNumber": 9963333819,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8681,7 +9044,8 @@
     "fatherEmail": "Krishna@gmail.com",
     "motherName": "Shyamala",
     "motherMobileNumber": 9948888958,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8705,7 +9069,8 @@
     "fatherEmail": "Chairman.satyasaigroup@gmail.com",
     "motherName": "M.Mallika Reddy",
     "motherMobileNumber": 8919348242,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8728,7 +9093,8 @@
     "fatherEmail": "Rout.jagdish@gmail.com",
     "motherName": "Bina Rout",
     "motherMobileNumber": 9437247777,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8751,7 +9117,8 @@
     "fatherEmail": "Venkataraomalineedi@gmail.com",
     "motherName": "M Padmaja",
     "motherMobileNumber": 9556983638,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8774,7 +9141,8 @@
     "fatherEmail": "Drfaisalnahdi@gmail.com",
     "motherName": "Muna",
     "motherMobileNumber": 9849330269,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8798,7 +9166,8 @@
     "fatherEmail": "Ggcbvrm77@gmail.com",
     "motherName": "Gannapureddy Varalakshmi",
     "motherMobileNumber": 9848144377,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8821,7 +9190,8 @@
     "fatherEmail": "Budhwanimunira@gmail.com",
     "motherName": "Munira",
     "motherMobileNumber": 9849607865,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8844,7 +9214,8 @@
     "fatherEmail": "Mohanraop272@gmail.com",
     "motherName": "Pendurthi Gopika",
     "motherMobileNumber": 9573784685,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8867,7 +9238,8 @@
     "fatherEmail": "Ayanpatni182@gmail.com",
     "motherName": "Mariam Fatima",
     "motherMobileNumber": 9820037966,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8891,7 +9263,8 @@
     "fatherEmail": "Naimafroz@yahoo.com",
     "motherName": "Afshan Nayeem",
     "motherMobileNumber": 9246883162,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8914,7 +9287,8 @@
     "fatherEmail": "Moonlabels08@gmail.com",
     "motherName": "Annapooranam",
     "motherMobileNumber": 9944293333,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8937,7 +9311,8 @@
     "fatherEmail": "Shashank11372@gmail.com",
     "motherName": "Sonal Thakur",
     "motherMobileNumber": 9867231075,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8960,7 +9335,8 @@
     "fatherEmail": "Mpavanakumar@yahoo.com",
     "motherName": "Lakshmi Soujanya Murikipudi",
     "motherMobileNumber": 8790350760,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -8983,7 +9359,8 @@
     "fatherEmail": "Ksntransport@rediffmail.com",
     "motherName": "Katragadda Vara Lakshmi",
     "motherMobileNumber": 9885009777,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   },
   {
     "degree": "UG",
@@ -9007,6 +9384,7 @@
     "fatherEmail": "kamaljus@gmail.com",
     "motherName": "Kavita Juneja",
     "motherMobileNumber": 7093002677,
-    "admissionStatus": "Withdrawn"
+    "admissionStatus": "Withdrawn",
+    "department": "BBA"
   }
 ]

@@ -24,11 +24,18 @@ export async function POST(request: Request) {
 
     const { studentemail, password } = result.data;
 
-    const user = await prisma.user.findUnique({
+    const user = await prisma.studentData.findUnique({
       where: { studentEmail: studentemail },
     });
 
     if (!user) {
+      return NextResponse.json(
+        { error: "Invalid credentials" },
+        { status: 400 }
+      );
+    }
+
+    if (!user.password) {
       return NextResponse.json(
         { error: "Invalid credentials" },
         { status: 400 }
@@ -56,7 +63,10 @@ export async function POST(request: Request) {
       user.department as Department
     );
 
-    await prisma.user.update({ where: { id: user.id }, data: refreshToken });
+    await prisma.studentData.update({
+      where: { id: user.id },
+      data: { refreshToken: String(refreshToken) },
+    });
 
     const response = NextResponse.json({
       message: "Login successful",
@@ -81,7 +91,7 @@ export async function POST(request: Request) {
     });
     return response;
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Login error:", (error as Error).message);
     return NextResponse.json(
       {
         message: "Failed to login",
