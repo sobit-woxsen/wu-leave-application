@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import prisma from "@/prisma";
 import { Department } from "@prisma/client";
+import { connect } from "http2";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -13,7 +14,7 @@ export async function GET() {
 
   const applications = await prisma.leaveApplication.findMany({
     where: {
-      userId: userId?.userId,
+      studentId: userId?.userId,
     },
     orderBy: {
       createdAt: "desc",
@@ -56,8 +57,6 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const user = await getCurrentUser();
-
-    console.log("USER ", user);
 
     if (!user?.userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -141,9 +140,11 @@ export async function POST(request: NextRequest) {
         leaveType,
         documentUrl: documentUrl as string | null,
         videoUrl: videoUrl as string | null,
-        userId: user.userId,
         department: user.department as Department,
         studentEmail: user.email as string | null,
+        StudentData: {
+          connect: { id: user.userId },
+        },
       },
     });
 

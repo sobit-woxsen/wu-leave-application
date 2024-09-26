@@ -21,10 +21,19 @@ export async function POST(request: NextRequest) {
     where: {
       department: department,
     },
+    include: {
+      StudentData: {
+        select: {
+          fullName: true,
+        },
+      },
+    },
     orderBy: {
       createdAt: "desc",
     },
   });
+
+  console.log("AAPPPP ", applications);
 
   return NextResponse.json({
     message: "APPLICATION approved/rejected successfully",

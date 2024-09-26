@@ -59,7 +59,7 @@ model LeaveApplication {
   studentEmail String?
   department   Department
   status       ApplicationStatus @default(PENDING)
-  studentId    String            @db.ObjectId
+  studentId    String?           @db.ObjectId
   StudentData  StudentData?      @relation(fields: [studentId], references: [id])
   createdAt    DateTime          @default(now()) @db.Date
   updatedAt    DateTime          @updatedAt @db.Date

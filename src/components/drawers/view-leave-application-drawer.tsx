@@ -41,33 +41,6 @@ export function ViewLeaveApplicationDrawer({
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  // const getStudentInfo = async () => {
-  //   try {
-  //     const response = await fetch(`/api/admin/application`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ studentEmail, applicationId, department }),
-  //     });
-
-  //     const json = await response.json();
-
-  //     if (!response.ok) {
-  //       toast.error(json.error);
-  //     }
-
-  //     setStudentData(json.data);
-  //   } catch (error) {
-  //     console.log("ERROR :: ", error);
-  //     if (error instanceof Error) {
-  //       toast.error(error.message);
-  //     } else {
-  //       toast.error("An unknown error occurred");
-  //     }
-  //   }
-  // };
-
   const getStudentInfo = async () => {
     try {
       const result = await getApplicationAndUserInfo(
@@ -77,11 +50,9 @@ export function ViewLeaveApplicationDrawer({
       if (result?.error) {
         toast.error(result?.error);
       } else {
-        console.log("res", result);
         setStudentData(result.data);
       }
     } catch (error) {
-      console.log("ERROR :: ", error);
       if (error instanceof Error) {
         toast.error(error.message);
       } else {
@@ -115,10 +86,10 @@ export function ViewLeaveApplicationDrawer({
       }
 
       toast.success(json.message);
-      router.refresh();
       setIsOpen(false);
+      router.refresh();
+      window.location.reload();
     } catch (error) {
-      console.log("Error : ", error);
       if (error instanceof Error) {
         toast.error(error.message);
       } else {
@@ -132,8 +103,6 @@ export function ViewLeaveApplicationDrawer({
   useEffect(() => {
     getStudentInfo();
   }, [isOpen]);
-
-  console.log("STDUENT", studentData);
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>

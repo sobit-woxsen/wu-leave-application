@@ -6,6 +6,19 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { ViewLeaveApplicationDrawer } from "../drawers/view-leave-application-drawer";
 import { Department } from "@prisma/client";
+import {
+  CalendarIcon,
+  DotFilledIcon,
+  IdCardIcon,
+  PieChartIcon,
+} from "@radix-ui/react-icons";
+import { applicationStatus } from "@/constant";
+
+const applicationStatusStyle = {
+  Pending: "text-yellow-500 bg-yellow-50",
+  Accepted: "text-green-500 bg-green-50",
+  Rejected: "text-red-500 bg-red-50",
+};
 
 export default function LeaveApplicationsTab() {
   const [department, setDepartment] = useState<Department>("BBA");
@@ -76,11 +89,9 @@ const DepartmentalApplications = ({
     getApplications();
   }, [department]);
 
-  console.log("Leave Applications ", leaveApplications);
-
   return (
     <section className="my-6">
-      {loading && leaveApplications.length > 1 && <p>Loading...</p>}
+      {loading && <p>Loading...</p>}
       {leaveApplications.length === 0 && !loading && (
         <p>No applications find for {department}</p>
       )}
@@ -90,59 +101,67 @@ const DepartmentalApplications = ({
             id,
             leaveReason,
             status,
-            videoUrl,
-            documentUrl,
             totalLeaves,
             createdAt,
-            startDate,
-            endDate,
             leaveType,
             studentEmail,
             department,
+            StudentData: { fullName },
           }) => (
-            <li key={id} className="border-2 rounded p-2 flex justify-between">
-              <section>
-                <h3 className="font-medium">{leaveReason}</h3>
+            <li
+              key={id}
+              className="border-2 rounded p-2 flex flex-col justify-between"
+            >
+              <section className="flex flex-col gap-3">
+                <div className="flex justify-between flex-start">
+                  <section className="leading-4">
+                    <h3 className="font-semibold text-xl">{fullName}</h3>
+                    <p className="text-sm text-slate-500">{leaveReason}</p>
+                  </section>
+                  <p
+                    className={`flex items-center lowercase text-sm px-4 rounded-full py-1 max-h-max ${
+                      applicationStatusStyle[applicationStatus[status]]
+                    }`}
+                  >
+                    <DotFilledIcon />
+                    {applicationStatus[status]}
+                  </p>
+                </div>
 
-                <p className="text-sm text-slate-600">
-                  Applied On{" "}
-                  <span className="font-medium">
-                    {format(new Date(createdAt), "d MMMM yyyy")}
-                  </span>
-                </p>
-                <p className="text-sm text-slate-600">
-                  Total leaves{" "}
-                  <span className="font-medium">{totalLeaves}</span>
-                </p>
-                <p className="text-sm text-slate-600">
-                  From{" "}
-                  <span className="font-medium">
-                    {format(new Date(startDate), "d MMMM yyyy")}
-                  </span>
-                </p>
-                <p className="text-sm text-slate-600">
-                  To{" "}
-                  <span className="font-medium">
-                    {format(new Date(endDate), "d MMMM yyyy")}
-                  </span>
-                </p>
-                <p className="text-sm text-slate-600">
-                  Leave Type{" "}
-                  <span className="font-medium">
-                    {leaveType
-                      ? String(leaveType)?.charAt(0).toUpperCase() +
-                        String(leaveType)?.slice(1).toLowerCase()
-                      : ""}
-                  </span>
-                </p>
-              </section>
+                <section className="flex justify-between items-end">
+                  <section className="flex flex-col gap-1">
+                    <p className="flex items-center gap-2">
+                      <CalendarIcon className="bg-slate-100 text-slate-600 w-7 h-7 p-1 rounded-sm" />
+                      <span className=" text-slate-600">Applied on </span>
+                      <span className="text-sm font-medium">
+                        {format(new Date(createdAt), "d MMMM yyyy")}
+                      </span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <PieChartIcon className="bg-slate-100 text-slate-600 w-7 h-7 p-1 rounded-sm" />
+                      <span className=" text-slate-600">Leaves (in days) </span>
+                      <span className="text-sm font-medium">{totalLeaves}</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <IdCardIcon className="bg-slate-100 text-slate-600 w-7 h-7 p-1 rounded-sm" />
+                      <span className=" text-slate-600">Leave type </span>
+                      <span className="text-sm font-medium">
+                        {leaveType
+                          ? String(leaveType)?.charAt(0).toUpperCase() +
+                            String(leaveType)?.slice(1).toLowerCase()
+                          : ""}
+                      </span>
+                    </p>
+                  </section>
 
-              <section className="flex gap-2">
-                <ViewLeaveApplicationDrawer
-                  studentEmail={studentEmail}
-                  applicationId={id}
-                  department={department}
-                />
+                  <section className="flex">
+                    <ViewLeaveApplicationDrawer
+                      studentEmail={studentEmail}
+                      applicationId={id}
+                      department={department}
+                    />
+                  </section>
+                </section>
               </section>
             </li>
           )

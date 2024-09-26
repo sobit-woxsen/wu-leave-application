@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const fraunces = Fraunces({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Woxsen University - Leave Application Manager",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fraunces.className}>
         <div>
           <Toaster position="top-center" reverseOrder={false} />
         </div>
