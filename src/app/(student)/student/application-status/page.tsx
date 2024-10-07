@@ -1,5 +1,6 @@
 "use client";
 
+import { format } from "date-fns";
 import StudentNavbar from "@/components/navbar/student-navbar";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -33,6 +34,11 @@ const ApplicationStatus = () => {
     getLatestApplication();
   }, []);
 
+  const date = new Date("2024-10-07T04:33:20.936Z");
+  const formattedDate = format(date, "do MMM yyyy");
+
+  console.log(formattedDate); // Output: "07th Oct 2024"
+
   return (
     <div className="w-full h-full">
       <StudentNavbar />
@@ -45,7 +51,9 @@ const ApplicationStatus = () => {
       <ul className="flex flex-col gap-2 mt-3">
         <li key={application?.id} className="border-2 rounded p-2">
           <h3 className="font-medium">{application?.leaveReason}</h3>
-          <p className="text-sm text-slate-600">{application?.createdAt}</p>
+          <p className="text-sm text-slate-600">
+            {application?.createdAt?.split("T")[0]}
+          </p>
           <p
             className={
               application?.status === "PENDING"
