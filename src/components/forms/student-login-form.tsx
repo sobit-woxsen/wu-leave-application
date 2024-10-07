@@ -47,7 +47,7 @@ const StudentLoginForm = () => {
       const json = await response.json();
 
       if (!response.ok) {
-        toast.error(json.message);
+        toast.error("Invalid credentials");
         setLoading(false);
         return;
       }

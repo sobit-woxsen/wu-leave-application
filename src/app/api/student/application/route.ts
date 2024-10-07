@@ -63,12 +63,12 @@ export async function POST(request: NextRequest) {
     }
 
     // startdate
-    const startDate = formData.get("startDate");
-    const endDate = formData.get("endDate");
+    const startDate = formData.get("startDate") as string;
+    const endDate = formData.get("endDate") as string;
     const reasonForLeave = formData.get("reasonForLeave");
-    const documentUrl = formData.get("documentUrl");
-    const videoUrl = formData.get("videoUrl");
-    const totalLeaves = formData.get("totalLeaves");
+    const documentUrl = formData.get("documentUrl") as string | null;
+    const videoUrl = formData.get("videoUrl") as string | null;
+    const totalLeaves = formData.get("totalLeaves") as string;
 
     const { reason: leaveReason, type: leaveType } = reasonForLeave
       ? JSON.parse(reasonForLeave.toString())
@@ -87,6 +87,38 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const overlappingLeave = await prisma.leaveApplication.findFirst({
+      where: {
+        AND: [
+          { startDate: { lte: new Date(startDate) } },
+          { endDate: { gte: new Date(startDate) } },
+        ],
+      },
+    });
+
+    if (
+      overlappingLeave &&
+      (overlappingLeave.status === "PENDING" ||
+        overlappingLeave.status === "ACCEPTED")
+    ) {
+      // return `Error: The new leave application overlaps with an existing leave from ${overlappingLeave.startDate.toDateString()} to ${overlappingLeave.endDate.toDateString()}.`;
+
+      return NextResponse.json(
+        {
+          error: `You already have a ${
+            overlappingLeave.status === "PENDING"
+              ? "pending"
+              : overlappingLeave.status === "ACCEPTED"
+              ? "approved"
+              : null
+          } application on the given date`,
+        },
+        { status: 400 }
+      );
+    }
+
+    console.log("OVERLAPPIG ", overlappingLeave);
 
     if (!leaveType) {
       return NextResponse.json(
@@ -133,13 +165,13 @@ export async function POST(request: NextRequest) {
     // update the applications for that user
     await prisma.leaveApplication.create({
       data: {
-        startDate: new Date(startDate as string),
-        endDate: new Date(endDate as string),
-        totalLeaves: parseInt(totalLeaves as string),
+        startDate: new Date(startDate),
+        endDate: new Date(endDate),
+        totalLeaves: parseInt(totalLeaves),
         leaveReason,
         leaveType,
-        documentUrl: documentUrl as string | null,
-        videoUrl: videoUrl as string | null,
+        documentUrl,
+        videoUrl,
         department: user.department as Department,
         studentEmail: user.email as string | null,
         StudentData: {
