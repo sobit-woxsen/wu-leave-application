@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/prisma";
-import { Department, ApplicationStatus } from "@prisma/client";
+import { Department } from "@prisma/client";
 import { z } from "zod";
 
 const filterSchema = z.object({
@@ -20,6 +20,7 @@ export async function getFilterApplications(
   const validatedFields = filterSchema.safeParse(formData);
 
   // console.
+  console.log("VALIDATED FILEDS ", validatedFields);
 
   if (!validatedFields.success) {
     return { error: "Invalid form data" };
@@ -27,46 +28,43 @@ export async function getFilterApplications(
 
   const { search, dateApplied, reasonType, status } = validatedFields.data;
 
+  console.log("VALIDATED FIELD :: ", validatedFields.data);
+
   const whereConditions: any = {
     department: department,
+    ...(search && {
+      OR: [
+        {
+          StudentData: { fullName: { contains: search, mode: "insensitive" } },
+        },
+        {
+          StudentData: {
+            fatherName: { contains: search, mode: "insensitive" },
+          },
+        },
+        {
+          StudentData: {
+            motherName: { contains: search, mode: "insensitive" },
+          },
+        },
+        { studentEmail: { contains: search, mode: "insensitive" } },
+      ],
+    }),
+    ...(dateApplied && {
+      startDate: {
+        equals: new Date(dateApplied),
+      },
+    }),
+    ...(reasonType && { leaveType: reasonType }),
+    ...(status && { status: status }),
   };
-
-  if (search) {
-    whereConditions.OR = [
-      { StudentData: { fullName: { contains: search, mode: "insensitive" } } },
-      {
-        StudentData: { fatherName: { contains: search, mode: "insensitive" } },
-      },
-      {
-        StudentData: { motherName: { contains: search, mode: "insensitive" } },
-      },
-      { studentEmail: { contains: search, mode: "insensitive" } },
-    ];
-  }
-
-  if (dateApplied) {
-    const date = new Date(dateApplied);
-    whereConditions.startDate = {
-      equals: date,
-    };
-  }
-
-  if (reasonType) {
-    whereConditions.leaveType = reasonType;
-  }
-
-  if (status) {
-    whereConditions.status = status;
-  }
 
   const filteredApplications = await prisma.leaveApplication.findMany({
     where: whereConditions,
     include: {
       StudentData: {
         select: {
-          password: false,
-          refreshToken: false,
-          studentEmail: true,
+          fullName: true,
         },
       },
     },
@@ -75,12 +73,5 @@ export async function getFilterApplications(
     },
   });
 
-  return {
-    search,
-    dateApplied: dateApplied ? new Date(dateApplied) : undefined,
-    reasonType,
-    status,
-    department,
-    filteredApplications,
-  };
+  return filteredApplications;
 }

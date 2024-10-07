@@ -107,20 +107,20 @@ export type { TLeaveReasonType };
 
 export type TLeaveApplication = {
   id: string;
-  startDate: string; //
-  endDate: string; // ISO date format
+  startDate: string | Date;
+  endDate: string | Date;
   totalLeaves: number;
   leaveReason: string;
   leaveType: string;
   documentUrl: string | null;
   videoUrl: string | null;
-  studentEmail: string;
+  studentEmail: string | null;
   department: string;
   status: string;
-  studentId: string;
-  createdAt: string; // ISO date format
-  updatedAt: string; // ISO date format
+  studentId: string | null;
+  createdAt: string | Date;
+  updatedAt: string | Date;
   StudentData: {
     fullName: string;
-  };
+  } | null;
 };

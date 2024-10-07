@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { format } from "date-fns";
-import { CalendarIcon } from "@radix-ui/react-icons";
+import { CalendarIcon, ResetIcon } from "@radix-ui/react-icons";
 import { FaFilter } from "react-icons/fa6";
 
 import { Button } from "@/components/ui/button";
@@ -39,6 +39,9 @@ import {
 } from "@/components/ui/dialog";
 import { getFilterApplications } from "@/actions/filterApplications";
 import { Department } from "@prisma/client";
+import toast from "react-hot-toast";
+import { TLeaveApplication } from "@/constant";
+import { resetFilterApplications } from "@/actions/resetFilterApplication";
 
 const formSchema = z.object({
   search: z.string().optional(),
@@ -53,8 +56,10 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function ApplicationFilter({
   department,
+  setLeaveApplications,
 }: {
   department: Department;
+  setLeaveApplications: Dispatch<SetStateAction<TLeaveApplication[]>>;
 }) {
   const [isMobile, setIsMobile] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -75,33 +80,46 @@ export default function ApplicationFilter({
   });
 
   async function onSubmit(values: FormValues) {
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-      console.log(key, value);
-      if (value !== undefined) {
-        if (key === "dateApplied" && value instanceof Date) {
-          formData.append(key, value.toISOString());
-        } else {
-          formData.append(key, value as string);
-        }
-      }
-    });
+    const result = await getFilterApplications(values as FormData, department);
 
-    console.log("FORM DATAS ::  ", formData);
-    console.log("FORM DATAS VALUES ::  ", values);
+    if (!result) {
+      toast.error("Something went wrong");
+      return;
+    }
 
-    const result = await getFilterApplications(formData, department);
-
-    console.log("RESULT  :: ", result);
-
-    if (!result) return;
+    console.log("RESULT ", result);
 
     if ("error" in result) {
       console.error(result.error);
     } else {
-      console.log("Filter applied:", result);
+      setLeaveApplications(result);
     }
     setIsDialogOpen(false);
+  }
+
+  async function handleResetApplication(
+    e: React.MouseEvent<HTMLButtonElement>
+  ) {
+    e.preventDefault();
+    form.reset();
+    try {
+      const result = await resetFilterApplications(department);
+      if (!result) {
+        toast.error("Something went wrong");
+        return;
+      }
+
+      if ("error" in result) {
+        console.error(result.error);
+      } else {
+        setLeaveApplications(result);
+      }
+      setIsDialogOpen(false);
+    } catch (error) {
+      console.log("ERROR : ", error);
+      setIsDialogOpen(false);
+      toast.error("Something went wrong");
+    }
   }
 
   const DatePickerField = ({ field }: { field: any }) => (
@@ -132,14 +150,12 @@ export default function ApplicationFilter({
                     field.onChange(date);
                     setShowMobileCalendar(false);
                   }}
-                  disabled={(date) =>
-                    date > new Date() || date < new Date("1900-01-01")
-                  }
+                  disabled={(date) => date < new Date("1900-01-01")}
                   initialFocus
                 />
                 <Button
                   type="button"
-                  className="mt-4 w-full"
+                  className="mt-4 w-full bg-brand/85 bg-brand"
                   onClick={() => setShowMobileCalendar(false)}
                 >
                   Close
@@ -193,7 +209,7 @@ export default function ApplicationFilter({
             <FormItem>
               <FormLabel>Search</FormLabel>
               <FormControl>
-                <Input placeholder="Search..." {...field} />
+                <Input placeholder="Search..." {...field} autoFocus />
               </FormControl>
             </FormItem>
           )}
@@ -242,9 +258,9 @@ export default function ApplicationFilter({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="accepted">Accepted</SelectItem>
-                  <SelectItem value="rejected">Rejected</SelectItem>
-                  <SelectItem value="pending">Pending</SelectItem>
+                  <SelectItem value="ACCEPTED">Accepted</SelectItem>
+                  <SelectItem value="REJECTED">Rejected</SelectItem>
+                  <SelectItem value="PENDING">Pending</SelectItem>
                 </SelectContent>
               </Select>
             </FormItem>
@@ -252,16 +268,13 @@ export default function ApplicationFilter({
         />
 
         <div className="md:col-span-2 flex space-x-2">
-          <Button type="submit" className="flex-1">
+          <Button type="submit" className="flex-1 bg-brand/85 hover:bg-brand">
             Apply Filters
           </Button>
           <Button
             type="button"
             variant="outline"
-            onClick={() => {
-              form.reset();
-              setIsDialogOpen(false);
-            }}
+            onClick={(e) => handleResetApplication(e)}
             className="flex-1"
           >
             Reset
@@ -289,7 +302,11 @@ export default function ApplicationFilter({
           </DialogContent>
         </Dialog>
       ) : (
-        <div className="p-4 bg-white rounded-lg w-full">
+        <div className="p-4 bg-white rounded-lg w-full border-[1.5px] border-gray-200">
+          <p className="flex items-center mb-6">
+            <FaFilter className="mr-2 h-4 w-4 text-brand" />
+            Filters
+          </p>
           <FilterContent />
         </div>
       )}

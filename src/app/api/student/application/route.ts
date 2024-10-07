@@ -106,7 +106,13 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json(
         {
-          error: `You already have a ${
+          error: `You already have ${
+            overlappingLeave.status === "PENDING"
+              ? "a"
+              : overlappingLeave.status === "ACCEPTED"
+              ? "an"
+              : null
+          } ${
             overlappingLeave.status === "PENDING"
               ? "pending"
               : overlappingLeave.status === "ACCEPTED"
@@ -117,8 +123,6 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
-    console.log("OVERLAPPIG ", overlappingLeave);
 
     if (!leaveType) {
       return NextResponse.json(

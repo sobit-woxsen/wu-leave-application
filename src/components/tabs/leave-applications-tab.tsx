@@ -5,15 +5,13 @@ import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { ViewLeaveApplicationDrawer } from "../drawers/view-leave-application-drawer";
-import { ApplicationStatus, Department } from "@prisma/client";
+import { Department } from "@prisma/client";
 import {
   CalendarIcon,
   DotFilledIcon,
   IdCardIcon,
   PieChartIcon,
 } from "@radix-ui/react-icons";
-
-import { FaFilter } from "react-icons/fa6";
 
 import { applicationStatus, TLeaveApplication } from "@/constant";
 import { Input } from "../ui/input";
@@ -61,7 +59,17 @@ const DepartmentalApplications = ({
 }: {
   department: Department;
 }) => {
-  const [leaveApplications, setLeaveApplications] = useState([]);
+  return (
+    <section className="my-6">
+      <FilterApplications department={department} />
+    </section>
+  );
+};
+
+export function FilterApplications({ department }: { department: Department }) {
+  const [leaveApplications, setLeaveApplications] = useState<
+    TLeaveApplication[]
+  >([]);
   const [loading, setLoading] = useState(false);
 
   const getApplications = async () => {
@@ -95,35 +103,23 @@ const DepartmentalApplications = ({
   }, [department]);
 
   return (
-    <section className="my-6">
-      <FilterApplications
-        leaveApplications={leaveApplications}
-        department={department}
-      />
-
-      {loading && <p>Loading...</p>}
-      {leaveApplications.length === 0 && !loading && (
-        <p>No applications find for {department}</p>
-      )}
-    </section>
-  );
-};
-
-export function FilterApplications({
-  leaveApplications,
-  department,
-}: {
-  leaveApplications: TLeaveApplication[];
-  department: Department;
-}) {
-  return (
     <div className="mb-5">
       {/* Filter logic should be here */}
-      {/* <div className="flex items-center gap-2 ">
-        <ApplicationFilter department={department} />
-      </div> */}
 
-      <ul className="flex flex-col gap-2 mt-3">
+      <div className="flex items-center gap-2 ">
+        <ApplicationFilter
+          department={department}
+          setLeaveApplications={setLeaveApplications}
+        />
+      </div>
+
+      {leaveApplications.length === 0 && (
+        <p className="text-2xl font-bold text-center my-20">
+          No applications found
+        </p>
+      )}
+
+      <ul className="flex flex-col gap-4 mt-8">
         {leaveApplications?.map(
           ({
             id,
@@ -134,7 +130,7 @@ export function FilterApplications({
             leaveType,
             studentEmail,
             department,
-            StudentData: { fullName },
+            StudentData,
           }) => (
             <li
               key={id}
@@ -143,7 +139,9 @@ export function FilterApplications({
               <section className="flex flex-col gap-3">
                 <div className="flex justify-between flex-start">
                   <section className="leading-4">
-                    <h3 className="font-semibold text-xl">{fullName}</h3>
+                    <h3 className="font-semibold text-xl">
+                      {StudentData?.fullName}
+                    </h3>
                     <p className="text-sm text-slate-500">{leaveReason}</p>
                   </section>
                   <p
@@ -189,11 +187,13 @@ export function FilterApplications({
                   </section>
 
                   <section className="flex">
-                    <ViewLeaveApplicationDrawer
-                      studentEmail={studentEmail}
-                      applicationId={id}
-                      department={department as Department}
-                    />
+                    {studentEmail && (
+                      <ViewLeaveApplicationDrawer
+                        studentEmail={studentEmail}
+                        applicationId={id}
+                        department={department as Department}
+                      />
+                    )}
                   </section>
                 </section>
               </section>
