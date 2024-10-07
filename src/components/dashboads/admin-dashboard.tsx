@@ -61,14 +61,14 @@ export function DashboardCard({
   return (
     <div className="border-2 border-slate-200 p-4 w-full md:max-w-max rounded-md hover:border-brand/20 ">
       <h3 className="text-lg font-semibold ">{title}</h3>
-      <p className="flex items-center text-brand gap-2 text-4xl font-semibold">
+      <p className="flex items-center text-brand gap-2 text-6xl font-semibold">
         {length}
-        <Link
+        {/* <Link
           href={path}
           className="border-[1.8px] border-slate-200 hover:bg-brand/10 hover:cursor-pointer hover:border-brand/20  rounded-full p-1"
         >
           <ArrowTopRightIcon className="w-5 h-5 text-slate-400 hover:text-brand/50  " />
-        </Link>{" "}
+        </Link>{" "} */}
       </p>
     </div>
   );
