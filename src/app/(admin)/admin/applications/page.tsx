@@ -14,6 +14,7 @@ const Applications = () => {
         <h3 className="text-xl font-bold text-slate-800 mb-4">
           Leave applications
         </h3>
+
         <LeaveApplicationsTab />
       </div>
     </div>

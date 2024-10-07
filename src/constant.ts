@@ -85,6 +85,13 @@ const applicationStatus = {
   ACCEPTED: "Accepted",
 };
 
+type TLeaveReasonType =
+  | "REGULAR"
+  | "MEDICAL"
+  | "GOVERNMENT"
+  | "EMERGENCY"
+  | "OTHERS";
+
 export {
   MAX_FILE_SIZE,
   MAX_VIDEO_SIZE,
@@ -93,4 +100,27 @@ export {
   holidayDates,
   leaveReasonsData,
   applicationStatus,
+};
+export type { TLeaveReasonType };
+
+// Types
+
+export type TLeaveApplication = {
+  id: string;
+  startDate: string; //
+  endDate: string; // ISO date format
+  totalLeaves: number;
+  leaveReason: string;
+  leaveType: string;
+  documentUrl: string | null;
+  videoUrl: string | null;
+  studentEmail: string;
+  department: string;
+  status: string;
+  studentId: string;
+  createdAt: string; // ISO date format
+  updatedAt: string; // ISO date format
+  StudentData: {
+    fullName: string;
+  };
 };

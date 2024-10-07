@@ -71,7 +71,7 @@ const AdminLoginForm = () => {
       if (!response.ok) {
         toast.error(json.error);
       } else {
-        toast.success(json.message);
+        toast.success("Logged in successfully");
 
         router.push("/admin");
       }

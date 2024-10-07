@@ -37,9 +37,6 @@ const AdminDashboard = async () => {
   return (
     <div>
       <h1 className="text-3xl  font-semibold mb-6">Faculty Dashboard</h1>
-      {/* <Link className="text-sm text-blue-600" href="/admin/applications">
-        See all the applications
-      </Link> */}
 
       <section className="flex gap-5 flex-wrap">
         {applicationsCardsInfo.map(({ id, title, length, path }) => (
@@ -75,4 +72,8 @@ export function DashboardCard({
       </p>
     </div>
   );
+}
+
+export function DashboardCard1() {
+  return <div>DashboardCard1</div>;
 }

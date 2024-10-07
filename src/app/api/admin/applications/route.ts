@@ -33,8 +33,6 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  console.log("AAPPPP ", applications);
-
   return NextResponse.json({
     message: "APPLICATION approved/rejected successfully",
     data: {

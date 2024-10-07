@@ -9,11 +9,11 @@ import {
 import { z } from "zod";
 
 export type LeaveReasonType =
-  | "SHORT"
-  | "LONG"
+  | "REGULAR"
   | "MEDICAL"
   | "GOVERNMENT"
-  | "FESTIVE";
+  | "EMERGENCY"
+  | "OTHERS";
 
 export const studentRegisterFormSchema = z
   .object({

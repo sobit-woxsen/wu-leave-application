@@ -5,19 +5,24 @@ import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { ViewLeaveApplicationDrawer } from "../drawers/view-leave-application-drawer";
-import { Department } from "@prisma/client";
+import { ApplicationStatus, Department } from "@prisma/client";
 import {
   CalendarIcon,
   DotFilledIcon,
   IdCardIcon,
   PieChartIcon,
 } from "@radix-ui/react-icons";
-import { applicationStatus } from "@/constant";
+
+import { FaFilter } from "react-icons/fa6";
+
+import { applicationStatus, TLeaveApplication } from "@/constant";
+import { Input } from "../ui/input";
+import ApplicationFilter from "../filter/application-filter";
 
 const applicationStatusStyle = {
-  Pending: "text-yellow-500 bg-yellow-50",
-  Accepted: "text-green-500 bg-green-50",
-  Rejected: "text-red-500 bg-red-50",
+  PENDING: "text-yellow-500 bg-yellow-50",
+  ACCEPTED: "text-green-500 bg-green-50",
+  REJECTED: "text-red-500 bg-red-50",
 };
 
 export default function LeaveApplicationsTab() {
@@ -91,10 +96,33 @@ const DepartmentalApplications = ({
 
   return (
     <section className="my-6">
+      <FilterApplications
+        leaveApplications={leaveApplications}
+        department={department}
+      />
+
       {loading && <p>Loading...</p>}
       {leaveApplications.length === 0 && !loading && (
         <p>No applications find for {department}</p>
       )}
+    </section>
+  );
+};
+
+export function FilterApplications({
+  leaveApplications,
+  department,
+}: {
+  leaveApplications: TLeaveApplication[];
+  department: Department;
+}) {
+  return (
+    <div className="mb-5">
+      {/* Filter logic should be here */}
+      {/* <div className="flex items-center gap-2 ">
+        <ApplicationFilter department={department} />
+      </div> */}
+
       <ul className="flex flex-col gap-2 mt-3">
         {leaveApplications?.map(
           ({
@@ -120,11 +148,17 @@ const DepartmentalApplications = ({
                   </section>
                   <p
                     className={`flex items-center lowercase text-sm px-4 rounded-full py-1 max-h-max ${
-                      applicationStatusStyle[applicationStatus[status]]
+                      applicationStatusStyle[
+                        status as keyof typeof applicationStatusStyle
+                      ]
                     }`}
                   >
                     <DotFilledIcon />
-                    {applicationStatus[status]}
+                    {
+                      applicationStatus[
+                        status as keyof typeof applicationStatus
+                      ]
+                    }
                   </p>
                 </div>
 
@@ -158,7 +192,7 @@ const DepartmentalApplications = ({
                     <ViewLeaveApplicationDrawer
                       studentEmail={studentEmail}
                       applicationId={id}
-                      department={department}
+                      department={department as Department}
                     />
                   </section>
                 </section>
@@ -167,6 +201,6 @@ const DepartmentalApplications = ({
           )
         )}
       </ul>
-    </section>
+    </div>
   );
-};
+}

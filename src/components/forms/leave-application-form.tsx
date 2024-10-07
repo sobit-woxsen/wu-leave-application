@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { format, isWeekend } from "date-fns";
 import { cn, getTotalLeaveDays, isHoliday } from "../../lib/utils";
+import { addDays, isBefore, isAfter } from "date-fns";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -180,11 +181,7 @@ const LeaveApplicationForm = () => {
                       mode="single"
                       selected={field.value}
                       onSelect={field.onChange}
-                      disabled={(date) =>
-                        date < new Date() ||
-                        isWeekend(date) ||
-                        isHoliday(date, holidayDates)
-                      }
+                      disabled={(date) => date < new Date()}
                       initialFocus
                     />
                   </PopoverContent>
@@ -223,11 +220,13 @@ const LeaveApplicationForm = () => {
                       mode="single"
                       selected={field.value}
                       onSelect={field.onChange}
-                      disabled={(date) =>
-                        date < form.getValues("startDate") ||
-                        isWeekend(date) ||
-                        isHoliday(date, holidayDates)
-                      }
+                      disabled={(date) => {
+                        const startDate = form.getValues("startDate");
+                        const endDate = addDays(startDate, 2);
+                        return (
+                          isBefore(date, startDate) || isAfter(date, endDate)
+                        );
+                      }}
                       initialFocus
                     />
                   </PopoverContent>
