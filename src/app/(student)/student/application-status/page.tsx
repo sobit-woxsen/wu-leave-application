@@ -37,8 +37,6 @@ const ApplicationStatus = () => {
   const date = new Date("2024-10-07T04:33:20.936Z");
   const formattedDate = format(date, "do MMM yyyy");
 
-  console.log(formattedDate); // Output: "07th Oct 2024"
-
   return (
     <div className="w-full h-full">
       <StudentNavbar />

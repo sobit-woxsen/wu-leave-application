@@ -19,16 +19,11 @@ export async function getFilterApplications(
 ) {
   const validatedFields = filterSchema.safeParse(formData);
 
-  // console.
-  console.log("VALIDATED FILEDS ", validatedFields);
-
   if (!validatedFields.success) {
     return { error: "Invalid form data" };
   }
 
   const { search, dateApplied, reasonType, status } = validatedFields.data;
-
-  console.log("VALIDATED FIELD :: ", validatedFields.data);
 
   const whereConditions: any = {
     department: department,

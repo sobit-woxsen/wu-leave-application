@@ -16,6 +16,7 @@ import {
 import { applicationStatus, TLeaveApplication } from "@/constant";
 import { Input } from "../ui/input";
 import ApplicationFilter from "../filter/application-filter";
+import { useSearchParams } from "next/navigation";
 
 const applicationStatusStyle = {
   PENDING: "text-yellow-500 bg-yellow-50",
@@ -71,6 +72,8 @@ export function FilterApplications({ department }: { department: Department }) {
     TLeaveApplication[]
   >([]);
   const [loading, setLoading] = useState(false);
+  // const searchParams = useSearchParams();
+  // const status = searchParams.get("status");
 
   const getApplications = async () => {
     setLoading(true);

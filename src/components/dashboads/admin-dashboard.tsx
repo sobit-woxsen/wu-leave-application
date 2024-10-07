@@ -12,25 +12,25 @@ const AdminDashboard = async () => {
       id: 1,
       title: "Total Students Applied",
       length: applications.length,
-      path: "/",
+      path: "/admin/applications",
     },
     {
       id: 2,
       title: "Total Students Accepted",
       length: applications.filter(({ status }) => status === "ACCEPTED").length,
-      path: "/",
+      path: "/admin/applications",
     },
     {
       id: 3,
       title: "Total Students Rejected",
       length: applications.filter(({ status }) => status === "REJECTED").length,
-      path: "/",
+      path: "/admin/applications",
     },
     {
       id: 4,
       title: "Total Students Pending",
       length: applications.filter(({ status }) => status === "PENDING").length,
-      path: "/",
+      path: "/admin/applications",
     },
   ];
 

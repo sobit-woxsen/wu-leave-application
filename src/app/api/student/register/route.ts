@@ -23,8 +23,6 @@ export async function POST(request: Request) {
       where: { studentEmail: studentemail, department },
     });
 
-    console.log("STUDENT INFO ", studentInfo);
-
     if (!studentInfo) {
       return NextResponse.json(
         { message: "No student found" },
@@ -33,16 +31,6 @@ export async function POST(request: Request) {
     }
 
     const isEmailAlreadyRegistered = studentInfo.isRegistered;
-
-    // const studentData = await prisma.studentData.findFirst({
-    //   where: {
-    //     studentEmail: studentemail,
-    //     department: department,
-    //   },
-    //   select: {
-    //     isRegistered: true,
-    //   },
-    // });
 
     if (isEmailAlreadyRegistered) {
       return NextResponse.json(

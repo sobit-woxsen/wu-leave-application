@@ -87,8 +87,6 @@ export default function ApplicationFilter({
       return;
     }
 
-    console.log("RESULT ", result);
-
     if ("error" in result) {
       console.error(result.error);
     } else {

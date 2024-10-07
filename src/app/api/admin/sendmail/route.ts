@@ -55,11 +55,11 @@ export async function POST(request: NextRequest) {
   try {
     const info = await transporter.sendMail({
       from: `${
-        isApplicationAccepted ? "[ ACCEPTED ]" : "[ REJECTED ]"
+        isApplicationAccepted ? " ACCEPTED " : " REJECTED "
       } Woxsen University - Leave Application" <${username}>`,
       to: `${studentEmail}, ${parentEmail}`,
       cc: isApplicationAccepted ? "cso@woxsen.edu.in" : "",
-      subject: "Leave Application Status - Woxsen University",
+      subject: `Leave Application Status - Woxsen University`,
       html: isApplicationAccepted
         ? leaveApprovalTemplate
         : leaveRejectionTemplate,
