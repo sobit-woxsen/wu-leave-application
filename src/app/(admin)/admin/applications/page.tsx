@@ -1,7 +1,14 @@
 "use client";
 
 import AdminNavbar from "@/components/navbar/admin-navbar";
-import LeaveApplicationsTab from "@/components/tabs/leave-applications-tab";
+import dynamic from "next/dynamic";
+
+const DynamicLeaveApplicationsTab = dynamic(
+  () => import("@/components/tabs/leave-applications-tab"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 
 import React from "react";
 
@@ -15,7 +22,7 @@ const Applications = () => {
           Leave applications
         </h3>
 
-        <LeaveApplicationsTab />
+        <DynamicLeaveApplicationsTab />
       </div>
     </div>
   );
